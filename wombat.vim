@@ -1,3 +1,5 @@
+"Wombat Color theme by Lars H. Neilsen http://dengmao.wordpress.com/2007/01/22/vim-color-scheme-wombat/
+
 set background=dark
 if version > 580
 	hi clear
