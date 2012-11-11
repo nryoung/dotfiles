@@ -1,3 +1,3 @@
-My .vimrc
+My dotfiles
 ---------
-.vimrc to be used when logged in to different computers. It also includes the wombat.vim theme.
+my dot configuration files for vim.
