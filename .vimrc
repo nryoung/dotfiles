@@ -12,4 +12,5 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+filetype plugin indent on
 colorscheme wombat

@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/atlas/Hacks/blog/content'
+let g:netrw_dirhist_2='/home/atlas/Hacks/rstblog/blog/_templates'
+let g:netrw_dirhist_3='/home/atlas/Juju/code/feed_manager/tools/feedmanager/test_feedmanager_tools'
+let g:netrw_dirhist_4='/home/atlas/Juju/code/trunk/sites/feed'
