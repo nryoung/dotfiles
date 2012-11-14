@@ -13,4 +13,6 @@ set shiftwidth=4
 set expandtab
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 filetype plugin indent on
+syntax on
+au BufNewFile,BufRead *.tem set filetype=cpp
 colorscheme wombat
