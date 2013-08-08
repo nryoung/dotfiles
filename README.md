@@ -1,3 +1,3 @@
 My dotfiles
 ---------
-my dot configuration files for vim.
+my dot configuration files for everything.
