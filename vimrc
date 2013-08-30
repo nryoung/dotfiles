@@ -19,6 +19,7 @@ set foldmethod=indent
 set foldlevel=99
 filetype plugin indent on
 syntax on
+set backspace=indent,eol,start
 
 " Syntax highlighting for C++ templates
 au BufNewFile,BufRead *.tem set filetype=cpp
