@@ -25,5 +25,9 @@ set backspace=indent,eol,start
 " Syntax highlighting for C++ templates
 au BufNewFile,BufRead *.tem set filetype=cpp
 
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+
 " Colors
 colorscheme wombat
