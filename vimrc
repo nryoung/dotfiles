@@ -17,6 +17,7 @@ set expandtab
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set foldmethod=indent
 set foldlevel=99
+set backspace=indent,eol,start
 filetype plugin indent on
 syntax on
 
@@ -25,6 +26,3 @@ au BufNewFile,BufRead *.tem set filetype=cpp
 
 " Colors
 colorscheme wombat
-
-" Vim-flake8
-autocmd BufWritePost *.py call Flake8()
