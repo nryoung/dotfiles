@@ -29,5 +29,8 @@ au BufNewFile,BufRead *.tem set filetype=cpp
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
-" Colors
-colorscheme wombat
+" Solarize color theme
+syntax enable
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
