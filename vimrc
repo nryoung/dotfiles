@@ -21,6 +21,7 @@ set backspace=indent,eol,start
 filetype plugin indent on
 syntax on
 set backspace=indent,eol,start
+set tw=79
 
 " Syntax highlighting for C++ templates
 au BufNewFile,BufRead *.tem set filetype=cpp
