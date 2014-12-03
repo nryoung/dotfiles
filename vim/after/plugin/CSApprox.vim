@@ -27,3 +27,4 @@
 if !has('gui_running') && exists(':CSApprox')
   CSApprox
 endif
+hi Normal ctermbg=none
