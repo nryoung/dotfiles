@@ -4,7 +4,7 @@ echo "Initializing and updating submodules"
 git submodule init && git submodule update
 
 echo "Installing symlinks"
-FILES=('bash_aliases' 'bash_profile' 'tmux.conf' 'vimrc' 'vim')
+FILES=('bash_aliases' 'bash_profile' 'tmux.conf' 'vimrc' 'vim' 'gitconfig')
 
 for file in "${FILES[@]}"; do
     echo "Creating symlink for $file"
