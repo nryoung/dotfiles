@@ -191,7 +191,7 @@ endfunc
 "au Syntax * RainbowParenthesesLoadBraces
 
 " json-vim
-let g:vim_json_syntax_conceal = 0
+let g:vim_json_syntax_conceal=0
 
 " Syntastic
 let g:syntastic_check_on_open=1
