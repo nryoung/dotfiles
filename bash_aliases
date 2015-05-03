@@ -5,5 +5,7 @@ alias la='ls -la'
 # enable 256 color in tmux + vim
 alias tmux='tmux -2'
 
-# create alias for t task manager
-alias t='python ~/Hacks/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
+# source the virtulenvwrapper file
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    . /usr/bin/virtualenvwrapper.sh
+fi
