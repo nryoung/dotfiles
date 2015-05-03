@@ -6,8 +6,8 @@ alias la='ls -la'
 alias tmux='tmux -2'
 
 # Source the virtulenvwrapper file
-if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    . /usr/bin/virtualenvwrapper.sh
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Enable bash_completion on mac
