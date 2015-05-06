@@ -18,4 +18,4 @@
     prune = true
 
 [core]
-    excludesfile = /Users/philipforget/.gitignore_global
+    editor = /usr/bin/vim
