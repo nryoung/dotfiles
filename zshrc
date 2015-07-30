@@ -1,5 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/nic.young/.oh-my-zsh
+#
+# Source the virtulenvwrapper file
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -45,7 +50,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man)
+plugins=(git colored-man tmux)
 
 # User configuration
 
