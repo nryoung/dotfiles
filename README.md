@@ -6,4 +6,4 @@
   \/____/   \/_____/     \/_/   \/_/     \/_/   \/_____/   \/_____/   \/_____/ 
                                                                                
 ```
-by: [Nic Young](@nryoung1011)
+by: [Nic Young](https://twitter.com/nryoung1011)
