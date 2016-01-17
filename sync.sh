@@ -13,4 +13,17 @@ for file in "${FILES[@]}"; do
     echo
 done
 
+echo "Installing symlinks for neovim"
+if [ -e ~/.config/nvim ]; then
+    echo "Nvim symlink exists already"
+else
+    ln -s ~/dotfiles/vim ~/.config/nvim
+fi
+
+if [ -e ~/.config/nvim/init.vim ]; then
+    echo "Init.vim symlink exists already"
+else
+    ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
+fi
+
 echo "Done"

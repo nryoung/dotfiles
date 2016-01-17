@@ -6,6 +6,11 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# Source bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # source node version manager
 . ~/.nvm/nvm.sh
 # Set name of the theme to load.
