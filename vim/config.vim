@@ -202,6 +202,9 @@ let g:syntastic_always_populate_loc_list = 1
 " Enable Airline
 let g:airline_powerline_fonts=1
 
+" Enable ESlint
+let g:syntastic_javascript_checkers = ['eslint']
+
 " Color theme
 syntax enable
 colorscheme atom-dark
