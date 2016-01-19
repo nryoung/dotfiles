@@ -11,6 +11,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Source creds
+if [ -f ~/.creds ]; then
+    . ~/.creds
+fi
+
+
 # source node version manager
 . ~/.nvm/nvm.sh
 # Set name of the theme to load.

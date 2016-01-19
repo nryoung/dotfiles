@@ -7,6 +7,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'Raimondi/delimitMate'
+Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
