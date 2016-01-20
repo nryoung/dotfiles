@@ -216,6 +216,9 @@ let g:airline_powerline_fonts=1
 " Enable ESlint
 let g:syntastic_javascript_checkers = ['eslint']
 
+" Enable rainbow parens
+let g:rainbow_active=1
+
 " Color theme
 syntax enable
 colorscheme atom-dark
