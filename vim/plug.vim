@@ -21,5 +21,6 @@ Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'elixir-lang/vim-elixir'
 
 call plug#end()
