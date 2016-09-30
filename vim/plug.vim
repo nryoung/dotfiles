@@ -22,5 +22,6 @@ Plug 'tpope/vim-surround'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elixir-lang/vim-elixir'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
