@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing symlinks"
-FILES=('bash_aliases' 'bash_profile' 'tmux.conf' 'vimrc' 'vim' 'gitconfig' 'zshrc' 'eslintrc')
+FILES=('bash_aliases' 'bash_profile' 'tmux.conf' 'vimrc' 'vim' 'gitconfig' 'zshrc' 'eslintrc' 'tern-project')
 
 for file in "${FILES[@]}"; do
     echo "Creating symlink for $file"
