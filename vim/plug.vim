@@ -23,5 +23,6 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elixir-lang/vim-elixir'
 Plug 'Valloric/YouCompleteMe'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
