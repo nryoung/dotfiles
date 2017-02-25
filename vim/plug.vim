@@ -24,5 +24,8 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'elixir-lang/vim-elixir'
 Plug 'Valloric/YouCompleteMe'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'neomake/neomake'
+Plug 'mhinz/vim-grepper'
+Plug 'vim-erlang/vim-erlang-runtime'
 
 call plug#end()
