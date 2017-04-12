@@ -16,6 +16,9 @@ if [ -f ~/.creds ]; then
     . ~/.creds
 fi
 
+# z
+. /usr/local/etc/profile.d/z.sh
+
 
 # source node version manager
 . ~/.nvm/nvm.sh
