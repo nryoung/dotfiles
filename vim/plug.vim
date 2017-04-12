@@ -27,5 +27,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'neomake/neomake'
 Plug 'mhinz/vim-grepper'
 Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'mtth/scratch.vim'
 
 call plug#end()
