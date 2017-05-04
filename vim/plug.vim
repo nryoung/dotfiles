@@ -28,5 +28,6 @@ Plug 'neomake/neomake'
 Plug 'mhinz/vim-grepper'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'mtth/scratch.vim'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
