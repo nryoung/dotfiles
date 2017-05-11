@@ -29,5 +29,6 @@ Plug 'mhinz/vim-grepper'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'mtth/scratch.vim'
 Plug 'sbdchd/neoformat'
+Plug 'elmcast/elm-vim'
 
 call plug#end()
