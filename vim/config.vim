@@ -5,6 +5,9 @@
 "  \/_____/   \/_____/   \/_/ \/_/   \/_/     \/_/   \/_____/ 
 "                                                             
 
+" Map leader to comma
+let mapleader=','
+
 " Syntax highlighting
 syntax on
 
