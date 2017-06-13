@@ -234,3 +234,6 @@ let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--single-quote', '--trailing-comma es5'],
             \ }
+
+" Share clipboard with system
+set clipboard+=unnamed
