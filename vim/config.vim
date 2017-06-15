@@ -237,3 +237,7 @@ let g:neoformat_javascript_prettier = {
 
 " Share clipboard with system
 set clipboard+=unnamed
+
+" Enable hybrid relative line numbers
+set relativenumber
+set number
