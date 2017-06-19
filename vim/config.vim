@@ -225,7 +225,7 @@ let g:rainbow_active=1
 
 " Color theme
 syntax enable
-colorscheme atom-dark
+colorscheme jellybeans
 
 " Prettier setup
 autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5

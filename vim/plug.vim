@@ -30,5 +30,6 @@ Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'mtth/scratch.vim'
 Plug 'sbdchd/neoformat'
 Plug 'elmcast/elm-vim'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
