@@ -12,3 +12,5 @@ alias vim='nvim'
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
+
+export PATH=/usr/local/bin:$PATH
