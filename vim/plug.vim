@@ -31,5 +31,6 @@ Plug 'mtth/scratch.vim'
 Plug 'sbdchd/neoformat'
 Plug 'elmcast/elm-vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()

@@ -121,9 +121,6 @@ set smartcase
 noremap * *N
 noremap # #N
 
-" Map shortcut leader to ',' instead of '\'
-let mapleader=','
-
 " Clear the search highlight with <leader> n
 nmap <silent> <leader>n :noh<CR>
 
@@ -241,3 +238,6 @@ set clipboard+=unnamed
 " Enable hybrid relative line numbers
 set relativenumber
 set number
+
+" Map fzf to something simple
+nnoremap <leader>f :FZF<cr>
