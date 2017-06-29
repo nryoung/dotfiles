@@ -245,6 +245,7 @@ nnoremap <leader>f :FZF<cr>
 
 " Ale
 let g:ale_emit_conflict_warnings = 0
+let g:ale_linters = {'rust': ['rustc']}
 
 " Scratch
 let g:scratch_persistence_file = '~/.scratch'
