@@ -168,7 +168,7 @@ nmap gp :.!python<CR>
 vmap gp :!python<CR>
 
 " Split to the file under the cursor and line number
-map gs <C-W>F
+" map gs <C-W>F
 
 " Turn on 256 colors if this is xterm or xterm compatible
 set t_Co=256
@@ -231,6 +231,7 @@ let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--single-quote', '--trailing-comma es5'],
             \ }
+let g:neoformat_only_msg_on_error = 1
 
 " Share clipboard with system
 set clipboard+=unnamed
@@ -241,3 +242,9 @@ set number
 
 " Map fzf to something simple
 nnoremap <leader>f :FZF<cr>
+
+" Ale
+let g:ale_emit_conflict_warnings = 0
+
+" Scratch
+let g:scratch_persistence_file = '~/.scratch'
