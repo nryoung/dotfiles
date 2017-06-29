@@ -32,5 +32,6 @@ Plug 'elmcast/elm-vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'w0rp/ale'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
