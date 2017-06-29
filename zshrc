@@ -6,11 +6,6 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
 
-# Source bash_aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # Source creds
 if [ -f ~/.creds ]; then
     . ~/.creds
@@ -18,7 +13,6 @@ fi
 
 # z
 . /usr/local/etc/profile.d/z.sh
-
 
 # source node version manager
 . ~/.nvm/nvm.sh
@@ -102,3 +96,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.yarn/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Source bash_profile, which will also source bash_aliases
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
