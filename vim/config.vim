@@ -249,3 +249,6 @@ let g:ale_linters = {'rust': ['rustc']}
 
 " Scratch
 let g:scratch_persistence_file = '~/.scratch'
+
+" Reload .vimrc mapped to something easy
+nnoremap <leader>rl :so $MYVIMRC<cr>
