@@ -214,9 +214,6 @@ let g:syntastic_always_populate_loc_list = 1
 " Enable Airline
 let g:airline_powerline_fonts=1
 
-" Enable ESlint
-let g:syntastic_javascript_checkers = ['eslint']
-
 " Enable rainbow parens
 let g:rainbow_active=1
 

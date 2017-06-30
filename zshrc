@@ -101,3 +101,5 @@ export PATH="$HOME/.yarn/bin:$PATH"
 if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
