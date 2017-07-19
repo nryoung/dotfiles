@@ -12,7 +12,7 @@
     email = nryoung@gmail.com
 
 [push]
-    default = simple
+    default = current
 
 [fetch]
     prune = true
