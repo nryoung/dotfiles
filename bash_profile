@@ -11,3 +11,5 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
