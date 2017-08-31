@@ -136,6 +136,9 @@ map <leader>t :NERDTreeToggle<CR>
 " NERDTree ignore files
 let NERDTreeIgnore=['\.pyc']
 
+" NERDTree see hidden files
+let NERDTreeShowHidden=1
+
 " Sorting
 vmap <leader>s :sort<CR>
 
@@ -242,7 +245,7 @@ nnoremap <leader>f :FZF<cr>
 
 " Ale
 let g:ale_emit_conflict_warnings = 0
-let g:ale_linters = {'rust': ['rustc']}
+"let g:ale_linters = {'rust': ['rustc']}
 
 " Scratch
 let g:scratch_persistence_file = '~/.scratch'
