@@ -252,3 +252,8 @@ let g:scratch_persistence_file = '~/.scratch'
 
 " Reload .vimrc mapped to something easy
 nnoremap <leader>rl :so $MYVIMRC<cr>
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#enable_smart_case = 1
