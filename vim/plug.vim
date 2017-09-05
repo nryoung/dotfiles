@@ -31,7 +31,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -39,5 +38,6 @@ Plug 'mbbill/undotree'
 Plug 'yssl/QFEnter'
 Plug 'mhinz/vim-signify'
 Plug 'justinmk/vim-sneak'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 call plug#end()
