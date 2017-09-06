@@ -225,8 +225,7 @@ syntax enable
 colorscheme jellybeans
 
 " Prettier setup
-autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
-autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.js,*.jsx Neoformat
 let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--single-quote', '--trailing-comma es5'],
