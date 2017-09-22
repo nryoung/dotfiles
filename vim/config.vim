@@ -230,6 +230,7 @@ let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--single-quote', '--trailing-comma es5'],
             \ }
+let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_only_msg_on_error = 1
 
 " Share clipboard with system
