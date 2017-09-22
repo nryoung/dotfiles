@@ -8,9 +8,4 @@ alias tmux='tmux -2'
 # Use neovim instead
 alias vim='nvim'
 
-# Source the virtulenvwrapper file
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    . /usr/local/bin/virtualenvwrapper.sh
-fi
-
 export PATH=/usr/local/bin:$PATH

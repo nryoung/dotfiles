@@ -1,10 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/nic.young/.oh-my-zsh
-#
-# Source the virtulenvwrapper file
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    . /usr/local/bin/virtualenvwrapper.sh
-fi
 
 # Source creds
 if [ -f ~/.creds ]; then
