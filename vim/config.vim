@@ -258,3 +258,12 @@ let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#enable_smart_case = 1
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Persistent Undo
+if has('persistent_undo')
+  set undofile
+  exec 'set undodir=~/.config/nvim/.undo'
+endif
+
+" Map undotree to ,u
+nnoremap <leader>u :UndotreeToggle<cr>

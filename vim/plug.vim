@@ -35,5 +35,6 @@ Plug 'fleischie/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'mbbill/undotree'
 
 call plug#end()
