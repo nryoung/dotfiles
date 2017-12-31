@@ -267,3 +267,6 @@ endif
 
 " Map undotree to ,u
 nnoremap <leader>u :UndotreeToggle<cr>
+
+" Map grepper with ag to ,g
+nnoremap <leader>g :Grepper -tool ag<cr>
