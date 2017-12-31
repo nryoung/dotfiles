@@ -37,5 +37,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mbbill/undotree'
 Plug 'yssl/QFEnter'
+Plug 'mhinz/vim-signify'
 
 call plug#end()
