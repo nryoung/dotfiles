@@ -38,5 +38,6 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mbbill/undotree'
 Plug 'yssl/QFEnter'
 Plug 'mhinz/vim-signify'
+Plug 'justinmk/vim-sneak'
 
 call plug#end()

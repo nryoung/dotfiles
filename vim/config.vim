@@ -271,3 +271,6 @@ nnoremap <leader>u :UndotreeToggle<cr>
 
 " Map grepper with ag to ,g
 nnoremap <leader>g :Grepper -tool ag<cr>
+
+" Vim-Sneak
+let g:sneak#label = 1
