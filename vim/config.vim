@@ -241,6 +241,7 @@ set relativenumber
 set number
 
 " Map fzf to something simple
+let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 nnoremap <leader>f :FZF<cr>
 
 " Ale
