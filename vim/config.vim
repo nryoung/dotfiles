@@ -228,7 +228,7 @@ colorscheme jellybeans
 autocmd BufWritePre *.js,*.jsx Neoformat
 let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--parser babylon', '--single-quote', '--trailing-comma es5'],
+            \ 'args': ['--parser babylon', '--single-quote', '--trailing-comma es5', '--arrow-parens always'],
             \ }
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_only_msg_on_error = 1
