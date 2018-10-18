@@ -39,5 +39,6 @@ Plug 'yssl/QFEnter'
 Plug 'mhinz/vim-signify'
 Plug 'justinmk/vim-sneak'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
 
 call plug#end()

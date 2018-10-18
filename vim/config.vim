@@ -222,7 +222,9 @@ let g:rainbow_active=1
 
 " Color theme
 syntax enable
-colorscheme jellybeans
+set termguicolors
+set background=dark
+colorscheme gruvbox
 
 " Prettier setup
 autocmd BufWritePre *.js,*.jsx Neoformat
@@ -263,7 +265,6 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " deoplete-ternjs
 let g:deoplete#sources#ternjs#types = 1
 let g:deoplete#sources#ternjs#depths = 1
-let g:deoplete#sources#ternjs#docs = 1
 let g:deoplete#sources#ternjs#case_insensitive = 1
 let g:deoplete#sources#ternjs#include_keywords = 1
 let g:deoplete#sources#ternjs#filetypes = [
@@ -286,3 +287,7 @@ nnoremap <leader>g :Grepper -tool ag<cr>
 
 " Vim-Sneak
 let g:sneak#label = 1
+
+" set gf to actually work
+set path=.,src,node_modules
+set suffixesadd=.js,.jsx
