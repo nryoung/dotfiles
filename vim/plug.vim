@@ -38,5 +38,6 @@ Plug 'mhinz/vim-signify'
 Plug 'justinmk/vim-sneak'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'morhetz/gruvbox'
+Plug 'alvan/vim-closetag'
 
 call plug#end()
