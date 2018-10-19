@@ -16,7 +16,8 @@ fi
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="bira"
- ZSH_THEME="avit"
+ ZSH_THEME="powerlevel9k/powerlevel9k"
+ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
