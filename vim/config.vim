@@ -293,10 +293,10 @@ set path=.,src,node_modules
 set suffixesadd=.js,.jsx
 
 " vim-closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
 let g:closetag_filetypes = 'html,xhtml,phtml'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
