@@ -235,6 +235,15 @@ let g:neoformat_javascript_prettier = {
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_only_msg_on_error = 1
 
+" Elixir formatter
+autocmd BufWritePre *.ex,*.exs Neoformat
+let g:neoformat_elixir = {
+        \ 'exe': 'mix',
+        \ 'args': ['format', "-"],
+        \ 'stdin': 1
+        \ }
+let g:neoformat_enabled_elixir = ['mixformat']
+
 " Share clipboard with system
 set clipboard+=unnamed
 
