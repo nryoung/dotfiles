@@ -244,6 +244,14 @@ let g:neoformat_elixir = {
         \ }
 let g:neoformat_enabled_elixir = ['mixformat']
 
+" Rust formatter
+autocmd BufWritePre *.rs, Neoformat
+let g:neoformat_rust = {
+        \ 'exe': 'rustfmt',
+        \ 'stdin': 1
+        \ }
+let g:neoformat_enabled_rust = ['rustfmt']
+
 " Share clipboard with system
 set clipboard+=unnamed
 
@@ -257,6 +265,7 @@ nnoremap <leader>f :FZF<cr>
 
 " Ale
 let g:ale_emit_conflict_warnings = 0
+let g:ale_rust_cargo_use_check = 1
 
 " Scratch
 let g:scratch_persistence_file = '~/.scratch'
