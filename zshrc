@@ -9,8 +9,6 @@ fi
 # z
 . /usr/local/etc/profile.d/z.sh
 
-# source node version manager
-. ~/.nvm/nvm.sh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -100,3 +98,6 @@ if [ -f ~/.bash_profile ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# source node version manager
+. ~/.nvm/nvm.sh
