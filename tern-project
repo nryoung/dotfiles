@@ -2,10 +2,11 @@
     "libs": [
         "browser",
         "underscore",
-        "jquery"
+        "jquery",
+        "react"
             ],
         "plugins": {
           "node": {},
-          "es_modules": {},
+          "es_modules": {}
         }
 }

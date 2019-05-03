@@ -301,9 +301,6 @@ endif
 " Map undotree to ,u
 nnoremap <leader>u :UndotreeToggle<cr>
 
-" Map grepper with ag to ,g
-nnoremap <leader>g :Grepper -tool ag<cr>
-
 " Vim-Sneak
 let g:sneak#label = 1
 
@@ -323,3 +320,10 @@ let g:closetag_close_shortcut = '<leader>>'
 " ranger
 let g:ranger_map_keys = 0
 nnoremap <leader>r :Ranger<CR>
+
+" ack
+" map ack with ag to ,g
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+nnoremap <leader>g :Ack!<Space>
