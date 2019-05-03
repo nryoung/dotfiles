@@ -319,3 +319,7 @@ let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+
+" ranger
+let g:ranger_map_keys = 0
+nnoremap <leader>r :Ranger<CR>
