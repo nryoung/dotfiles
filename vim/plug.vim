@@ -7,7 +7,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'Raimondi/delimitMate'
-Plug 'scrooloose/nerdtree'
 Plug 'luochen1990/rainbow'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -38,7 +37,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'morhetz/gruvbox'
 Plug 'alvan/vim-closetag'
-Plug 'francoiscabrol/ranger.vim'
+Plug 'rafaqz/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'mileszs/ack.vim'
 

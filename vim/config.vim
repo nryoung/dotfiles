@@ -318,8 +318,15 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 " ranger
-let g:ranger_map_keys = 0
-nnoremap <leader>r :Ranger<CR>
+nnoremap <leader>r :RangerEdit<cr>
+nnoremap <leader>rv :RangerVSplit<cr>
+nnoremap <leader>rs :RangerSplit<cr>
+nnoremap <leader>rt :RangerTab<cr>
+nnoremap <leader>ri :RangerInsert<cr>
+nnoremap <leader>ra :RangerAppend<cr>
+nnoremap <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+nnoremap <leader>rd :RangerCD<cr>
+nnoremap <leader>rld :RangerLCD<cr>
 
 " ack
 " map ack with ag to ,g
