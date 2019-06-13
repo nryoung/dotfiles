@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/nicholas.young/.oh-my-zsh
+export ZSH=/Users/nic.young/.oh-my-zsh
 
 # Source creds
 if [ -f ~/.creds ]; then
