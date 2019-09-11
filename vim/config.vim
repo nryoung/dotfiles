@@ -42,6 +42,7 @@ set switchbuf=useopen,usetab
 " Filetype detection
 au BufNewFile,BufRead *.tem set filetype=cpp
 au BufNewFile,BufRead *.json set filetype=json
+au BufNewFile,BufRead *.tsx set filetype=javascript
 
 " Set terminal width to 80 chars when looking at md or rst files
 au BufRead,BufNewFile *.md setlocal wrap linebreak nolist textwidth=80
