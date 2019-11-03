@@ -28,8 +28,6 @@ Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mbbill/undotree'
 Plug 'yssl/QFEnter'
 Plug 'mhinz/vim-signify'
@@ -40,5 +38,6 @@ Plug 'alvan/vim-closetag'
 Plug 'rafaqz/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'mileszs/ack.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
