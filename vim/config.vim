@@ -262,6 +262,7 @@ set relativenumber
 set number
 
 " Map fzf to something simple
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--color-path="0;33"', <bang>0)
 let $FZF_DEFAULT_COMMAND= 'ag --hidden --ignore .git -l -g ""'
 nnoremap <leader>f :FZF<cr>
 
@@ -309,15 +310,6 @@ let g:sneak#label = 1
 set path=.,src,node_modules
 set suffixesadd=.js,.jsx
 
-" vim-closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
-let g:closetag_filetypes = 'html,xhtml,phtml'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
-
 " ranger
 nnoremap <leader>r :RangerEdit<cr>
 nnoremap <leader>rv :RangerVSplit<cr>
@@ -329,9 +321,84 @@ nnoremap <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 nnoremap <leader>rd :RangerCD<cr>
 nnoremap <leader>rld :RangerLCD<cr>
 
-" ack
-" map ack with ag to ,g
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-nnoremap <leader>g :Ack!<Space>
+" === Denite setup ==="
+" Use ag for searching within files in the current directory
+" By default, ag will respect rules in .gitignore
+
+" Use ag in place of 'grep'
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+" Custom options for ag
+"   --vimgrep:  Show results with every match on it's own line
+"   --hidden:   Search hidden directories and files
+"   --heading:  Show the file name above clusters of matches from each file
+"   --S:        Search case insensitively if the pattern is all lowercase
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep', '--hidden', '--heading'])
+
+" Recommended defaults for ripgrep via Denite docs
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+
+" Remove date from buffer list
+call denite#custom#var('buffer', 'date_format', '')
+
+" Custom options for Denite
+"   auto_resize             - Auto resize the Denite window height automatically.
+"   prompt                  - Customize denite prompt
+"   direction               - Specify Denite window direction as directly below current pane
+"   winminheight            - Specify min height for Denite window
+"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
+"   prompt_highlight        - Specify color of prompt
+"   highlight_matched_char  - Matched characters highlight
+"   highlight_matched_range - matched range highlight
+let s:denite_options = {'default' : {
+\ 'split': 'floating',
+\ 'start_filter': 1,
+\ 'auto_resize': 1,
+\ 'source_names': 'short',
+\ 'prompt': 'λ:',
+\ 'statusline': 0,
+\ 'highlight_matched_char': 'WildMenu',
+\ 'highlight_matched_range': 'Visual',
+\ 'highlight_window_background': 'Visual',
+\ 'highlight_filter_background': 'StatusLine',
+\ 'highlight_prompt': 'StatusLine',
+\ 'winrow': 1,
+\ 'vertical_preview': 1
+\ }}
+
+call denite#custom#option('default', s:denite_options)
+
+nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
+nmap <leader>t :DeniteProjectDir file/rec<CR>
+nmap ; :Denite buffer<CR>
+
+" Define mappings while in denite window
+"   <CR>        - Opens currently selected file
+"   q or <Esc>  - Quit Denite window
+"   d           - Delete currenly selected file
+"   p           - Preview currently selected file
+"   <C-o> or i  - Switch to insert mode inside of filter prompt
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <Esc>
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <C-o>
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <C-v>
+  \ denite#do_map('do_action', 'vsplit')
+  nnoremap <silent><buffer><expr> <C-x>
+  \ denite#do_map('do_action', 'split')
+endfunction
