@@ -261,9 +261,17 @@ set clipboard+=unnamed
 set relativenumber
 set number
 
-" Map fzf to something simple
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--color-path="0;33"', <bang>0)
-let $FZF_DEFAULT_COMMAND= 'ag --hidden --ignore .git -l -g ""'
+" Use fzf and ripgrep to search within files
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+nnoremap <leader>g :Rg<cr>
+
+" Use fzf and ripgrep to find files
+let $FZF_DEFAULT_COMMAND= 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 nnoremap <leader>f :FZF<cr>
 
 " Ale
@@ -325,22 +333,6 @@ nnoremap <leader>rld :RangerLCD<cr>
 " Use ag for searching within files in the current directory
 " By default, ag will respect rules in .gitignore
 
-" Use ag in place of 'grep'
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-" Custom options for ag
-"   --vimgrep:  Show results with every match on it's own line
-"   --hidden:   Search hidden directories and files
-"   --heading:  Show the file name above clusters of matches from each file
-"   --S:        Search case insensitively if the pattern is all lowercase
-call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep', '--hidden', '--heading'])
-
-" Recommended defaults for ripgrep via Denite docs
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
 
@@ -371,8 +363,6 @@ let s:denite_options = {'default' : {
 
 call denite#custom#option('default', s:denite_options)
 
-nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
-nmap <leader>t :DeniteProjectDir file/rec<CR>
 nmap ; :Denite buffer<CR>
 
 " Define mappings while in denite window

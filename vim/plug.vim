@@ -56,6 +56,7 @@ Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 " 🌸 A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " The undo history visualizer for VIM 
 Plug 'mbbill/undotree'
 " Open a Quickfix item in a window you choose. (Vim plugin) 
