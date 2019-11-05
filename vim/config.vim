@@ -264,14 +264,14 @@ set number
 " Use fzf and ripgrep to search within files
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
   \   <bang>0)
 nnoremap <leader>g :Rg<cr>
 
 " Use fzf and ripgrep to find files
-let $FZF_DEFAULT_COMMAND= 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+let $FZF_DEFAULT_COMMAND= 'rg --files --hidden --follow --glob "!.git/*"'
 nnoremap <leader>f :FZF<cr>
 
 " Ale
