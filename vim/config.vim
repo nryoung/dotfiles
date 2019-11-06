@@ -228,15 +228,6 @@ set termguicolors
 set background=dark
 colorscheme gruvbox
 
-" Prettier setup
-autocmd BufWritePre *.js,*.jsx Neoformat
-let g:neoformat_javascript_prettier = {
-            \ 'exe': 'prettier',
-            \ 'args': ['--parser babylon', '--single-quote', '--trailing-comma es5', '--arrow-parens always'],
-            \ }
-let g:neoformat_enabled_javascript = ['prettier']
-let g:neoformat_only_msg_on_error = 1
-
 " Elixir formatter
 autocmd BufWritePre *.ex,*.exs Neoformat
 let g:neoformat_elixir = {
