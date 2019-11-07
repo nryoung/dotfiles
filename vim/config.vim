@@ -265,6 +265,9 @@ nnoremap <leader>g :Rg<cr>
 let $FZF_DEFAULT_COMMAND= 'rg --files --hidden --follow --glob "!.git/*"'
 nnoremap <leader>f :FZF<cr>
 
+" Use fzf to find buffers
+nnoremap <leader>b :Buffers<cr>
+
 " Ale
 let g:ale_emit_conflict_warnings = 0
 let g:ale_rust_cargo_use_check = 1
