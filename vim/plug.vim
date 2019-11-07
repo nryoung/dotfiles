@@ -67,8 +67,5 @@ Plug 'justinmk/vim-sneak'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Ranger integration in vim and neovim 
 Plug 'rafaqz/ranger.vim'
-"🐉 Dark powered asynchronous unite all interfaces for Neovim/Vim8 
-Plug 'Shougo/denite.nvim'
-"Plug 'mileszs/ack.vim'
 
 call plug#end()

@@ -132,15 +132,6 @@ nmap <silent> <leader>p :set paste!<CR>
 " Softwrap text
 nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 
-" NERDTree toggle
-map <leader>t :NERDTreeToggle<CR>
-
-" NERDTree ignore files
-let NERDTreeIgnore=['\.pyc']
-
-" NERDTree see hidden files
-let NERDTreeShowHidden=1
-
 " Sorting
 vmap <leader>s :sort<CR>
 
@@ -167,13 +158,6 @@ set sessionoptions+=resize
 " After shifting a visual block, reselect it to be able to shift again
 vnoremap > >gv
 vnoremap < <gv
-
-" Run current line/selection as Python code and replace with output
-nmap gp :.!python<CR>
-vmap gp :!python<CR>
-
-" Split to the file under the cursor and line number
-" map gs <C-W>F
 
 " Turn on 256 colors if this is xterm or xterm compatible
 set t_Co=256
@@ -211,11 +195,6 @@ endfunc
 " json-vim
 let g:vim_json_syntax_conceal=0
 
-" Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_always_populate_loc_list = 1
-
 " Enable Airline
 let g:airline_powerline_fonts=1
 
@@ -227,23 +206,6 @@ syntax enable
 set termguicolors
 set background=dark
 colorscheme gruvbox
-
-" Elixir formatter
-autocmd BufWritePre *.ex,*.exs Neoformat
-let g:neoformat_elixir = {
-        \ 'exe': 'mix',
-        \ 'args': ['format', "-"],
-        \ 'stdin': 1
-        \ }
-let g:neoformat_enabled_elixir = ['mixformat']
-
-" Rust formatter
-autocmd BufWritePre *.rs, Neoformat
-let g:neoformat_rust = {
-        \ 'exe': 'rustfmt',
-        \ 'stdin': 1
-        \ }
-let g:neoformat_enabled_rust = ['rustfmt']
 
 " Share clipboard with system
 set clipboard+=unnamed
@@ -268,33 +230,8 @@ nnoremap <leader>f :FZF<cr>
 " Use fzf to find buffers
 nnoremap <leader>b :Buffers<cr>
 
-" Ale
-let g:ale_emit_conflict_warnings = 0
-let g:ale_rust_cargo_use_check = 1
-
-" Scratch
-let g:scratch_persistence_file = '~/.scratch'
-
 " Reload .vimrc mapped to something easy
 nnoremap <leader>rl :so $MYVIMRC<cr>
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#enable_smart_case = 1
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-" deoplete-ternjs
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#depths = 1
-let g:deoplete#sources#ternjs#case_insensitive = 1
-let g:deoplete#sources#ternjs#include_keywords = 1
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx',
-                \ 'vue',
-                \ ]
 
 " Persistent Undo
 if has('persistent_undo')
@@ -322,67 +259,3 @@ nnoremap <leader>ra :RangerAppend<cr>
 nnoremap <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 nnoremap <leader>rd :RangerCD<cr>
 nnoremap <leader>rld :RangerLCD<cr>
-
-" === Denite setup ==="
-" Use ag for searching within files in the current directory
-" By default, ag will respect rules in .gitignore
-
-" Remove date from buffer list
-call denite#custom#var('buffer', 'date_format', '')
-
-" Custom options for Denite
-"   auto_resize             - Auto resize the Denite window height automatically.
-"   prompt                  - Customize denite prompt
-"   direction               - Specify Denite window direction as directly below current pane
-"   winminheight            - Specify min height for Denite window
-"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
-"   prompt_highlight        - Specify color of prompt
-"   highlight_matched_char  - Matched characters highlight
-"   highlight_matched_range - matched range highlight
-let s:denite_options = {'default' : {
-\ 'split': 'floating',
-\ 'start_filter': 1,
-\ 'auto_resize': 1,
-\ 'source_names': 'short',
-\ 'prompt': 'λ:',
-\ 'statusline': 0,
-\ 'highlight_matched_char': 'WildMenu',
-\ 'highlight_matched_range': 'Visual',
-\ 'highlight_window_background': 'Visual',
-\ 'highlight_filter_background': 'StatusLine',
-\ 'highlight_prompt': 'StatusLine',
-\ 'winrow': 1,
-\ 'vertical_preview': 1
-\ }}
-
-call denite#custom#option('default', s:denite_options)
-
-nmap ; :Denite buffer<CR>
-
-" Define mappings while in denite window
-"   <CR>        - Opens currently selected file
-"   q or <Esc>  - Quit Denite window
-"   d           - Delete currenly selected file
-"   p           - Preview currently selected file
-"   <C-o> or i  - Switch to insert mode inside of filter prompt
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> <Esc>
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-o>
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-v>
-  \ denite#do_map('do_action', 'vsplit')
-  nnoremap <silent><buffer><expr> <C-x>
-  \ denite#do_map('do_action', 'split')
-endfunction
