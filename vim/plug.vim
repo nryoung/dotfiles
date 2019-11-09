@@ -34,8 +34,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'elixir-lang/vim-elixir'
 " Erlang indentation and syntax for vim
 Plug 'vim-erlang/vim-erlang-runtime'
-" A (Neo)vim plugin for formatting code.
-Plug 'sbdchd/neoformat'
 " Elm plugin for Vim
 Plug 'elmcast/elm-vim'
 " Vim configuration for Rust.
@@ -63,9 +61,17 @@ Plug 'mbbill/undotree'
 Plug 'yssl/QFEnter'
 " The missing motion for Vim 👟 
 Plug 'justinmk/vim-sneak'
-" Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Ranger integration in vim and neovim 
 Plug 'rafaqz/ranger.vim'
+
+" === coc.nvim ===
+" Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()

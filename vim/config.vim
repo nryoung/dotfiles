@@ -58,6 +58,7 @@ set bs=indent,eol,start
 " Disable backup and swap
 set noswapfile
 set nobackup
+set nowritebackup
 
 " Turn on mouse
 set mouse=a
@@ -249,7 +250,7 @@ let g:sneak#label = 1
 set path=.,src,node_modules
 set suffixesadd=.js,.jsx
 
-" ranger
+" === ranger ===
 nnoremap <leader>r :RangerEdit<cr>
 nnoremap <leader>rv :RangerVSplit<cr>
 nnoremap <leader>rs :RangerSplit<cr>
@@ -259,3 +260,26 @@ nnoremap <leader>ra :RangerAppend<cr>
 nnoremap <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 nnoremap <leader>rd :RangerCD<cr>
 nnoremap <leader>rld :RangerLCD<cr>
+
+" === coc.nvim ===
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+" always show signcolumns
+set signcolumn=yes
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
