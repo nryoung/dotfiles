@@ -26,9 +26,6 @@ set mouse=a
 if !has('nvim')
     set ttymouse=xterm2
 endif
-" Allow L and H to go to beginning and end of line
-nnoremap H 0
-nnoremap L $
 " Disable Ex mode
 nnoremap Q <Nop>
 " Make Y and D yank until EOL like other capital letters
