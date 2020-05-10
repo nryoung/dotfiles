@@ -63,6 +63,8 @@ Plug 'yssl/QFEnter'
 Plug 'justinmk/vim-sneak'
 " Ranger integration in vim and neovim 
 Plug 'rafaqz/ranger.vim'
+" Vim HardTime
+Plug 'takac/vim-hardtime'
 
 " === coc.nvim ===
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
@@ -73,6 +75,5 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()

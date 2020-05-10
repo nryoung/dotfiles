@@ -203,6 +203,10 @@ nnoremap <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 nnoremap <leader>rd :RangerCD<cr>
 nnoremap <leader>rld :RangerLCD<cr>
 
+" === HardTime ===
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+
 " === coc.nvim ===
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
