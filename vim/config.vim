@@ -188,6 +188,7 @@ nnoremap <leader>u :UndotreeToggle<cr>
 
 " === Vim-Sneak ===
 let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1
 
 " === Ranger ===
 nnoremap <leader>r :RangerEdit<cr>
