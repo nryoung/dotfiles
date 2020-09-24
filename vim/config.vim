@@ -136,6 +136,7 @@ set sw=4 sts=4 ts=4 expandtab
 set number
 set ruler
 set cursorline
+set cursorcolumn
 " List special chars such as whitespace and tabs
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅,extends:#
 " When splitting window, split to bottom and right
