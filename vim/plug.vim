@@ -65,6 +65,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'rafaqz/ranger.vim'
 " Vim HardTime
 Plug 'takac/vim-hardtime'
+" Personal Wiki for Vim
+Plug 'vimwiki/vimwiki'
 
 " === coc.nvim ===
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
