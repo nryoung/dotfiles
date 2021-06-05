@@ -238,3 +238,22 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" === treesitter ===
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+    disable = { },
+  },
+  indent = {
+    enable = true
+  },
+  incremental_selection = {
+    enable = true
+  }
+}
+EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
