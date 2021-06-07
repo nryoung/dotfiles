@@ -15,8 +15,8 @@ Plug 'mhinz/vim-signify'
 " === UI ===
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
-" Retro groove color scheme for Vim
-Plug 'morhetz/gruvbox'
+" High Contrast & Vivid Color Scheme based on Monokai Pro
+Plug 'sainnhe/sonokai'
 
 " === Git Plugins ===
 Plug 'tpope/vim-fugitive'
