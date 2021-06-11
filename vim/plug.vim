@@ -15,8 +15,8 @@ Plug 'mhinz/vim-signify'
 " === UI ===
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
-" High Contrast & Vivid Color Scheme based on Monokai Pro
-Plug 'sainnhe/sonokai'
+" A colour scheme for terminals, Vim and friends.
+Plug 'fenetikm/falcon'
 
 " === Git Plugins ===
 Plug 'tpope/vim-fugitive'

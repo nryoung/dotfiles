@@ -152,7 +152,7 @@ set lazyredraw
 syntax enable
 set termguicolors
 set background=dark
-colorscheme sonokai
+colorscheme falcon
 " Enable hybrid relative line numbers
 set relativenumber
 set number
@@ -162,7 +162,8 @@ set number
 let g:vim_json_syntax_conceal=0
 " Enable Airline
 let g:airline_powerline_fonts=1
-let g:airline_theme = 'sonokai'
+let g:falcon_airline = 1
+let g:airline_theme = 'falcon'
 " Enable rainbow parens
 let g:rainbow_active=1
 
