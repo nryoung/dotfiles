@@ -7,8 +7,8 @@
 call plug#begin('~/.vim/plugged')
 
 " === Syntax Highlighting ===
-"  Color matching of parentheses and other things
-Plug 'luochen1990/rainbow'
+" 🌈 Rainbow parentheses for neovim using tree-sitter 🌈 
+Plug 'p00f/nvim-ts-rainbow'
 " ➕ Show a diff using Vim its sign column.
 Plug 'mhinz/vim-signify'
 
@@ -67,6 +67,8 @@ Plug 'rafaqz/ranger.vim'
 Plug 'takac/vim-hardtime'
 " Personal Wiki for Vim
 Plug 'vimwiki/vimwiki'
+" commentary.vim: comment stuff out
+Plug 'tpope/vim-commentary'
 
 " === coc.nvim ===
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
@@ -79,7 +81,13 @@ Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 
 " === treesitter ===
+" Nvim Treesitter configurations and abstraction layer
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Refactor module for nvim-treesitter
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
+" Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+"  Show code context
+Plug 'romgrk/nvim-treesitter-context'
 
 call plug#end()
