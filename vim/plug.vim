@@ -90,4 +90,9 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 "  Show code context
 Plug 'romgrk/nvim-treesitter-context'
 
+" === telescope ===
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()

@@ -165,21 +165,6 @@ let g:airline_powerline_fonts=1
 let g:falcon_airline = 1
 let g:airline_theme = 'falcon'
 
-" === FZF ===
-" Use fzf and ripgrep to search within files
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
-  \   <bang>0)
-nnoremap <leader>g :Rg<cr>
-" Use fzf and ripgrep to find files
-let $FZF_DEFAULT_COMMAND= 'rg --files --hidden --follow --glob "!.git/*"'
-nnoremap <leader>f :FZF<cr>
-" Use fzf to find buffers
-nnoremap <leader>b :Buffers<cr>
-
 " === Persistent Undo ===
 if has('persistent_undo')
   set undofile
@@ -309,3 +294,10 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 EOF
+
+" === telescope ===
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
