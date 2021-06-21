@@ -24,26 +24,8 @@ Plug 'tpope/vim-fugitive'
 " === Language specific plugins ===
 " This plugin adds Go language support for Vim
 Plug 'fatih/vim-go'
-" Vastly improved Javascript indentation and syntax support in Vim
-Plug 'pangloss/vim-javascript'
-" Distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing
-Plug 'elzr/vim-json'
-" The React syntax highlighting and indenting plugin for vim
-Plug 'maxmellon/vim-jsx-pretty'
-" Elixir support for vim
-Plug 'elixir-lang/vim-elixir'
-" Erlang indentation and syntax for vim
-Plug 'vim-erlang/vim-erlang-runtime'
-" Elm plugin for Vim
-Plug 'elmcast/elm-vim'
 " Vim configuration for Rust.
 Plug 'rust-lang/rust.vim'
-" Vim syntax for TOML
-Plug 'cespare/vim-toml'
-" CSS3 syntax (and syntax defined in some foreign specifications) support for Vim's built-in syntax/css.vim
-Plug 'hail2u/vim-css3-syntax'
-" Vim bundle for http://styled-components.com based javascript files.
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " === Functionality ===
 " This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
@@ -70,16 +52,6 @@ Plug 'vimwiki/vimwiki'
 " commentary.vim: comment stuff out
 Plug 'tpope/vim-commentary'
 
-" === coc.nvim ===
-" Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
-
 " === treesitter ===
 " Nvim Treesitter configurations and abstraction layer
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -95,4 +67,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" === LSP ===
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'kabouzeid/nvim-lspinstall'
 call plug#end()
