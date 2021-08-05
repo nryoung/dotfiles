@@ -408,3 +408,9 @@ require'lspinstall'.post_install_hook = function ()
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 EOF
+
+" Neoformat and Prettier
+if isdirectory($PWD .'/node_modules')
+    let $PATH .= ':' . $PWD . '/node_modules/.bin'
+endif
+autocmd BufWritePre *.js Neoformat

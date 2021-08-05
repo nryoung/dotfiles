@@ -71,4 +71,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
+
+" === Formatting ===
+Plug 'sbdchd/neoformat'
 call plug#end()
