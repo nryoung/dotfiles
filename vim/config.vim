@@ -269,7 +269,12 @@ nnoremap <leader>h <cmd>Telescope help_tags<cr>
 
 " === LSP ===
 lua << EOF
-require'lspconfig'.pyright.setup{}
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    server:setup(opts)
+end)
+-- require'lspconfig'.pyright.setup{ cmd = { "~/.local/share/nvim/lsp_servers/python"} }
 EOF
 
 lua << EOF
