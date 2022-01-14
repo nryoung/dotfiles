@@ -390,3 +390,9 @@ local function make_config()
 end
 
 EOF
+
+" Neoformat and Prettier
+if isdirectory($PWD .'/node_modules')
+    let $PATH .= ':' . $PWD . '/node_modules/.bin'
+endif
+autocmd BufWritePre *.js Neoformat
