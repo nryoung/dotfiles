@@ -70,5 +70,5 @@ Plug 'nvim-telescope/telescope.nvim'
 " === LSP ===
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 call plug#end()
