@@ -22,59 +22,70 @@
 " set nobackup
 " set nowritebackup
 " Turn on mouse
-set mouse=a
-if !has('nvim')
-    set ttymouse=xterm2
-endif
+"set mouse=a
+"if !has('nvim')
+"    set ttymouse=xterm2
+"endif
+
 " Disable Ex mode
-nnoremap Q <Nop>
+"nnoremap Q <Nop>
+
 " Make Y and D yank until EOL like other capital letters
-map Y y$
-map D d$
+"map Y y$
+"map D d$
+
 " Enable folding
-set foldmethod=indent
-set foldlevel=99
+"set foldmethod=indent
+"set foldlevel=99
+
 " Set bash style word completion
-set wildmode=longest:full
-set wildmenu
-set wildignore=*.swp,*.bak,*.pyc,*.class
+"set wildmode=longest:full
+"set wildmenu
+"set wildignore=*.swp,*.bak,*.pyc,*.class
+
 " Enable search highlighting
-set hlsearch
+"set hlsearch
 " Enable incremental search
-set incsearch
+"set incsearch
 " Case-insensitive search
-set ignorecase
+"set ignorecase
 " Match uppercase when searched for
-set smartcase
+"set smartcase
 " Do not move the cursor when highlighting
-noremap * *N
-noremap # #N
+"noremap * *N
+"noremap # #N
+
 " Clear the search highlight with <leader> n
-nmap <silent> <leader>n :noh<CR>
+"nmap <silent> <leader>n :noh<CR>
+
 " Paste mode toggle
-nmap <silent> <leader>p :set paste!<CR>
+"nmap <silent> <leader>p :set paste!<CR>
+
 " Softwrap text
-nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
+" nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
+
 " Sorting
-vmap <leader>s :sort<CR>
+"vmap <leader>s :sort<CR>
+
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+"map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
 " Opens a split command with the path of the currently edited file filled in
 " Normal mode: <Leader>s
-map <Leader>se :split <C-R>=expand("%:p:h") . "/" <CR>
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>v
-map <Leader>ve :vsplit <C-R>=expand("%:p:h") . "/" <CR>
-" After shifting a visual block, reselect it to be able to shift again
-vnoremap > >gv
-vnoremap < <gv
-" Automatically reload vimrc on save
-autocmd! BufWritePost .vimrc source %
-autocmd! BufWritePost .gvimrc source %
+"map <Leader>se :split <C-R>=expand("%:p:h") . "/" <CR>
+"" Opens a tab edit command with the path of the currently edited file filled in
+"" Normal mode: <Leader>v
+"map <Leader>ve :vsplit <C-R>=expand("%:p:h") . "/" <CR>
+
+"" After shifting a visual block, reselect it to be able to shift again
+"vnoremap > >gv
+"vnoremap < <gv
+
 " Remember cursor postions on files
-autocmd BufReadPost * normal `"
+"autocmd BufReadPost * normal `"
 " Disable help
+XXX
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
