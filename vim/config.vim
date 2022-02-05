@@ -3,24 +3,24 @@
 "\ \ \____  \ \ \/\ \  \ \ \-.  \  \ \  __\ \ \ \  \ \ \__ \  
 " \ \_____\  \ \_____\  \ \_\\"\_\  \ \_\    \ \_\  \ \_____\ 
 "  \/_____/   \/_____/   \/_/ \/_/   \/_/     \/_/   \/_____/ 
-"                                                             
+"
 
 " === Functionality ===
 " Map leader to comma
-let mapleader=','
+"let mapleader=','
 " Automatically reload file when changed outside buffer
-set autoread
+" set autoread
 " Change buffers without saving them
-set hidden
+" set hidden
 " Use the already open buffer if it exists
-set switchbuf=useopen,usetab
+" set switchbuf=useopen,usetab
 " Visual bell and no beep
-set vb
-set noerrorbells
+" set vb
+" set noerrorbells
 " Disable backup and swap
-set noswapfile
-set nobackup
-set nowritebackup
+" set noswapfile
+" set nobackup
+" set nowritebackup
 " Turn on mouse
 set mouse=a
 if !has('nvim')
@@ -272,6 +272,24 @@ lua << EOF
 local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
     local opts = {}
+    if server.name == "sumenko_lua" then
+      opts.settings = {
+          Lua = {
+              diagnostics = {
+                -- Get the language server to recognize the 'vim', 'use' global
+                globals = {'vim', 'use'},
+              },
+              workspace = {
+                  -- Make the server aware of Neovim runtime files
+                  library = vim.api.nvim_get_runtime_file("", true),
+              },
+              -- Do not send telemetry data containing a randomized but unique identifier
+              telemetry = {
+                enable = false,
+              },
+          },
+      }
+    end
     server:setup(opts)
 end)
 -- require'lspconfig'.pyright.setup{ cmd = { "~/.local/share/nvim/lsp_servers/python"} }
