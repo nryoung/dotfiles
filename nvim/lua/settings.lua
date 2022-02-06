@@ -43,3 +43,29 @@ vim.o.smartcase = true
 
 -- Remember cursor positions in files
 vim.api.nvim_command('autocmd BufReadPost * normal `"')
+
+-- Autocomplete on dashed words
+vim.o.iskeyword = '-'
+
+-- Share clipboard with system
+vim.o.clipboard = 'unnamed'
+
+-- Set path and suffixes to work with JS projects
+vim.o.path = '.,src,node_modules'
+vim.o.suffixesadd = '.js,.jsx'
+
+-- Allow backspacing over all the things
+vim.o.bs = 'indent,eol,start'
+
+-- No wrap
+vim.o.wrap = false
+
+-- Enable status bar
+vim.o.laststatus = 2
+
+-- When splitting window, split to the bottom and right
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+-- Resize dinwos when loading sessions
+vim.o.sessionoptions = 'resize'

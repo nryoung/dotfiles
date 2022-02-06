@@ -39,3 +39,14 @@ vim.api.nvim_set_keymap('', '<leader>ve', ':vsplit <C-R>=expand("%:p:h") . "/" <
 -- After shifting a visual block, reselect it to be able to shift again
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true })
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true })
+
+-- Disable help
+vim.api.nvim_set_keymap('i', '<F1>', '<ESC>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<F1>', '<ESC>', { noremap = true })
+vim.api.nvim_set_keymap('v', '<F1>', '<ESC>', { noremap = true })
+
+-- Remap C-c to Esc
+vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', { noremap = true })
+
+-- Reload vim rc file
+vim.api.nvim_set_keymap('n', '<leader>rl', ':so $MYVIMRC<CR>', { noremap = true })

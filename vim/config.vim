@@ -85,86 +85,86 @@
 " Remember cursor postions on files
 "autocmd BufReadPost * normal `"
 " Disable help
-XXX
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+"inoremap <F1> <ESC>
+"nnoremap <F1> <ESC>
+"vnoremap <F1> <ESC>
+
 " Remap C-c to ESC
-inoremap <C-c> <ESC>
+"inoremap <C-c> <ESC>
 " Autocomplete on dashed words
-set iskeyword+=-
+"set iskeyword+=-
 " Share clipboard with system
-set clipboard+=unnamed
+"set clipboard+=unnamed
 " Reload .vimrc mapped to something easy
-nnoremap <leader>rl :so $MYVIMRC<cr>
+" nnoremap <leader>rl :so $MYVIMRC<cr>
 " set gf to actually work
-set path=.,src,node_modules
-set suffixesadd=.js,.jsx
+"set path=.,src,node_modules
+"set suffixesadd=.js,.jsx
 
 " === Syntax / UI ===
 " Syntax highlighting
-syntax on
+"syntax on
 " Turn on indent rules
-filetype plugin indent on
-set smartindent
+" filetype plugin indent on
+"set smartindent
 " indent per file type
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype elm setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascriptreact setlocal ts=2 sts=2 sw=2
-autocmd Filetype python setlocal ts=4 sts=4 sw=4
-autocmd Filetype rst setlocal ts=2 sts=2 sw=2
-autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
-autocmd Filetype json setlocal ts=2 sts=2 sw=2
-autocmd Filetype scss setlocal ts=2 sts=2 sw=2
-" Turn on modelines
-set modeline
-set modelines=3
+"autocmd Filetype html setlocal ts=2 sts=2 sw=2
+"autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+"autocmd Filetype elm setlocal ts=2 sts=2 sw=2
+"autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+"autocmd Filetype javascriptreact setlocal ts=2 sts=2 sw=2
+"autocmd Filetype python setlocal ts=4 sts=4 sw=4
+"autocmd Filetype rst setlocal ts=2 sts=2 sw=2
+"autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
+"autocmd Filetype json setlocal ts=2 sts=2 sw=2
+"autocmd Filetype scss setlocal ts=2 sts=2 sw=2
+"" Turn on modelines
+"set modeline
+"set modelines=3
 " Filetype detection
-au BufNewFile,BufRead *.tem set filetype=cpp
-au BufNewFile,BufRead *.json set filetype=json
-au BufNewFile,BufRead *.tsx set filetype=javascript
+"au BufNewFile,BufRead *.tem set filetype=cpp
+"au BufNewFile,BufRead *.json set filetype=json
+"au BufNewFile,BufRead *.tsx set filetype=javascript
 " Set terminal width to 80 chars when looking at md or rst files
-au BufRead,BufNewFile *.md setlocal wrap linebreak nolist textwidth=80
-au BufRead,BufNewFile *.rst setlocal wrap linebreak nolist textwidth=80
+"au BufRead,BufNewFile *.md setlocal wrap linebreak nolist textwidth=80
+"au BufRead,BufNewFile *.rst setlocal wrap linebreak nolist textwidth=80
 " Allow backspacing over all the things in insert mode
-set bs=indent,eol,start
+"set bs=indent,eol,start
 " No wrap
-set nowrap
+"set nowrap
 " Hide toolbar
-set go-=T
+" set go-=T
 " Enable status bar
-set laststatus=2
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+"set laststatus=2
+"set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 " Space between current line and window frame
-set scrolloff=4
+"set scrolloff=4
 " 4 spaces, exand tab by default
-set sw=4 sts=4 ts=4 expandtab
+"set sw=4 sts=4 ts=4 expandtab
 " See line numbers, ruler, and current line
-set number
-set ruler
-set cursorline
-set cursorcolumn
+"set number
+"set ruler
+"set cursorline
+"set cursorcolumn
 " List special chars such as whitespace and tabs
-set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅,extends:#
+"set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅,extends:#
 " When splitting window, split to bottom and right
-set splitright
-set splitbelow
+"set splitright
+"set splitbelow
 " Resize windows when loading sessions
-set sessionoptions+=resize
+"set sessionoptions+=resize
 " Turn on 256 colors if this is xterm or xterm compatible
-set t_Co=256
+"set t_Co=256
 " Don't flicker when executing macros/functions
-set lazyredraw
+"set lazyredraw
 " Color theme
-syntax enable
-set termguicolors
-set background=dark
-colorscheme falcon
+"syntax enable
+"set termguicolors
+"set background=dark
+"colorscheme falcon
 " Enable hybrid relative line numbers
-set relativenumber
-set number
+"set relativenumber
+"set number
 
 " === Airline ===
 let g:airline_powerline_fonts=1
