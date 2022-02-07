@@ -50,3 +50,30 @@ vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', { noremap = true })
 
 -- Reload vim rc file
 vim.api.nvim_set_keymap('n', '<leader>rl', ':so $MYVIMRC<CR>', { noremap = true })
+
+-- Map undotree to ,u
+-- nnoremap <leader>u :UndotreeToggle<cr>
+vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', { noremap = true })
+
+-- Map various Ranger commands
+vim.api.nvim_set_keymap('n', '<leader>r', ':RangerEdit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rv', ':RangerVSplit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rs', ':RangerSplit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rt', ':RangerTab<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>ri', ':RangerInsert<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>ra', ':RangerAppend<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rc', ':set operatorfunc=RangerChangeOperator<CR>g@', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rd', ':RangerCD<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rld', ':RangerLCD<CR>', { noremap = true })
+
+-- Map various Telescope commands
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Telescope find_files<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>Telescope help_tags<CR>', { noremap = true })
+
+-- Map various Compe commands
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
