@@ -5,7 +5,7 @@ vim.g.airline_theme = 'falcon'
 
 -- === Persistent Undo ===
 vim.o.undofile = true
-vim.o.undodir = '~/.config/nvim/.undo'
+vim.o.undodir = vim.fn.expand('~/.config/nvim/.undo')
 
 -- === Vim-Sneak ===
 vim.g['sneak#label'] = 1
