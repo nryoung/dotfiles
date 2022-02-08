@@ -205,3 +205,12 @@ local function make_config()
     on_attach = on_attach,
   }
 end
+
+-- === Telescope ===
+require('telescope').setup{
+  pickers = {
+    find_files = {
+      find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+    }
+  },
+}

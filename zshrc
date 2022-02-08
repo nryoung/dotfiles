@@ -106,8 +106,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# source node version manager
-. ~/.nvm/nvm.sh
+## source node version manager
+#. ~/.nvm/nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -115,3 +115,7 @@ fi
 # Go version manager
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 export GOROOT_BOOTSTRAP=$GOROOT
+
+if [ -f ~/.workconfig.sh ]; then
+  . ~/.workconfig.sh
+fi
