@@ -1,3 +1,4 @@
 vim/plugged
 vim/init.vim
 npm-debug.log
+nvim/.undo
