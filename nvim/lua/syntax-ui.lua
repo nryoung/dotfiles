@@ -36,6 +36,13 @@ augroup Markdown
   autocmd FileType markdown set wrap linebreak nolist textwidth=80
 augroup END
 ]])
+-- Set terminal width to 80 chars when viewing/editing wiki files
+vim.cmd([[
+augroup Vimwiki
+  autocmd!
+  autocmd FileType vimwiki set wrap linebreak nolist textwidth=80
+augroup END
+]])
 
 -- Space between current line and window frame
 vim.o.scrolloff = 4
