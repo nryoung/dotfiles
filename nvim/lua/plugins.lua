@@ -192,7 +192,7 @@ lsp_installer.on_server_ready(function(server)
       on_attach = on_attach,
       capabilities = capabilities
     }
-    if server.name == 'sumenko_lua' then
+    if server.name == 'sumneko_lua' then
       opts.settings = {
           Lua = {
               diagnostics = {
