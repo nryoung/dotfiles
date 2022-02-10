@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap('n', 'Q', '<Nop>', { noremap = true })
 vim.api.nvim_set_keymap('', 'Y', 'y$', {})
 vim.api.nvim_set_keymap('', 'D', 'd$', {})
 
--- Do not move the cursoer when highlighting
+-- Do not move the cursor when highlighting
 vim.api.nvim_set_keymap('n', '*', '*N', { noremap = true })
 vim.api.nvim_set_keymap('n', '#', '#N', { noremap = true })
 
@@ -50,6 +50,9 @@ vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', { noremap = true })
 
 -- Reload vim rc file
 vim.api.nvim_set_keymap('n', '<leader>rl', ':so $MYVIMRC<CR>', { noremap = true })
+
+-- Toggle spell check
+vim.api.nvim_set_keymap('n', '<leader>c', ':set spell!<CR>', { noremap = true })
 
 -- Map undotree to ,u
 -- nnoremap <leader>u :UndotreeToggle<cr>
