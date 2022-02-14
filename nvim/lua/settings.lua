@@ -45,7 +45,7 @@ vim.o.smartcase = true
 vim.api.nvim_command('autocmd BufReadPost * normal `"')
 
 -- Autocomplete on dashed words
-vim.o.iskeyword = '-'
+vim.opt.iskeyword = vim.opt.iskeyword + { '-' }
 
 -- Share clipboard with system
 vim.o.clipboard = 'unnamed'

@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
      run = ':TSUpdate'
   }
-  -- 🌈 Rainbow parentheses for neovim using tree-sitter 🌈 
+  -- 🌈 Rainbow parentheses for neovim using tree-sitter 🌈
   use 'p00f/nvim-ts-rainbow'
   -- ➕ Show a diff using Vim its sign column.
   use 'mhinz/vim-signify'
@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
   use 'mbbill/undotree'
   -- The missing motion for Vim 👟
   use 'justinmk/vim-sneak'
-  -- Ranger integration in vim and neovim 
+  -- Ranger integration in vim and neovim
   use 'rafaqz/ranger.vim'
   -- Vim HardTime
   use 'takac/vim-hardtime'
@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   -- EditorConfig plugin for Vim
   use 'editorconfig/editorconfig-vim'
-  -- Open a Quickfix item in a window you choose. (Vim plugin) 
+  -- Open a Quickfix item in a window you choose. (Vim plugin)
   use 'yssl/QFEnter'
   -- Personal Wiki for Vim
   use 'vimwiki/vimwiki'
