@@ -75,11 +75,5 @@ vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>Telescope live_grep<CR>', { nore
 vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>Telescope help_tags<CR>', { noremap = true })
 
--- Map various Compe commands
-vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.tab_complete()', {expr = true})
-vim.api.nvim_set_keymap('s', '<Tab>', 'v:lua.tab_complete()', {expr = true})
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})
-vim.api.nvim_set_keymap('s', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})
-
 -- Show diagnostic on current line:
 vim.api.nvim_set_keymap('n', '<Leader>d', ':lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })

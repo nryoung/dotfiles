@@ -74,6 +74,31 @@ _G.packer_plugins = {
     path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/QFEnter",
     url = "https://github.com/yssl/QFEnter"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
   delimitMate = {
     loaded = true,
     path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/delimitMate",
@@ -89,10 +114,10 @@ _G.packer_plugins = {
     path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/falcon",
     url = "https://github.com/fenetikm/falcon"
   },
-  ["nvim-compe"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/nvim-compe",
-    url = "https://github.com/hrsh7th/nvim-compe"
+    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -203,6 +228,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/nic.young/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   vimwiki = {
     loaded = true,
