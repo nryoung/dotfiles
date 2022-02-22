@@ -179,7 +179,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'sumneko_lua', 'rust_analyzer', 'pyright', 'tsserver', 'eslint' }
+local servers = { 'solargraph', 'sumneko_lua', 'rust_analyzer', 'pyright', 'tsserver', 'eslint' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

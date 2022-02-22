@@ -61,6 +61,12 @@ return require('packer').startup(function(use)
   use 'fatih/vim-go'
   -- Vim configuration for Rust.
   use 'rust-lang/rust.vim'
+  -- Vim config for Prettier
+  use {
+    'prettier/vim-prettier',
+    run = 'yarn install',
+    ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'}
+  }
 
   -- === telescope ===
   use 'nvim-lua/popup.nvim'
