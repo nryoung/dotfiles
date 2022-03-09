@@ -21,8 +21,9 @@ vim.o.writebackup = false
 vim.o.mouse = 'a'
 
 -- Enable folding
-vim.o.foldmethod = 'indent'
-vim.o.foldlevel=99
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr='nvim_treesitter#foldexpr()'
+-- vim.o.foldlevel=99
 
 -- Set bash style word completion
 vim.o.wildmode = 'longest:full'

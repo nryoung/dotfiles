@@ -179,7 +179,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'solargraph', 'sumneko_lua', 'rust_analyzer', 'pyright', 'tsserver', 'eslint' }
+local servers = {'jsonls', 'html', 'cssls', 'solargraph', 'sumneko_lua', 'rust_analyzer', 'pyright', 'tsserver', 'eslint' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -223,3 +223,7 @@ require('telescope').setup{
     }
   },
 }
+
+-- === Prettier ===
+vim.g['prettier#autoformat'] = 1
+vim.g['prettier#autoformat_require_pragma'] = 0

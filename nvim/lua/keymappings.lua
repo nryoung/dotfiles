@@ -54,6 +54,9 @@ vim.api.nvim_set_keymap('n', '<leader>rl', ':so $MYVIMRC<CR>', { noremap = true 
 -- Toggle spell check
 vim.api.nvim_set_keymap('n', '<leader>c', ':set spell!<CR>', { noremap = true })
 
+-- Map folding to <space> in normal mode
+vim.api.nvim_set_keymap('n', '<space>', 'za', { noremap = true })
+
 -- Map undotree to ,u
 -- nnoremap <leader>u :UndotreeToggle<cr>
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', { noremap = true })
