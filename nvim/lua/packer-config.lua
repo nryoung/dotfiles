@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
   use 'romgrk/nvim-treesitter-context'
   -- fugitive.vim: A Git wrapper so awesome, it should be illegal
   use 'tpope/vim-fugitive'
+  -- rhubarb.vim: GitHub extension for fugitive.vim
+  use 'tpope/vim-rhubarb'
   -- This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
   use 'Raimondi/delimitMate'
   -- Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more

@@ -194,6 +194,13 @@ lsp_installer.on_server_ready(function(server)
       on_attach = on_attach,
       capabilities = capabilities
     }
+    if server.name == 'solargraph' then
+      opts.settings = {
+        solargraph = {
+          diagnostics = true
+        }
+    }
+    end
     if server.name == 'sumneko_lua' then
       opts.settings = {
           Lua = {
