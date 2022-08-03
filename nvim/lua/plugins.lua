@@ -18,7 +18,8 @@ vim.g.hardtime_maxcount = 10
 
 -- === treesitter ===
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = 'maintained',
+  ensure_installed = 'all',
+  ignore_install = { "phpdoc" },
   highlight = {
     enable = true,
     disable = { },
@@ -65,7 +66,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- === nvim-treesitter-context ===
-require'treesitter-context.config'.setup{
+require'treesitter-context'.setup{
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
 }
 

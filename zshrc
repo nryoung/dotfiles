@@ -14,7 +14,7 @@ if [ -f ~/.creds ]; then
 fi
 
 # z
-. /usr/local/etc/profile.d/z.sh
+. /opt/homebrew/Cellar/z/1.9/etc/profile.d/z.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -66,7 +66,7 @@ plugins=(git colored-man-pages tmux nvm kubectl)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/usr/bin/python:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -104,17 +104,16 @@ if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile
 fi
 
+# source fzf for shell integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## source node version manager
-#. ~/.nvm/nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Go version manager
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-export GOROOT_BOOTSTRAP=$GOROOT
+# source homebrew config
+if [ -f ~/.zprofile ]; then
+  . ~/.zprofile
+fi
 
 if [ -f ~/.workconfig.sh ]; then
   . ~/.workconfig.sh

@@ -7,5 +7,6 @@ alias tmux='tmux -2'
 
 # Use neovim instead
 alias vim='nvim'
+alias python='python3'
 
 export PATH=/usr/local/bin:$PATH

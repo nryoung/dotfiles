@@ -18,7 +18,7 @@
     prune = true
 
 [core]
-    editor = /usr/local/bin/nvim
+	editor = nvim
 [credential]
 	helper = osxkeychain
 [pull]
