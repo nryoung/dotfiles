@@ -116,6 +116,12 @@ if [ -f ~/.zprofile ]; then
   . ~/.zprofile
 fi
 
+# work config
 if [ -f ~/.workconfig.sh ]; then
   . ~/.workconfig.sh
+fi
+
+# source lua-language-server
+if [ -d ~/.lua-language-server ]; then
+  export PATH="$HOME/.lua-language-server/bin:$PATH"
 fi
