@@ -14,7 +14,7 @@ if [ -f ~/.creds ]; then
 fi
 
 # z
-. /opt/homebrew/Cellar/z/1.9/etc/profile.d/z.sh
+. ~/z.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -105,7 +105,8 @@ if [ -f ~/.bash_profile ]; then
 fi
 
 # source fzf for shell integration
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -115,6 +116,12 @@ if [ -f ~/.zprofile ]; then
   . ~/.zprofile
 fi
 
+# work config
 if [ -f ~/.workconfig.sh ]; then
   . ~/.workconfig.sh
+fi
+
+# source lua-language-server
+if [ -d ~/.lua-language-server ]; then
+  export PATH="$HOME/.lua-language-server/bin:$PATH"
 fi
