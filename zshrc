@@ -129,3 +129,5 @@ fi
 if [ -d ~/.lua-language-server ]; then
   export PATH="$HOME/.lua-language-server/bin:$PATH"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
