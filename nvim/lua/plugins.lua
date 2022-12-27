@@ -235,3 +235,6 @@ require('telescope').setup{
 -- === Prettier ===
 vim.g['prettier#autoformat'] = 1
 vim.g['prettier#autoformat_require_pragma'] = 0
+
+-- == Rust ==
+vim.g['rustfmt_autosave'] = 1
