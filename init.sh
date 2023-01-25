@@ -34,7 +34,6 @@ install_prereqs() {
       cmake \
       gcc \
       gh
-  brew install --cask rectangle
 
   # Install zsh and config
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
