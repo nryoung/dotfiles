@@ -23,12 +23,6 @@ vim.cmd('autocmd Filetype rust setlocal ts=4 sts=4 sw=4')
 vim.o.modeline = true
 vim.o.modelines = 3
 
--- Filetype detection for misc files
-vim.cmd('au BufNewFile,BufRead *.tem set filetype=cpp')
-vim.cmd('au BufNewFile,BufRead *.json set filetype=json')
-vim.cmd('au BufNewFile,BufRead *.tsx set filetype=javascript')
-vim.cmd('au BufNewFile,BufRead *.jsx set filetype=javascript')
-
 -- Set terminal width to 80 chars when viewing/editing md files
 vim.cmd([[
 augroup Markdown

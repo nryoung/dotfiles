@@ -1,7 +1,15 @@
-local wrong
 -- === lualine ===
 require('lualine').setup {
-  theme = 'onedark'
+  theme = 'onedark',
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        file_status = true,
+        path = 1
+      }
+    }
+  }
 }
 
 -- === Persistent Undo ===
@@ -192,6 +200,13 @@ local servers = {
     },
   },
 }
+-- Setup neovim lua configuration
+require('neodev').setup()
+--
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 require('mason').setup()
 
 -- Ensure the servers above are installed
