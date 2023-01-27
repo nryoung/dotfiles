@@ -1,30 +1,72 @@
 -- bootstrap packer if not installed already
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local is_bootstrap = false
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  is_bootstrap = true
+  vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
+  vim.cmd [[packadd packer.nvim]]
 end
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
   -- Plugins here
 
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   -- === Syntax / UI ===
+  use 'navarasu/onedark.nvim'
   -- A colour scheme for terminals, Vim and friends.
-  use 'fenetikm/falcon'
-  -- Lean & mean status/tabline for vim that's light as air
-  use 'vim-airline/vim-airline'
-  -- Nvim Treesitter configurations and abstraction layer
+  -- use 'fenetikm/falcon'
+
+  -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
-    'nvim-treesitter/nvim-treesitter',
-     run = ':TSUpdate'
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   -- 🌈 Rainbow parentheses for neovim using tree-sitter 🌈
-  use 'p00f/nvim-ts-rainbow'
-  -- ➕ Show a diff using Vim its sign column.
-  use 'mhinz/vim-signify'
+  use 'mrjones2014/nvim-ts-rainbow'
+  -- Git integration for buffers
+  use 'lewis6991/gitsigns.nvim'
+  -- Indent guides for Neovim
+  use "lukas-reineke/indent-blankline.nvim"
+  -- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+  use 'numToStr/Comment.nvim'
+
+
+  -- === LSP ===
+  use { -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    requires = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+
+      -- Additional lua configuration, makes nvim stuff amazing
+      'folke/neodev.nvim',
+    },
+  }
+
+  -- == Autocompletion ==
+  use { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+  }
+
+  -- -- == Tresitter ==
+  use { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  }
+
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
 
   -- === Functionality ===
   -- The undo history visualizer for VIM
@@ -35,14 +77,6 @@ return require('packer').startup(function(use)
   use 'rafaqz/ranger.vim'
   -- Vim HardTime
   use 'takac/vim-hardtime'
-  -- Refactor module for nvim-treesitter
-  use 'nvim-treesitter/nvim-treesitter-refactor'
-  -- Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  -- commentary.vim: comment stuff out
-  use 'tpope/vim-commentary'
-  -- Show code context
-  use 'romgrk/nvim-treesitter-context'
   -- fugitive.vim: A Git wrapper so awesome, it should be illegal
   use 'tpope/vim-fugitive'
   -- rhubarb.vim: GitHub extension for fugitive.vim
@@ -57,6 +91,8 @@ return require('packer').startup(function(use)
   use 'yssl/QFEnter'
   -- Personal Wiki for Vim
   use 'vimwiki/vimwiki'
+  -- sleuth.vim: Heuristically set buffer options
+  use 'tpope/vim-sleuth'
 
   -- === Language specific plugins ===
   -- This plugin adds Go language support for Vim
@@ -71,24 +107,26 @@ return require('packer').startup(function(use)
   }
 
   -- === telescope ===
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
+    -- Fuzzy Finder (files, lsp, etc)
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
-  -- === LSP ===
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'williamboman/nvim-lsp-installer'
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
+  if is_bootstrap then
     require('packer').sync()
   end
 end)
+
+-- When we are bootstrapping a configuration, it doesn't
+-- make sense to execute the rest of the init.lua.
+--
+-- You'll need to restart nvim, and then it will work.
+if is_bootstrap then
+  print '=================================='
+  print '    Plugins are being installed'
+  print '    Wait until Packer completes,'
+  print '       then restart nvim'
+  print '=================================='
+  return
+end

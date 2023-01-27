@@ -72,4 +72,8 @@ vim.o.termguicolors = true
 vim.o.background = 'dark'
 
 -- Set colorscheme
-vim.cmd([[colorscheme falcon]])
+require('onedark').setup {
+  style = 'darker'
+}
+require('onedark').load()
+-- vim.cmd([[colorscheme ]])
