@@ -17,12 +17,10 @@ require('packer').startup(function(use)
   use 'navarasu/onedark.nvim'
   -- A colour scheme for terminals, Vim and friends.
   -- use 'fenetikm/falcon'
-
+  -- lua `fork` of vim-web-devicons for neovim
+  use 'nvim-tree/nvim-web-devicons'
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-  use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use 'nvim-lualine/lualine.nvim'
   -- 🌈 Rainbow parentheses for neovim using tree-sitter 🌈
   use 'mrjones2014/nvim-ts-rainbow'
   -- Git integration for buffers
