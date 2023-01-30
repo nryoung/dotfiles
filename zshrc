@@ -44,8 +44,10 @@ else
 fi
 
 # Enable ls aliases
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='exa -l -g --icons'
+alias la='exa -la -g --icons'
+alias lll='ls -l'
+alias lla='ls -la'
 
 # Enable 256 color in tmux + vim
 alias tmux='tmux -2'

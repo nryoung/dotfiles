@@ -33,7 +33,8 @@ install_prereqs() {
       ranger \
       cmake \
       gcc \
-      gh
+      gh \
+      exa
 
   # Install zsh and config
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
