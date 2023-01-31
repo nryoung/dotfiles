@@ -20,7 +20,7 @@ require('packer').startup(function(use)
   -- lua `fork` of vim-web-devicons for neovim
   use 'nvim-tree/nvim-web-devicons'
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-  use 'nvim-lualine/lualine.nvim'
+  use { 'nvim-lualine/lualine.nvim', commit = '5f68f07' }
   -- 🌈 Rainbow parentheses for neovim using tree-sitter 🌈
   use 'mrjones2014/nvim-ts-rainbow'
   -- Git integration for buffers
