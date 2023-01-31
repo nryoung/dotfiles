@@ -277,3 +277,13 @@ require('indent_blankline').setup {
 
 -- == Comment.nvim ==
 require('Comment').setup()
+
+-- == alpha-nvim ==
+local alpha = require'alpha'
+    -- --[[
+    local startify = require'alpha.themes.startify'
+    -- startify.nvim_web_devicons.highlight = "Normal"
+    startify.nvim_web_devicons.enabled = false
+    startify.config.opts.noautocmd = true
+
+    alpha.setup(startify.config)

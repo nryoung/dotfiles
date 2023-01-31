@@ -27,8 +27,14 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   -- Indent guides for Neovim
   use "lukas-reineke/indent-blankline.nvim"
-  -- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
-  use 'numToStr/Comment.nvim'
+  -- a lua powered greeter like vim-startify / dashboard-nvim
+  use {
+      'goolord/alpha-nvim',
+      requires = { 'nvim-tree/nvim-web-devicons' },
+      config = function ()
+          require'alpha'.setup(require'alpha.themes.startify'.config)
+      end
+  }
 
 
   -- === LSP ===
@@ -91,6 +97,8 @@ require('packer').startup(function(use)
   use 'vimwiki/vimwiki'
   -- sleuth.vim: Heuristically set buffer options
   use 'tpope/vim-sleuth'
+  -- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+  use 'numToStr/Comment.nvim'
 
   -- === Language specific plugins ===
   -- This plugin adds Go language support for Vim
