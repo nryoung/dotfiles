@@ -108,8 +108,8 @@ require('packer').startup(function(use)
   -- Vim config for Prettier
   use {
     'prettier/vim-prettier',
-    run = 'yarn install',
-    ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'}
+    run = 'yarn install --frozen-lockfile --production',
+    ft = {'javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'},
   }
 
   -- === telescope ===
