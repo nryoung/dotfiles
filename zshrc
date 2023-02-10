@@ -79,6 +79,9 @@ if [ -f /opt/homebrew/etc/profile.d/z.sh ]; then
     . /opt/homebrew/etc/profile.d/z.sh
 fi
 
+# point neorg to a newer compiler
+export CC=gcc-12
+
 # work config (any work related config should go here and will not be checked in)
 if [ -f ~/.workconfig.sh ]; then
   . ~/.workconfig.sh

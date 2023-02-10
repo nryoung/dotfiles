@@ -97,6 +97,33 @@ require('packer').startup(function(use)
   use 'tpope/vim-sleuth'
   -- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
   use 'numToStr/Comment.nvim'
+  -- Modernity meets insane extensibility. The future of organizing your life in Neovim.
+  use {
+    "nvim-neorg/neorg",
+    config = function()
+        require('neorg').setup {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.norg.concealer"] = { -- Adds pretty icons to your documents
+                  config = {
+                    icon_preset = "varied",
+                    markup_preset = "brave",
+                  }
+                },
+                ["core.norg.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/Workspace/notes",
+                            work = "~/Workspace/work-notes"
+                        },
+                    },
+                },
+            },
+        }
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
+  }
 
   -- === Language specific plugins ===
   -- This plugin adds Go language support for Vim
