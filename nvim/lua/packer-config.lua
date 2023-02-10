@@ -93,8 +93,6 @@ require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   -- Open a Quickfix item in a window you choose. (Vim plugin)
   use 'yssl/QFEnter'
-  -- Personal Wiki for Vim
-  use 'vimwiki/vimwiki'
   -- sleuth.vim: Heuristically set buffer options
   use 'tpope/vim-sleuth'
   -- 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
@@ -109,7 +107,7 @@ require('packer').startup(function(use)
   use {
     'prettier/vim-prettier',
     run = 'yarn install --frozen-lockfile --production',
-    ft = {'javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'},
+    ft = {'javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'graphql', 'vue', 'html'},
   }
 
   -- === telescope ===
