@@ -14,9 +14,8 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- === Syntax / UI ===
-  use 'navarasu/onedark.nvim'
-  -- A colour scheme for terminals, Vim and friends.
-  -- use 'fenetikm/falcon'
+  -- 🌆 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins.
+  use 'folke/tokyonight.nvim'
   -- lua `fork` of vim-web-devicons for neovim
   use 'nvim-tree/nvim-web-devicons'
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.

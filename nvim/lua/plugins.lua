@@ -1,6 +1,5 @@
 -- === lualine ===
 require('lualine').setup {
-  theme = 'onedark',
   sections = {
     lualine_c = {
       {
