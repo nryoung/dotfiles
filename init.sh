@@ -34,7 +34,8 @@ install_prereqs() {
       cmake \
       gcc \
       gh \
-      exa
+      exa \
+      bat
 
   brew tap wez/wezterm
   brew install --cask wez/wezterm/wezterm
