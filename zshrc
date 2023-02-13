@@ -74,10 +74,8 @@ if [ -d ~/.lua-language-server ]; then
   export PATH="$HOME/.lua-language-server/bin:$PATH"
 fi
 
-# z
-if [ -f /opt/homebrew/etc/profile.d/z.sh ]; then
-    . /opt/homebrew/etc/profile.d/z.sh
-fi
+# zoxide
+eval "$(zoxide init zsh)"
 
 # point neorg to a newer compiler
 export CC=gcc-12

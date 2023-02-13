@@ -29,13 +29,13 @@ install_prereqs() {
       tmux \
       fzf \
       ripgrep \
-      z \
       ranger \
       cmake \
       gcc \
       gh \
       exa \
-      bat
+      bat \
+      zoxide
 
   brew tap wez/wezterm
   brew install --cask wez/wezterm/wezterm
