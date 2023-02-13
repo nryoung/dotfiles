@@ -36,6 +36,9 @@ install_prereqs() {
       gh \
       exa
 
+  brew tap wez/wezterm
+  brew install --cask wez/wezterm/wezterm
+
   # Install zsh and config
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -60,6 +63,7 @@ link_files() {
     symlink "${dotfiles}/nvim" ~/.config/nvim
     symlink "${dotfiles}/zshrc" ~/.zshrc
     symlink "${dotfiles}/gitconfig" ~/.gitconfig
+    symlink "${dotfiles}/wezterm" ~/.config/wezterm
 }
 
 init() {
