@@ -22,6 +22,13 @@ vim.cmd('autocmd Filetype rust setlocal ts=4 sts=4 sw=4')
 -- Turn on modelines
 vim.o.modeline = true
 vim.o.modelines = 3
+-- Set terminal width on norg files
+vim.cmd([[
+augroup Markdown
+  autocmd!
+  autocmd FileType norg set wrap linebreak nolist textwidth=120
+augroup END
+]])
 
 -- Space between current line and window frame
 vim.o.scrolloff = 4
