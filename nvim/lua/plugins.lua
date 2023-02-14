@@ -286,3 +286,7 @@ local alpha = require'alpha'
     startify.config.opts.noautocmd = true
 
     alpha.setup(startify.config)
+
+-- == Neogit ==
+local neogit = require('neogit')
+neogit.setup {}

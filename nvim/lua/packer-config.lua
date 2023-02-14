@@ -80,10 +80,8 @@ require('packer').startup(function(use)
   use 'rafaqz/ranger.vim'
   -- Vim HardTime
   use 'takac/vim-hardtime'
-  -- fugitive.vim: A Git wrapper so awesome, it should be illegal
-  use 'tpope/vim-fugitive'
-  -- rhubarb.vim: GitHub extension for fugitive.vim
-  use 'tpope/vim-rhubarb'
+  -- magit for neovim
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   -- This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
   use 'Raimondi/delimitMate'
   -- Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more
