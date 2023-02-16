@@ -58,7 +58,6 @@ link_files() {
     symlink "${dotfiles}/bash_profile" ~/.bash_profile
     symlink "${dotfiles}/tmux.conf" ~/.tmux.conf
     symlink "${dotfiles}/nvim" ~/.config/nvim
-    symlink "${dotfiles}/zshrc" ~/.zshrc
     symlink "${dotfiles}/gitconfig" ~/.gitconfig
     symlink "${dotfiles}/wezterm" ~/.config/wezterm
     symlink "${dotfiles}/config.fish" ~/.config/fish/config.fish
