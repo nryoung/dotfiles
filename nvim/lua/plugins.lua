@@ -27,7 +27,7 @@ vim.g.hardtime_maxcount = 10
 -- === Treesitter ===
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim', 'tsx', 'javascript' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim', 'tsx', 'javascript', 'fish'},
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },

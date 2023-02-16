@@ -35,17 +35,13 @@ install_prereqs() {
       gh \
       exa \
       bat \
-      zoxide
+      zoxide \
+      fish \
+      starship \
+      fd
 
   brew tap wez/wezterm
   brew install --cask wez/wezterm/wezterm
-
-  # Install zsh and config
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-  # add fzf goodies
-  $(brew --prefix)/opt/fzf/install
 
   # Install hammerspoon and ControlEscape spoon
   mkdir -p ~/.hammerspoon/Spoons
@@ -65,6 +61,8 @@ link_files() {
     symlink "${dotfiles}/zshrc" ~/.zshrc
     symlink "${dotfiles}/gitconfig" ~/.gitconfig
     symlink "${dotfiles}/wezterm" ~/.config/wezterm
+    symlink "${dotfiles}/config.fish" ~/.config/fish/config.fish
+    symlink "${dotfiles}/fish_plugins" ~/.config/fish/fish_plugins
 }
 
 init() {
