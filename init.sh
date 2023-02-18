@@ -38,7 +38,9 @@ install_prereqs() {
       zoxide \
       fish \
       starship \
-      fd
+      fd \
+      bat \
+      git-delta
 
   brew tap wez/wezterm
   brew install --cask wez/wezterm/wezterm
