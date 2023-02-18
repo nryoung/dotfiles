@@ -3,8 +3,8 @@ if status is-interactive
     fish_vi_key_bindings
 
     # Commands to run in interactive sessions can go here
-    /opt/homebrew/bin/starship init fish | source
-    /opt/homebrew/bin/zoxide init fish | source
+    /snap/bin/starship init fish | source
+    /usr/bin/zoxide init fish | source
 
     # config PATH
     # homebrew apps should take precedence
