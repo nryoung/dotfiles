@@ -16,8 +16,7 @@ vim.o.undofile = true
 vim.o.undodir = vim.fn.expand('~/.config/nvim/.undo')
 
 -- === Vim-Sneak ===
-vim.g['sneak#label'] = 1
-vim.g['sneak#use_ic_scs'] = 1
+require('leap').add_default_mappings()
 
 -- === HardTime ===
 vim.g.hardtime_default_on = 1

@@ -74,14 +74,17 @@ require('packer').startup(function(use)
   -- === Functionality ===
   -- The undo history visualizer for VIM
   use 'mbbill/undotree'
-  -- The missing motion for Vim 👟
-  use 'justinmk/vim-sneak'
+  -- 🦘 Neovim's answer to the mouse
+  use 'ggandor/leap.nvim'
   -- Ranger integration in vim and neovim
   use 'rafaqz/ranger.vim'
   -- Vim HardTime
   use 'takac/vim-hardtime'
   -- magit for neovim
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  -- fugitive
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
   -- This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
   use 'Raimondi/delimitMate'
   -- Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more
