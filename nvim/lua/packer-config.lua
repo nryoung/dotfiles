@@ -34,6 +34,12 @@ require('packer').startup(function(use)
           require'alpha'.setup(require'alpha.themes.startify'.config)
       end
   }
+  use ({
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  })
 
 
   -- === LSP ===
@@ -116,6 +122,7 @@ require('packer').startup(function(use)
                             notes = "~/Workspace/notes",
                             work = "~/Workspace/work-notes"
                         },
+                        default_workspace = "notes",
                     },
                 },
             },
