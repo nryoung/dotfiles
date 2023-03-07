@@ -40,7 +40,8 @@ install_prereqs() {
       starship \
       fd \
       bat \
-      git-delta
+      git-delta \
+      shortcat
 
   brew tap wez/wezterm
   brew install --cask wez/wezterm/wezterm
