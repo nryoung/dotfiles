@@ -40,3 +40,5 @@ if status is-interactive
       . ~/.workconfig.sh
     end
 end
+
+source ~/.asdf/asdf.fish
