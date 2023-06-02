@@ -110,19 +110,19 @@ require('packer').startup(function(use)
         require('neorg').setup {
             load = {
                 ["core.defaults"] = {}, -- Loads default behaviour
-                ["core.norg.concealer"] = { -- Adds pretty icons to your documents
+                ["core.concealer"] = { -- Adds pretty icons to your documents
                   config = {
                     icon_preset = "varied",
                     markup_preset = "brave",
                   }
                 },
-                ["core.norg.dirman"] = { -- Manages Neorg workspaces
+                ["core.dirman"] = { -- Manages Neorg workspaces
                     config = {
                         workspaces = {
                             notes = "~/Workspace/notes",
                             work = "~/Workspace/work-notes"
                         },
-                        default_workspace = "notes",
+                        default_workspace = "work",
                     },
                 },
             },
