@@ -49,7 +49,7 @@ vim.api.nvim_command('autocmd BufReadPost * normal `"')
 vim.opt.iskeyword = vim.opt.iskeyword + { '-' }
 
 -- Share clipboard with system
-vim.o.clipboard = 'unnamed'
+vim.o.clipboard = 'unnamedplus'
 
 -- Set path and suffixes to work with JS projects
 vim.o.path = '.,src,node_modules'

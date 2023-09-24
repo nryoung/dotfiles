@@ -83,11 +83,3 @@ vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>Telescope help_tags<CR>', { nore
 
 -- Show diagnostic on current line:
 vim.api.nvim_set_keymap('n', '<Leader>d', ':lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-
--- open neorg notes in a new tab
--- TODO: see if there is a native neorg way to do this
-vim.api.nvim_set_keymap('n', '<Leader>wo', ':tabnew ~/Workspace/work-notes/index.norg | tcd ~/Workspace/work-notes/<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>no', ':tabnew ~/Workspace/notes/index.norg | tcd ~/Workspace/notes/<CR>', { noremap = true, silent = true })
-
--- open neogit
-vim.api.nvim_set_keymap('n', '<Leader>ng', ':Neogit<CR>', { noremap = true, silent = true })

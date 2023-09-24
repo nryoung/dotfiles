@@ -26,7 +26,7 @@ vim.g.hardtime_maxcount = 10
 -- === Treesitter ===
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim', 'tsx', 'javascript', 'fish'},
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vimdoc', 'vim', 'tsx', 'javascript', 'fish'},
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -190,7 +190,7 @@ local servers = {
   -- rust_analyzer = {},
   tsserver = {},
 
-  sumneko_lua = {
+  lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
@@ -285,7 +285,3 @@ local alpha = require'alpha'
     startify.config.opts.noautocmd = true
 
     alpha.setup(startify.config)
-
--- == Neogit ==
-local neogit = require('neogit')
-neogit.setup {}

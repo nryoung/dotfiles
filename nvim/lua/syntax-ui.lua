@@ -59,8 +59,3 @@ vim.o.background = 'dark'
 
 -- Set colorscheme
 vim.cmd([[colorscheme tokyonight-night ]])
-
--- Disable virtual_text since it's redundant due to lsp_lines.
-vim.diagnostic.config({
-  virtual_text = false,
-})
