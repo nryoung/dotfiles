@@ -26,7 +26,7 @@ vim.o.modelines = 3
 vim.cmd([[
 augroup Markdown
   autocmd!
-  autocmd FileType norg set wrap linebreak nolist textwidth=120
+  autocmd FileType markdown set wrap linebreak nolist textwidth=120
 augroup END
 ]])
 
