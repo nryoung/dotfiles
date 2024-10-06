@@ -9,7 +9,7 @@
 
 [user]
     name = Nic Young
-    email = nryoung@gmail.com
+    email = nic@nicyoung.io
 
 [push]
     default = current
@@ -18,7 +18,7 @@
     prune = true
 
 [core]
-    editor = nvim
+    editor = hx
     pager = delta
 [credential]
     helper = osxkeychain
