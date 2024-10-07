@@ -40,7 +40,6 @@ install_prereqs() {
       eza \
       zoxide \
       git-delta \
-      broot \
       yazi-fm \
       yazi-cli \
   
