@@ -14,39 +14,60 @@ symlink() {
     ln -s "${source}" "${target}"
 }
 
+print_status() {
+  # A function to display what step the script is on
+  echo "###############################################################################"
+  echo "$1"
+  echo "###############################################################################"
+}
+
 install_prereqs() {
-  # check to see if brew is installed. Install it if it isn't already
+
+  # Install brew
   if ! which brew &> /dev/null; then
-    echo 'Installing `brew` package manager: https://brew.sh/'
-    echo 'Requires user password'
+    print_status "Installing brew."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
-  # Install packages
-  echo "Installing packages with brew"
+  # Install pre-reqs
+  print_status "Installing pre-reqs such as cURL and wget."
   brew install \
-      neovim \
-      tmux \
-      fzf \
-      ripgrep \
-      ranger \
-      cmake \
-      gcc \
-      gh \
-      exa \
-      bat \
+    curl \
+    wget \
+
+  # Install rustup
+  print_status "Installing rustc toolchain. Requires input."
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+  # Install packages
+  print_status "Install packages with brew."
+  brew install \
+      zellij \
+      eza \
       zoxide \
-      fish \
-      starship \
-      fd \
-      bat \
       git-delta \
-      shortcat
+      yazi \
+      ffmpegthumbnailer \
+      sevenzip \
+      jq \
+      poppler \
+      fd \
+      ripgrep \
+      fzf \
+      imagemagick \
+      font-symbols-only-nerd-font \
+      bat \
+      fish \
+      gh \
+      starship \
+      jesseduffield/lazygit/lazygit \
+      lazygit \
+      helix \
 
-  brew tap wez/wezterm
-  brew install --cask wez/wezterm/wezterm
+  brew install --cask wezterm
 
-  # Install hammerspoon and ControlEscape spoon
+  # Install Hammerspoon and ControlEscape spoon
+  print_status "Installing Hammerspoon and ControlEscape spoon."
   mkdir -p ~/.hammerspoon/Spoons
   git clone https://github.com/jasonrudolph/ControlEscape.spoon.git ~/.hammerspoon/Spoons/ControlEscape.spoon
   cd ~/.hammerspoon/Spoons/ControlEscape.spoon
@@ -57,10 +78,6 @@ link_files() {
     local readonly dotfiles="${HOME}/dotfiles"
 
     # sync all the things
-    symlink "${dotfiles}/bash_aliases" ~/.bash_aliases
-    symlink "${dotfiles}/bash_profile" ~/.bash_profile
-    symlink "${dotfiles}/tmux.conf" ~/.tmux.conf
-    symlink "${dotfiles}/nvim" ~/.config/nvim
     symlink "${dotfiles}/gitconfig" ~/.gitconfig
     symlink "${dotfiles}/wezterm" ~/.config/wezterm
     symlink "${dotfiles}/config.fish" ~/.config/fish/config.fish
