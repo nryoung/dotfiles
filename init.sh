@@ -56,6 +56,8 @@ install_prereqs() {
 	&& wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
 	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
 	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+  # add helix ppa
+  sudo add-apt-repository ppa:maveonair/helix-editor
 
   sudo apt update
   sudo apt install \
@@ -66,6 +68,7 @@ install_prereqs() {
       fd-find \
       wezterm \
       gh \
+      helix \
 
 	# Install starship
 	print_status "Installing Starship."
