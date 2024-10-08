@@ -36,8 +36,10 @@ install_prereqs() {
     wget \
 
   # Install rustup
-  print_status "Installing rustc toolchain. Requires input."
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  if ! which rustc &> /dev/null; then
+    print_status "Installing rustc toolchain. Requires input."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  fi
 
   # Install packages
   print_status "Install packages with brew."
@@ -67,11 +69,13 @@ install_prereqs() {
   brew install --cask wezterm
 
   # Install Hammerspoon and ControlEscape spoon
-  print_status "Installing Hammerspoon and ControlEscape spoon."
-  mkdir -p ~/.hammerspoon/Spoons
-  git clone https://github.com/jasonrudolph/ControlEscape.spoon.git ~/.hammerspoon/Spoons/ControlEscape.spoon
-  cd ~/.hammerspoon/Spoons/ControlEscape.spoon
-  script/setup
+  if [ ! -d "${HOME}/.hammerspoon/Spoons" ]; then
+    print_status "Installing Hammerspoon and ControlEscape spoon."
+    mkdir -p ~/.hammerspoon/Spoons
+    git clone https://github.com/jasonrudolph/ControlEscape.spoon.git ~/.hammerspoon/Spoons/ControlEscape.spoon
+    cd ~/.hammerspoon/Spoons/ControlEscape.spoon
+    script/setup
+  fi
 }
 
 link_files() {
