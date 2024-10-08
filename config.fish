@@ -8,30 +8,57 @@ if status is-interactive
 
     # config PATH
     # homebrew apps should take precedence
-    export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/bin/python:$PATH"
+    export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
     # for yarn config
     export PATH="$HOME/.yarn/bin:$PATH"
     # for rust config
     export PATH="$HOME/.cargo/bin:$PATH"
 
-    # Enable ls aliases
-    alias ll='exa -l -g --icons'
-    alias la='exa -la -g --icons'
-    alias lt='exa -la -g --icons --tree --git-ignore'
+    # set alias for reloading this config
+    alias rlf='source ~/.config/fish/config.fish'
 
-    # Enable 256 color in tmux + vim
-    alias tmux='tmux -2'
+    # set Helix as default editor along with aliases
+    export EDITOR="hx"
+    alias vim="hx"
+    alias nvim="hx"
+    alias vvim="vim"
+    alias nnvim="nvim"
 
-    # Use neovim instead
-    alias vim='nvim'
-    # use python3
-    alias python='python3'
+    # set ls aliases
+    alias ll='eza -al --group-directories-first --icons=always --color=always'
+    alias lf='eza -fla --icons=always --color=always'
+    alias ld='eza -Dla --icons=always --color=always'
+    alias lh='eza -dl .* --group-directories-first --icons=always --color=always'
+    alias ls='eza -fla --icons=always --color=always --sort=size'
+    alias lt='eza -la --tree --git-ignore --icons=always --color=always'
+    alias lls='ls'
 
-    # source lua-language-server
-    if test -d ~/.lua-language-server
-      export PATH="$HOME/.lua-language-server/bin:$PATH"
+    # set fd aliases
+    alias find='fd'
+    alias ffind='find'
 
-    # Zellij alias
+    # set bat aliases
+    alias cat='bat'
+    alias ccat='cat'
+
+    # set rg aliases
+    alias grep='rg'
+    alias ggrep='grep'
+
+    # set lazygit aliases
+    alias lg='lazygit'
+
+    # set yazi shell wrapper
+    function y
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
+    end
+
+    # set zellij integration
     function zr
         command zellij run --name "$argv" -- fish -c "$argv"
     end
@@ -65,7 +92,7 @@ if status is-interactive
 
     # work config (any work related config should go here and will not be checked in)
     if test -f ~/.workconfig.sh
-      . ~/.workconfig.sh
+        . ~/.workconfig.sh
     end
 end
 
