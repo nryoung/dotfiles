@@ -43,6 +43,7 @@ install_prereqs() {
 
   # Install packages
   print_status "Install packages with brew."
+  print_status "Installing packages with brew."
   brew install \
       zellij \
       eza \
