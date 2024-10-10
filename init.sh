@@ -30,8 +30,6 @@ install_prereqs() {
     wget \
 
   # Install rustup
-  print_status "Installing rustc toolchain. Requires input."
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   if ! which rustc &> /dev/null; then
     print_status "Installing rustc toolchain. Requires input."
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -74,9 +72,10 @@ install_prereqs() {
       helix \
 
 	# Install starship
-	print_status "Installing Starship."
-	curl -sS https://starship.rs/install.sh | sh
-
+	if [ ! -f /snap/bin/starship ]; then
+	  print_status "Installing Starship."
+	  curl -sS https://starship.rs/install.sh | sh
+	fi
 
   # Install asdf
   if [ ! -d "${HOME}/.asdf" ]; then
