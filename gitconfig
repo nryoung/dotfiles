@@ -34,3 +34,5 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[includeIf "gitdir:~/Workspace/"]
+    path = ~/.work_gitconfig
