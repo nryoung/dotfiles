@@ -30,10 +30,12 @@ install_prereqs() {
   fi
 
   # Install pre-reqs
-  print_status "Installing pre-reqs such as cURL and wget."
+  print_status "Installing pre-reqs such as cURL, wget, coreutils and git."
   brew install \
     curl \
     wget \
+    coreutils \
+    git \
 
   # Install rustup
   if ! which rustc &> /dev/null; then
@@ -42,7 +44,6 @@ install_prereqs() {
   fi
 
   # Install packages
-  print_status "Install packages with brew."
   print_status "Installing packages with brew."
   brew install \
       zellij \
@@ -76,6 +77,12 @@ install_prereqs() {
     git clone https://github.com/jasonrudolph/ControlEscape.spoon.git ~/.hammerspoon/Spoons/ControlEscape.spoon
     cd ~/.hammerspoon/Spoons/ControlEscape.spoon
     script/setup
+  fi
+
+  # Install asdf
+  if [ ! -d "${HOME}/.asdf" ]; then
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+    mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
   fi
 }
 

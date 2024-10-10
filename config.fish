@@ -19,6 +19,7 @@ if status is-interactive
 
     # set Helix as default editor along with aliases
     export EDITOR="hx"
+    export VISUAL="hx"
     alias vim="hx"
     alias nvim="hx"
     alias vvim="vim"
@@ -94,6 +95,7 @@ if status is-interactive
     if test -f ~/.workconfig.sh
         . ~/.workconfig.sh
     end
-end
 
-source ~/.asdf/asdf.fish
+    # source asdf completions
+    source ~/.asdf/asdf.fish
+end
