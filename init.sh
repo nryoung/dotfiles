@@ -77,12 +77,12 @@ install_prereqs() {
 	print_status "Installing Starship."
 	curl -sS https://starship.rs/install.sh | sh
 
-	# Install lazygit
-	print_status "Installing Lazygit."
-	LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-  curl -Lo /tmp/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-  tar xf /tmp/lazygit.tar.gz -C /tmp/
-  sudo install /tmp/lazygit /usr/local/bin
+
+  # Install asdf
+  if [ ! -d "${HOME}/.asdf" ]; then
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+    mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+  fi
 }
 
 link_files() {

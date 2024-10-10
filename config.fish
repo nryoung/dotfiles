@@ -100,4 +100,6 @@ if status is-interactive
     source ~/.asdf/asdf.fish
 end
 
-source ~/.asdf/asdf.fish
+    # source asdf completions
+    source ~/.asdf/asdf.fish
+end
