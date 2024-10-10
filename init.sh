@@ -32,6 +32,10 @@ install_prereqs() {
   # Install rustup
   print_status "Installing rustc toolchain. Requires input."
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  if ! which rustc &> /dev/null; then
+    print_status "Installing rustc toolchain. Requires input."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  fi
 
   # Install Rust specific tools
   print_status "Installing Rust specific tools."
