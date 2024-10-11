@@ -99,7 +99,3 @@ if status is-interactive
     # source asdf completions
     source ~/.asdf/asdf.fish
 end
-
-    # source asdf completions
-    source ~/.asdf/asdf.fish
-end
