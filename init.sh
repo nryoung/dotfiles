@@ -96,7 +96,7 @@ link_files() {
   symlink "${dotfiles}/fish/fish_plugins" ~/.config/fish/fish_plugins
   symlink "${dotfiles}/helix/config.toml" ~/.config/helix/config.toml
   symlink "${dotfiles}/helix/languages.toml" ~/.config/helix/languages.toml
-  symlink "${dotfiles}/yazi-picker.sh" ~/.config/helix/yazi-picker.sh
+  symlink "${dotfiles}/helix/yazi-picker.sh" ~/.config/helix/yazi-picker.sh
 }
 
 init() {
