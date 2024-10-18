@@ -27,6 +27,7 @@ if status is-interactive
 
     # set ls aliases
     alias ll='eza -al --group-directories-first --icons=always --color=always'
+    alias la='eza -al --group-directories-first --icons=always --color=always'
     alias lf='eza -fla --icons=always --color=always'
     alias ld='eza -Dla --icons=always --color=always'
     alias lh='eza -dl .* --group-directories-first --icons=always --color=always'
