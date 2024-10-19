@@ -61,22 +61,22 @@ if status is-interactive
     end
 
     # set zellij integration
-    function zr
+    function zjr
         command zellij run --name "$argv" -- fish -c "$argv"
     end
-    function zrf
+    function zjrf
         command zellij run --name "$argv" --floating -- fish -c "$argv"
     end
-    function zri
+    function zjri
         command zellij run --name "$argv" --in-place -- fish -c "$argv"
     end
-    function ze
+    function zje
         command zellij edit $argv
     end
-    function zef
+    function zjef
         command zellij edit --floating $argv
     end
-    function zei
+    function zjei
         command zellij edit --in-place $argv
     end
 
@@ -84,7 +84,7 @@ if status is-interactive
     function __fish_complete_aliases
         zellij list-aliases 2>/dev/null
     end
-    function zpipe
+    function zjpipe
         if count $argv >/dev/null
             command zellij pipe -p $argv
         else
