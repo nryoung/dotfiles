@@ -3,8 +3,8 @@ if status is-interactive
     fish_vi_key_bindings
 
     # Commands to run in interactive sessions can go here
-    /opt/homebrew/bin/starship init fish | source
-    /opt/homebrew/bin/zoxide init fish | source
+    starship init fish | source
+    zoxide init fish | source
 
     # config PATH
     # homebrew apps should take precedence
@@ -97,6 +97,18 @@ if status is-interactive
         . ~/.workconfig.sh
     end
 
+    # Fisher installation and plugin setup
+    if not test -f ~/.config/fish/functions/fisher.fish
+        echo "Installing Fisher..."
+        curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+    end
+
+    # Only install fzf.fish if it hasn't been installed already
+    if not fisher list | rg -q patrickf1/fzf.fish
+        echo "Installing fzf.fish plugin..."
+        fisher install PatrickF1/fzf.fish
+    end
+
     # source asdf completions
-    source ~/.asdf/asdf.fish
+    # source ~/.asdf/asdf.fish
 end
