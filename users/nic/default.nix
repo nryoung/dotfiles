@@ -48,6 +48,7 @@
     wezterm
     yazi
     zellij
+    pkgs.zola
     zoxide
   ];
 
