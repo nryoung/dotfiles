@@ -111,7 +111,6 @@
     curl
     flaresolverr
     git
-    helix
     jackett
     jellyfin
     jellyfin-web

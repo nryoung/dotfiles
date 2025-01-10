@@ -24,6 +24,7 @@
         cursorcolumn = true;
         bufferline = "multiple";
         line-number = "relative";
+        end-of-line-diagnostics = "hint";
 
         soft-wrap.enable = true;
 
@@ -60,6 +61,9 @@
           mode.normal = "🧬";
           mode.insert = "I";
           mode.select = "S";
+        };
+        inline-diagnostics = {
+          cursor-line = "error";
         };
       };
 
