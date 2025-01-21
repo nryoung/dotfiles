@@ -24,6 +24,7 @@
     pkgs._1password-gui
     bash
     bat
+    pkgs.clang
     pkgs.calibre
     pkgs.element-desktop
     eza
