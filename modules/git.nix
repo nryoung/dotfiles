@@ -3,7 +3,7 @@
     enable = true;
 
     userName = "Nic Young";
-    userEmail = "nic@nicyoung.io";
+    userEmail = "nic@nicyoung.dev";
 
     aliases = {
       co = "checkout";
@@ -38,8 +38,8 @@
     };
 
     includes = [{
-        condition = "gitdir:~/Workspace/";
-        path = "~/.work_gitconfig";
-      }];
+      condition = "gitdir:~/Workspace/";
+      path = "~/.work_gitconfig";
+    }];
   };
 }
