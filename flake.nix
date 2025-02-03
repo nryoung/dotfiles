@@ -17,12 +17,16 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # system76 cosmic
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
   outputs =
     { self
     , nixpkgs
     , home-manager
+    , nixos-cosmic
     , ...
     } @ inputs:
     let
@@ -36,6 +40,13 @@
           specialArgs = { inherit inputs outputs; };
           # > Our main nixos configuration file <
           modules = [
+            {
+              nix.settings = {
+                substituters = [ "https://cosmic.cachix.org/" ];
+                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+              };
+            }
+            nixos-cosmic.nixosModules.default
             ./hosts/nixos
             home-manager.nixosModules.home-manager
             {
