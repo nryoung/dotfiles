@@ -70,6 +70,9 @@
       keys = {
         normal = {
           C-y = ":sh zellij run -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh";
+          space = {
+            F = "file_picker_in_current_buffer_directory";
+          };
         };
       };
     };
