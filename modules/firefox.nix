@@ -5,7 +5,7 @@
     package = pkgs.firefox-devedition-bin;
 
     profiles.dev-edition-default = {
-      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
         multi-account-containers
         react-devtools
         reduxdevtools
