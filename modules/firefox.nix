@@ -85,12 +85,6 @@
         "network.protocol-handler.external.mailto" = false;
         "network.proxy.socks_remote_dns" = true;
         "permissions.delegation.enabled" = false;
-        "privacy.clearOnShutdown.cache" = true;
-        "privacy.clearOnShutdown.cookies" = false;
-        "privacy.clearOnShutdown.downloads" = true;
-        "privacy.clearOnShutdown.formdata" = true;
-        "privacy.clearOnShutdown.history" = false;
-        "privacy.clearOnShutdown.sessions" = false;
         "privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage" = false;
         "privacy.partition.always_partition_third_party_non_cookie_storage" = true;
         "privacy.sanitize.sanitizeOnShutdown" = true;
