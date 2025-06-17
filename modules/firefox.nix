@@ -2,7 +2,7 @@
   programs.firefox = {
     enable = true;
 
-    package = pkgs.firefox-devedition-bin;
+    package = pkgs.firefox-devedition;
 
     profiles.dev-edition-default = {
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [

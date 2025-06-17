@@ -42,7 +42,7 @@
     pkgs.qbittorrent
     ripgrep
     pkgs.rustup
-    pkgs.soulseekqt
+    pkgs.nicotine-plus
     starship
     pkgs.signal-desktop
     pkgs.vlc
