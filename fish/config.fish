@@ -100,3 +100,6 @@ if status is-interactive
     # source asdf completions
     source ~/.asdf/asdf.fish
 end
+
+# uv
+fish_add_path "/Users/nyoung/.local/bin"
