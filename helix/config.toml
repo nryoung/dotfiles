@@ -1,15 +1,19 @@
 theme = "tokyonight"
 
 [editor]
-line-number = "relative"
-cursorline = true
+bufferline = "multiple"
+color-modes = true
 cursorcolumn = true
+cursorline = true
+line-number = "relative"
 mouse = false
 rulers = [120]
 end-of-line-diagnostics = "hint"
+soft-wrap.enable = true
 
-[editor.inline-diagnostics]
-cursor-line = "error"
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -18,6 +22,26 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+ignore = false
+
+[editor.indent-guides]
+character = "┊"
+render = true
+skip-levels = 1
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.statusline]
+left = [ "mode", "file-name", "spinner", "read-only-indicator", "file-modification-indicator" ]
+right = [ "diagnostics", "selections", "register", "file-type", "file-line-ending", "position" ]
+mode.normal = "🧬"
+mode.insert = "📝"
+mode.select = "⣏⣹"
+
+[editor.inline-diagnostics]
+cursor-line = "error"
 
 [keys.normal]
-C-y = ":sh zellij run -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh"
+C-y = ":sh zellij run -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh"

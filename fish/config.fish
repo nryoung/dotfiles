@@ -96,10 +96,14 @@ if status is-interactive
     if test -f ~/.workconfig.sh
         . ~/.workconfig.sh
     end
-
-    # source asdf completions
-    source ~/.asdf/asdf.fish
 end
 
 # uv
 fish_add_path "/Users/nyoung/.local/bin"
+
+# pnpm
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

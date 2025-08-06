@@ -7,24 +7,58 @@ command = "clippy"
 
 [[language]]
 name = "json"
+language-servers = [{ name = "vscode-json-language-server", except-features = ["format"] }]
 formatter = { command = 'prettier', args = ["--parser", "json"] }
 
 [[language]]
 name = "javascript"
+language-servers = [{ name = "typescript-language-server", except-features = ["format"] }]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+language-servers = [{ name = "typescript-language-server", except-features = ["format"] }]
 auto-format = true
 
 [[language]]
 name = "tsx"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+language-servers = [{ name = "typescript-language-server", except-features = ["format"] }]
 auto-format = true
 
 [[language]]
 name = "python"
-language-servers = [ "pylsp" ]
+language-servers = ["ruff", "pylsp"]
 auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server"]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "css"] }
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server"]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "html"] }
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+
+[[language]]
+name = "nix"
+language-servers = ["nil"]
+auto-format = true
+formatter = { command = "nixpkgs-fmt" }
+
+[[language]]
+name = "toml"
+language-servers = ["taplo"]
+auto-format = true
+formatter = { command = "taplo", args = ["fmt", "-o", "column_width=120", "-"] }
