@@ -14,8 +14,10 @@ if status is-interactive
     # for rust config
     export PATH="$HOME/.cargo/bin:$PATH"
 
+    # set alias for notes
+    alias n="hx ~/Workspace/notes/notes.md"
     # set alias for reloading this config
-    alias rlf='source ~/.config/fish/config.fish'
+    alias rlf="source ~/.config/fish/config.fish"
 
     # set Helix as default editor along with aliases
     export EDITOR="hx"
@@ -26,29 +28,29 @@ if status is-interactive
     alias nnvim="nvim"
 
     # set ls aliases
-    alias ll='eza -al --group-directories-first --icons=always --color=always'
-    alias la='eza -al --group-directories-first --icons=always --color=always'
-    alias lf='eza -fla --icons=always --color=always'
-    alias ld='eza -Dla --icons=always --color=always'
-    alias lh='eza -dl .* --group-directories-first --icons=always --color=always'
-    alias ls='eza -fla --icons=always --color=always --sort=size'
-    alias lt='eza -la --tree --git-ignore --icons=always --color=always'
-    alias lls='ls'
+    alias ll="eza -al --group-directories-first --icons=always --color=always"
+    alias la="eza -al --group-directories-first --icons=always --color=always"
+    alias lf="eza -fla --icons=always --color=always"
+    alias ld="eza -Dla --icons=always --color=always"
+    alias lh="eza -dl .* --group-directories-first --icons=always --color=always"
+    alias ls="eza -fla --icons=always --color=always --sort=size"
+    alias lt="eza -la --tree --git-ignore --icons=always --color=always"
+    alias lls="ls"
 
     # set fd aliases
-    alias find='fd'
-    alias ffind='find'
+    alias find="fd"
+    alias ffind="find"
 
     # set bat aliases
-    alias cat='bat'
-    alias ccat='cat'
+    alias cat="bat"
+    alias ccat="cat"
 
     # set rg aliases
-    alias grep='rg'
-    alias ggrep='grep'
+    alias grep="rg"
+    alias ggrep="grep"
 
     # set lazygit aliases
-    alias lg='lazygit'
+    alias lg="lazygit"
 
     # set yazi shell wrapper
     function y
