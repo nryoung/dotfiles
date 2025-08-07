@@ -140,9 +140,9 @@
             # when held left ctrl
             # when tapped esc
             CapsLock = {
-              held = "Ctrl_L";
-              alone = "Esc";
-              alone_timeout_millis = 1000;
+              held = "leftctrl";
+              alone = "esc";
+              alone_timeout_millis = 150;
             };
           };
         }
@@ -154,6 +154,8 @@
   systemd.tmpfiles.rules = [
     "d /media 0775 nic media -"
     "Z /media 0775 nic media -"
+    "d /notes 0777 nic syncthing -"
+    "Z /notes 0777 nic syncthing -"
   ];
 
   # Jellyfin
@@ -168,6 +170,12 @@
   # enable Jackett, default is ok
   services.jackett = {
     enable = true;
+  };
+
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
   };
 
   system.stateVersion = "24.05";
