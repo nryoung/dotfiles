@@ -106,7 +106,7 @@
     nic = {
       isNormalUser = true;
       description = "Nic";
-      extraGroups = [ "networkmanager" "wheel" "media" ];
+      extraGroups = [ "networkmanager" "wheel" "media" "syncthing" ];
       packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
     };
   };
@@ -154,8 +154,8 @@
   systemd.tmpfiles.rules = [
     "d /media 0775 nic media -"
     "Z /media 0775 nic media -"
-    "d /notes 0777 nic syncthing -"
-    "Z /notes 0777 nic syncthing -"
+    "d /notes 0770 nic syncthing -"
+    "Z /notes 0770 nic syncthing -"
   ];
 
   # Jellyfin
@@ -173,6 +173,8 @@
   };
 
   # Syncthing
+  users.users.syncthing.extraGroups = [ "users" ];
+  systemd.services.syncthing.serviceConfig.UMask = "0007";
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
