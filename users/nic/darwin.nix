@@ -5,53 +5,43 @@
 , ...
 }: {
   imports = [
-    ../../modules/bash.nix
-    ../../modules/firefox.nix
     ../../modules/fish
     ../../modules/git.nix
     ../../modules/helix
     ../../modules/wezterm
+    ../../modules/zsh.nix
     ../../modules/zellij
   ];
 
   home = {
-    username = "nic";
-    homeDirectory = "/home/nic";
+    username = "nyoung";
+    homeDirectory = "/Users/nyoung";
   };
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    bash
+    zsh
     bat
     delta
     eza
     fd
     fira-code
-    firefox
     fish
     fzf
     gh
     git
     jq
+    just
+    jujutsu
     lazygit
-    pkgs._1password-cli
-    pkgs._1password-gui
-    pkgs.calibre
     pkgs.clang
-    pkgs.element-desktop
-    pkgs.nicotine-plus
-    pkgs.obsidian
-    pkgs.openmw
-    pkgs.protonvpn-gui
-    pkgs.qbittorrent
     pkgs.rustup
-    pkgs.signal-desktop
-    pkgs.vlc
     pkgs.zola
     ripgrep
     starship
     wezterm
     yazi
+    zellij
     zoxide
   ];
 
@@ -68,23 +58,11 @@
   programs.yazi.enable = true;
   programs.zoxide.enable = true;
 
-  # switch touchpad scrolling to reverse
-  dconf.settings = {
-    "org/gnome/desktop/peripherals/touchpad" =
-      {
-        natural-scroll = false;
-      };
-  };
-
-
   # Enable font configuration
   fonts.fontconfig.enable = true;
 
   # Enable home-manager
   programs.home-manager.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";

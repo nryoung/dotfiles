@@ -6,6 +6,12 @@ switch: git-add
 home: git-add
   home-manager switch --flake .#nic@nixos
 
+switch-darwin: git-add
+ sudo ./result/sw/bin/darwin-rebuild switch --flake .#HLGXHQKGYJ 
+
+home-darwin: git-add
+  home-manager switch --flake .#nyoung@HLGXHQKGYJ 
+
 update: git-add
   nix flake update
 
