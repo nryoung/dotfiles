@@ -1,6 +1,6 @@
 [[language]]
 name = "rust"
-formatter = { command = "rustfmt" }
+formatter = { command = "rustfmt", args = ["--edition", "2024"] }
 auto-format = true
 [language-server.rust-analyzer.config.check]
 command = "clippy"
