@@ -20,37 +20,37 @@
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    pkgs._1password-cli
-    pkgs._1password-gui
     bash
     bat
-    pkgs.clang
-    pkgs.calibre
-    pkgs.element-desktop
     eza
     fd
     fira-code
     firefox
     fish
     fzf
-    git
     gh
+    git
     jq
     lazygit
-    pkgs.protonvpn-gui
-    pkgs.openmw
-    pkgs.obsidian
-    pkgs.qbittorrent
-    ripgrep
-    pkgs.rustup
+    pkgs._1password-cli
+    pkgs._1password-gui
+    pkgs.calibre
+    pkgs.clang
+    pkgs.element-desktop
     pkgs.nicotine-plus
-    starship
+    pkgs.obsidian
+    pkgs.openmw
+    pkgs.protonvpn-gui
+    pkgs.qbittorrent
+    pkgs.rustup
     pkgs.signal-desktop
     pkgs.vlc
+    pkgs.zola
+    ripgrep
+    starship
     wezterm
     yazi
     zellij
-    pkgs.zola
     zoxide
   ];
 
