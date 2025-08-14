@@ -5,7 +5,6 @@
 , ...
 }: {
   imports = [
-    inputs.xremap-flake.nixosModules.default
     ./hardware-configuration.nix
   ];
 
@@ -129,24 +128,18 @@
   environment.variables.EDITOR = lib.getExe pkgs.helix;
   environment.variables.VISUAL = lib.getExe pkgs.helix;
 
-  # key remap with xremap
-  services.xremap = {
-    config = {
-      modmap = [
-        {
-          name = "Global";
-          remap = {
-            # globally remap CapsLock:
-            # when held left ctrl
-            # when tapped esc
-            CapsLock = {
-              held = "leftctrl";
-              alone = "esc";
-              alone_timeout_millis = 150;
-            };
+  # key remap with keyd
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
           };
-        }
-      ];
+        };
+      };
     };
   };
 
@@ -178,6 +171,13 @@
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
+  };
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
   system.stateVersion = "24.05";

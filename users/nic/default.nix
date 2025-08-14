@@ -38,6 +38,7 @@
     jq
     lazygit
     pkgs.protonvpn-gui
+    pkgs.openmw
     pkgs.obsidian
     pkgs.qbittorrent
     ripgrep
