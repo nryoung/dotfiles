@@ -147,8 +147,8 @@
   systemd.tmpfiles.rules = [
     "d /media 0775 nic media -"
     "Z /media 0775 nic media -"
-    "d /notes 0770 nic syncthing -"
-    "Z /notes 0770 nic syncthing -"
+    "d /notes 0775 nic syncthing -"
+    "Z /notes 0775 nic syncthing -"
   ];
 
   # Jellyfin
