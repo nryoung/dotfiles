@@ -9,8 +9,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # xremap
-    xremap-flake.url = "github:xremap/nix-flake";
+    # nix-darwin
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # firefox-addons
     firefox-addons = {
@@ -23,6 +24,7 @@
     { self
     , nixpkgs
     , home-manager
+    , nix-darwin
     , ...
     } @ inputs:
     let
@@ -33,7 +35,7 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs; };
           # > Our main nixos configuration file <
           modules = [
             ./hosts/nixos
@@ -48,6 +50,25 @@
         };
       };
 
+      # nix-darwin configuration entrypoint
+      # Available through 'darwin-rebuild --flake .#your-hostname'
+      darwinConfigurations = {
+        HLGXHQKGYJ = nix-darwin.lib.darwinSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/darwin
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.nyoung = import ./users/nic/darwin.nix;
+              users.users.nyoung.home = "/Users/nyoung";
+            }
+          ];
+        };
+      };
+
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
@@ -57,6 +78,18 @@
           # > Our main home-manager configuration file <
           modules = [
             ./users/nic
+          ];
+        };
+        "nyoung@HLGXHQKGYJ" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs; };
+          # > Our main home-manager configuration file <
+          modules = [
+            ./users/nic/darwin.nix
+            # Allow unfree packages
+            {
+              nixpkgs.config.allowUnfree = true;
+            }
           ];
         };
       };
