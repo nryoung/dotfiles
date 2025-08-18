@@ -21,7 +21,7 @@
 
   # Nix configuration (Determinate Nix detected - let it manage the daemon)
   nix.enable = false;
-  
+
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
     config = {
@@ -33,7 +33,7 @@
   system = {
     # Set Git commit hash for darwin-version.
     configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
-    
+
     # Primary user for user-specific settings
     primaryUser = "nyoung";
 
@@ -44,19 +44,19 @@
         showhidden = true;
         mru-spaces = false;
       };
-      
+
       finder = {
         AppleShowAllExtensions = true;
         ShowPathbar = true;
         ShowStatusBar = true;
         FXEnableExtensionChangeWarning = false;
       };
-      
+
       trackpad = {
         Clicking = true;
         TrackpadThreeFingerDrag = true;
       };
-      
+
       NSGlobalDomain = {
         # Disable automatic capitalization
         NSAutomaticCapitalizationEnabled = false;
@@ -80,7 +80,9 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
-
+    brews = [
+      "asdf"
+    ];
     casks = [
       "alfred"
       "calibre"
