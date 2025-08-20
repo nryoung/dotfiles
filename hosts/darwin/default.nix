@@ -96,6 +96,7 @@
       # "slack"
       "syncthing-app"
       # "zoom"
+      "wezterm"
     ];
   };
 
