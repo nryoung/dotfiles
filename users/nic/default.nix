@@ -39,6 +39,7 @@
     pkgs.calibre
     pkgs.clang
     pkgs.element-desktop
+    pkgs.glow
     pkgs.nicotine-plus
     pkgs.nil
     pkgs.obsidian
