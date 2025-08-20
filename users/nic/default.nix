@@ -40,6 +40,7 @@
     pkgs.clang
     pkgs.element-desktop
     pkgs.nicotine-plus
+    pkgs.nil
     pkgs.obsidian
     pkgs.openmw
     pkgs.protonvpn-gui

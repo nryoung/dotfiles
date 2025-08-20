@@ -208,8 +208,8 @@ keybinds clear-defaults=true {
     }
     shared {
          bind "Alt y" {
-             Run "hx" "~/Workspace/notes" {
-                  cwd "~/Workspace/notes"
+             Run "hx" "@notesPath@" {
+                  cwd "@notesPath@"
                   floating true
                   width "80%"
                   height "80%"

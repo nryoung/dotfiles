@@ -35,8 +35,10 @@
     jujutsu
     lazygit
     pkgs.clang
+    pkgs.nil
     pkgs.rustup
     pkgs.zola
+    nil
     ripgrep
     starship
     wezterm

@@ -41,6 +41,7 @@
             ./hosts/nixos
             home-manager.nixosModules.home-manager
             {
+              home-manager.backupFileExtension = "bak";
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
@@ -59,6 +60,7 @@
             ./hosts/darwin
             home-manager.darwinModules.home-manager
             {
+              home-manager.backupFileExtension = "bak";
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
@@ -73,6 +75,7 @@
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
         "nic@nixos" = home-manager.lib.homeManagerConfiguration {
+          backupFileExtension = "bak";
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs; };
           # > Our main home-manager configuration file <
@@ -81,6 +84,7 @@
           ];
         };
         "nyoung@HLGXHQKGYJ" = home-manager.lib.homeManagerConfiguration {
+          backupFileExtension = "bak";
           pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs; };
           # > Our main home-manager configuration file <
