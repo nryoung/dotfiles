@@ -82,6 +82,14 @@
     onActivation.cleanup = "zap";
     brews = [
       "asdf"
+      "bzip2"
+      "go-task"
+      "libffi"
+      "openssl"
+      "readline"
+      "sqlite3"
+      "xz"
+      "zlib"
     ];
     casks = [
       "alfred"
@@ -90,13 +98,16 @@
       "font-symbols-only-nerd-font"
       "gifcapture"
       "hammerspoon"
+      "podman-desktop"
       "rectangle-pro"
       # "shush"
       "signal"
       # "slack"
       "syncthing-app"
-      # "zoom"
+      # "vscode"
+      # "vlc"
       "wezterm"
+      # "zoom"
     ];
   };
 

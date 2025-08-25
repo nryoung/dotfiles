@@ -35,8 +35,10 @@
     jujutsu
     lazygit
     pkgs.clang
+    pkgs.docker
     pkgs.glow
     pkgs.nil
+    pkgs.podman
     pkgs.rustup
     pkgs.zola
     nil
