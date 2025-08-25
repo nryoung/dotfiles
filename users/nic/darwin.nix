@@ -8,6 +8,7 @@
     ../../modules/fish
     ../../modules/git.nix
     ../../modules/helix
+    ../../modules/newsboat.nix
     ../../modules/wezterm
     ../../modules/zsh.nix
     ../../modules/zellij

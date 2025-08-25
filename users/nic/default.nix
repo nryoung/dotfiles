@@ -10,6 +10,7 @@
     ../../modules/fish
     ../../modules/git.nix
     ../../modules/helix
+    ../../modules/newsboat.nix
     ../../modules/wezterm
     ../../modules/zellij
   ];

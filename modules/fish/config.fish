@@ -50,6 +50,13 @@ if status is-interactive
     # set lazygit aliases
     alias lg='lazygit'
 
+    # set newsboat alias
+    if test (uname) = Linux
+        alias nb='newsboat --url-file=/notes/urls.newsboat'
+    else
+        alias nb='newsboat --url-file=~/Workspace/notes/urls.newsboat'
+    end
+
     # set yazi shell wrapper
     function y
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
