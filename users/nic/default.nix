@@ -41,6 +41,7 @@
     pkgs.clang
     pkgs.element-desktop
     pkgs.glow
+    pkgs.mediainfo
     pkgs.nicotine-plus
     pkgs.nil
     pkgs.obsidian
