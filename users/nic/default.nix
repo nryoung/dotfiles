@@ -33,18 +33,17 @@
     fzf
     gh
     git
+    iosevka
     jq
     lazygit
     pkgs._1password-cli
     pkgs._1password-gui
     pkgs.calibre
     pkgs.clang
-    pkgs.element-desktop
     pkgs.glow
     pkgs.mediainfo
     pkgs.nicotine-plus
     pkgs.nil
-    pkgs.obsidian
     pkgs.openmw
     pkgs.protonvpn-gui
     pkgs.qbittorrent
