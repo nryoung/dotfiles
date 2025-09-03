@@ -98,7 +98,7 @@
       "font-symbols-only-nerd-font"
       "gifcapture"
       "hammerspoon"
-      "podman-desktop"
+      "orbstack"
       "rectangle-pro"
       # "shush"
       "signal"

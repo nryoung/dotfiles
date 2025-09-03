@@ -31,6 +31,7 @@
     fzf
     gh
     git
+    iosevka
     jq
     just
     jujutsu
@@ -38,6 +39,8 @@
     pkgs.clang
     pkgs.docker
     pkgs.glow
+    pkgs.kubectl
+    pkgs.kubernetes-helm
     pkgs.nil
     pkgs.podman
     pkgs.rustup
