@@ -53,7 +53,6 @@ in
     fzf
     gh
     git
-    iosevka
     jq
     just
     jujutsu

@@ -33,7 +33,6 @@
     fzf
     gh
     git
-    iosevka
     jq
     lazygit
     pkgs._1password-cli
