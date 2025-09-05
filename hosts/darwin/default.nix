@@ -5,7 +5,7 @@
 , ...
 }: {
   # Define hostname
-  networking.hostName = "HLGXHQKGYJ";
+  networking.hostName = "LMAC-XHQKGYJ-AG";
 
   # Set your time zone.
   time.timeZone = "America/Denver";
@@ -35,7 +35,7 @@
     configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
     # Primary user for user-specific settings
-    primaryUser = "nyoung";
+    primaryUser = "NYG4";
 
     defaults = {
       dock = {
@@ -94,6 +94,7 @@
     casks = [
       "alfred"
       "calibre"
+      "firefox@developer-edition"
       "font-fira-code"
       "font-symbols-only-nerd-font"
       "gifcapture"
@@ -102,12 +103,12 @@
       "rectangle-pro"
       # "shush"
       "signal"
-      # "slack"
+      "slack"
       "syncthing-app"
-      # "vscode"
-      # "vlc"
+      "visual-studio-code"
+      "vlc"
       "wezterm"
-      # "zoom"
+      "zoom"
     ];
   };
 

@@ -6,6 +6,10 @@
 
     profiles.dev-edition-default = {
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+        onepassword-password-manager
+        dearrow
+        instapaper-official
+        leechblock-ng
         multi-account-containers
         react-devtools
         reduxdevtools
@@ -14,6 +18,7 @@
         sponsorblock
         ublock-origin
         vimium
+        youtube-recommended-videos
       ];
       settings = {
         "accessibility.force_disabled" = 1;

@@ -7,10 +7,10 @@ home: git-add
   home-manager switch --flake .#nic@nixos
 
 switch-darwin: git-add
- sudo ./result/sw/bin/darwin-rebuild switch --flake .#HLGXHQKGYJ 
+  NIXPKGS_ALLOW_UNFREE=1 sudo darwin-rebuild switch --impure --flake .#LMAC-XHQKGYJ-AG
 
 home-darwin: git-add
-  home-manager switch --flake .#nyoung@HLGXHQKGYJ 
+  home-manager switch --flake .#NYG4@LMAC-XHQKGYJ-AG
 
 update: git-add
   nix flake update

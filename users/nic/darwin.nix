@@ -3,8 +3,14 @@
 , config
 , pkgs
 , ...
-}: {
+}:
+let
+  profilesFilePath = "$HOME/Library/Application\\ Support/Firefox/profiles.ini";
+in
+{
+
   imports = [
+    ../../modules/firefox.nix
     ../../modules/fish
     ../../modules/git.nix
     ../../modules/helix
@@ -15,9 +21,24 @@
   ];
 
   home = {
-    username = "nyoung";
-    homeDirectory = "/Users/nyoung";
+    username = "NYG4";
+    homeDirectory = "/Users/NYG4";
   };
+
+  # Firefox from homebrew doesn't open with symlinks
+  # https://www.reddit.com/r/NixOS/comments/1fiomft/comment/lnm20pk/
+  home.activation.firefoxWriteBoundary =
+    lib.hm.dag.entryAfter
+      [
+        "writeBoundary"
+        "linkGeneration"
+      ]
+      ''
+        run mv ${profilesFilePath} ${profilesFilePath}.hm
+        run cp "`readlink ${profilesFilePath}.hm`" ${profilesFilePath}
+        run rm -f ${profilesFilePath}.$HOME_MANAGER_BACKUP_EXT
+        run chmod u+w ${profilesFilePath}
+      '';
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
@@ -27,6 +48,7 @@
     eza
     fd
     fira-code
+    firefox
     fish
     fzf
     gh
