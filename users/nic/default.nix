@@ -39,6 +39,7 @@
     pkgs._1password-gui
     pkgs.calibre
     pkgs.clang
+    pkgs.direnv
     pkgs.glow
     pkgs.mediainfo
     pkgs.nicotine-plus
