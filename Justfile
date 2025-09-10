@@ -1,13 +1,13 @@
 default: switch
 
 switch: git-add
-  sudo nixos-rebuild switch --flake .#nixos
+  sudo NIXPKGS_ALLOW_UNFREE=1  nixos-rebuild switch --impure --flake .#nixos
 
 home: git-add
   home-manager switch --flake .#nic@nixos
 
 switch-darwin: git-add
-  NIXPKGS_ALLOW_UNFREE=1 sudo darwin-rebuild switch --impure --flake .#LMAC-XHQKGYJ-AG
+  sudo NIXPKGS_ALLOW_UNFREE=1 darwin-rebuild switch --impure --flake .#LMAC-XHQKGYJ-AG
 
 home-darwin: git-add
   home-manager switch --flake .#NYG4@LMAC-XHQKGYJ-AG
