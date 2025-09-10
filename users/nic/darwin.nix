@@ -57,13 +57,17 @@ in
     just
     jujutsu
     lazygit
+    pkgs.awscli2
     pkgs.clang
+    pkgs.direnv
     pkgs.docker
+    pkgs.devbox
     pkgs.glow
     pkgs.kubectl
     pkgs.kubernetes-helm
     pkgs.nil
     pkgs.podman
+    pkgs.python313Packages.python-lsp-server
     pkgs.rustup
     pkgs.zola
     nil

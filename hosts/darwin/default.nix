@@ -83,7 +83,6 @@
     brews = [
       "asdf"
       "bzip2"
-      "go-task"
       "libffi"
       "openssl"
       "readline"
