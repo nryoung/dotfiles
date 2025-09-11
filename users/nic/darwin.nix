@@ -68,6 +68,7 @@ in
     pkgs.nil
     pkgs.podman
     pkgs.python313Packages.python-lsp-server
+    pkgs.rubyPackages_3_4.solargraph
     pkgs.rustup
     pkgs.zola
     nil
