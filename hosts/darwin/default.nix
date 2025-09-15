@@ -93,6 +93,7 @@
     casks = [
       "alfred"
       "calibre"
+      "cryptomator"
       "firefox@developer-edition"
       "font-fira-code"
       "font-symbols-only-nerd-font"
