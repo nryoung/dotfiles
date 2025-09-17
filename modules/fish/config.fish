@@ -7,6 +7,7 @@ if status is-interactive
     zoxide init fish | source
     devbox completion fish | source
     direnv hook fish | source
+    atuin init fish | source
 
     # config PATH
     # homebrew apps should take precedence
@@ -56,7 +57,7 @@ if status is-interactive
     if test (uname) = Linux
         alias nb='newsboat --url-file=/notes/urls.newsboat'
     else
-        alias nb='newsboat --url-file=~/Workspace/notes/urls.newsboat'
+        alias nb='newsboat --url-file=/Volumes/config/app_configs/urls.newsboat'
     end
 
     # set yazi shell wrapper

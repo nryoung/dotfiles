@@ -57,6 +57,7 @@ in
     just
     jujutsu
     lazygit
+    pkgs.atuin
     pkgs.awscli2
     pkgs.biome
     pkgs.clang
