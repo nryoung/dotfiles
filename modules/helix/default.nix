@@ -88,6 +88,11 @@
         path = "${pkgs.typescript}/lib/node_modules/typescript/lib/tsserver.js";
       };
 
+      language-server.biome = {
+        command = "biome";
+        args = [ "lsp-proxy" ];
+      };
+
       language = [
         {
           name = "css";
@@ -114,6 +119,7 @@
             # unfortunately the following language server needs to be installed manually with whatever version of Node
             # that the specific project is using so it gets the correct eslint plugins and config
             { name = "vscode-eslint-language-server"; }
+            "biome"
           ];
           auto-format = true;
         }
@@ -121,11 +127,8 @@
           name = "json";
           language-servers = [
             { name = "vscode-json-language-server"; except-features = [ "format" ]; }
+            "biome"
           ];
-          formatter = {
-            command = "prettier";
-            args = [ "--parser" "json" ];
-          };
           auto-format = true;
         }
         {
@@ -163,11 +166,8 @@
           language-servers = [
             { name = "typescript-language-server"; except-features = [ "format" ]; }
             { name = "vscode-eslint-language-server"; }
+            "biome"
           ];
-          formatter = {
-            command = "biome";
-            args = [ "format" "--indent-style" "space" "--stdin-file-path" "file.tsx" ];
-          };
           auto-format = true;
         }
         {
@@ -175,11 +175,8 @@
           language-servers = [
             { name = "typescript-language-server"; except-features = [ "format" ]; }
             { name = "vscode-eslint-language-server"; }
+            "biome"
           ];
-          formatter = {
-            command = "biome";
-            args = [ "format" "--indent-style" "space" "--stdin-file-path" "file.ts" ];
-          };
           auto-format = true;
         }
       ];

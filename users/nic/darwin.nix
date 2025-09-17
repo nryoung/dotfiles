@@ -58,6 +58,7 @@ in
     jujutsu
     lazygit
     pkgs.awscli2
+    pkgs.biome
     pkgs.clang
     pkgs.direnv
     pkgs.docker
