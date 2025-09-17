@@ -111,6 +111,9 @@
           name = "javascript";
           language-servers = [
             { name = "typescript-language-server"; except-features = [ "format" ]; }
+            # unfortunately the following language server needs to be installed manually with whatever version of Node
+            # that the specific project is using so it gets the correct eslint plugins and config
+            { name = "vscode-eslint-language-server"; }
           ];
           auto-format = true;
         }
@@ -159,6 +162,7 @@
           name = "tsx";
           language-servers = [
             { name = "typescript-language-server"; except-features = [ "format" ]; }
+            { name = "vscode-eslint-language-server"; }
           ];
           formatter = {
             command = "biome";
@@ -170,6 +174,7 @@
           name = "typescript";
           language-servers = [
             { name = "typescript-language-server"; except-features = [ "format" ]; }
+            { name = "vscode-eslint-language-server"; }
           ];
           formatter = {
             command = "biome";
