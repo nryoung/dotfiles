@@ -39,6 +39,7 @@
     pkgs._1password-gui
     pkgs.calibre
     pkgs.clang
+    pkgs.cryptomator
     pkgs.direnv
     pkgs.glow
     pkgs.mediainfo
