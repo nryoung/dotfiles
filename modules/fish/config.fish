@@ -55,7 +55,7 @@ if status is-interactive
 
     # set newsboat alias
     if test (uname) = Linux
-        alias nb='newsboat --url-file=/notes/urls.newsboat'
+        alias nb='newsboat --url-file=/syncthing/config/app_configs/urls.newsboat'
     else
         alias nb='newsboat --url-file=/Volumes/config/app_configs/urls.newsboat'
     end
