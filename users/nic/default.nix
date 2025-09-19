@@ -37,6 +37,7 @@
     lazygit
     pkgs._1password-cli
     pkgs._1password-gui
+    pkgs.atuin
     pkgs.calibre
     pkgs.clang
     pkgs.cryptomator
