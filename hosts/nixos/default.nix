@@ -42,9 +42,13 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable COSMIC
+  # Enable the login manager
+  services.displayManager.cosmic-greeter.enable = true;
+  # Enable the COSMIC DE itself
+  services.desktopManager.cosmic.enable = true;
+  # Enable XWayland support in COSMIC
+  services.desktopManager.cosmic.xwayland.enable = true;
 
   # Enable tailscale
   services.tailscale.enable = true;
