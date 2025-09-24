@@ -94,6 +94,7 @@
       "alfred"
       "calibre"
       "cryptomator"
+      "dbeaver-community"
       "firefox@developer-edition"
       "font-fira-code"
       "font-symbols-only-nerd-font"
