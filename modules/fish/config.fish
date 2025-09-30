@@ -53,6 +53,9 @@ if status is-interactive
     # set lazygit aliases
     alias lg='lazygit'
 
+    # set kubectl aliases
+    alias k='kubectl'
+
     # set newsboat alias
     if test (uname) = Linux
         alias nb='newsboat --url-file=/syncthing/config/app_configs/urls.newsboat'
