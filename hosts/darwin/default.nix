@@ -100,6 +100,7 @@
       "font-symbols-only-nerd-font"
       "gifcapture"
       "hammerspoon"
+      "localsend"
       "orbstack"
       "rectangle-pro"
       # "shush"
