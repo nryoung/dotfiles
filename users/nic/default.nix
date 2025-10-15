@@ -42,10 +42,12 @@
     pkgs.clang
     pkgs.cryptomator
     pkgs.direnv
+    pkgs.exiftool
     pkgs.glow
     pkgs.mediainfo
     pkgs.nicotine-plus
     pkgs.nil
+    pkgs.papers
     pkgs.openmw
     pkgs.protonvpn-gui
     pkgs.qbittorrent
