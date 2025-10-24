@@ -44,6 +44,7 @@
     pkgs.direnv
     pkgs.exiftool
     pkgs.glow
+    pkgs.localsend
     pkgs.mediainfo
     pkgs.nicotine-plus
     pkgs.nil
