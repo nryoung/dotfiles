@@ -49,7 +49,7 @@
     pkgs.nicotine-plus
     pkgs.nil
     pkgs.papers
-    pkgs.openmw
+    # pkgs.openmw
     pkgs.protonvpn-gui
     pkgs.qbittorrent
     pkgs.rustup
