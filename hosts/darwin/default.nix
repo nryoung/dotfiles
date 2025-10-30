@@ -95,6 +95,7 @@
       "calibre"
       "cryptomator"
       "dbeaver-community"
+      "element"
       "firefox@developer-edition"
       "font-fira-code"
       "font-symbols-only-nerd-font"

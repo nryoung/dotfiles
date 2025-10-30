@@ -72,6 +72,7 @@ in
     pkgs.python313Packages.python-lsp-server
     pkgs.rubyPackages_3_4.solargraph
     pkgs.rustup
+    pkgs.terraform
     pkgs.zola
     nil
     ripgrep
