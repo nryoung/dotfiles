@@ -42,7 +42,9 @@
     pkgs.clang
     pkgs.cryptomator
     pkgs.direnv
+    pkgs.discord
     pkgs.exiftool
+    pkgs.fluffychat
     pkgs.glow
     pkgs.localsend
     pkgs.mediainfo
