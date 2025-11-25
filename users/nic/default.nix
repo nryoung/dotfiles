@@ -56,6 +56,7 @@
     pkgs.qbittorrent
     pkgs.rustup
     pkgs.signal-desktop
+    pkgs.slack
     pkgs.vlc
     pkgs.zola
     ripgrep
