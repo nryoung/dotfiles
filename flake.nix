@@ -18,6 +18,12 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # erosanix's flake to get protonvpn
+    erosanix = {
+      url = "github:emmanuelrosa/erosanix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -46,6 +52,21 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.nic = import ./users/nic;
+            }
+          ];
+        };
+        home-server = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          # > Our main nixos configuration file <
+          modules = [
+            ./hosts/home-server
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "bak";
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.nic = import ./users/nic/home-server.nix;
             }
           ];
         };
@@ -81,6 +102,15 @@
           # > Our main home-manager configuration file <
           modules = [
             ./users/nic
+          ];
+        };
+        "nic@home-server" = home-manager.lib.homeManagerConfiguration {
+          backupFileExtension = "bak";
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs; };
+          # > Our main home-manager configuration file <
+          modules = [
+            ./users/nic/home-server.nix
           ];
         };
         "NYG4@LMAC-XHQKGYJ-AG" = home-manager.lib.homeManagerConfiguration {
