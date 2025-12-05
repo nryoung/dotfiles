@@ -21,6 +21,12 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Allow certain ports through the firewall
+  networking.firewall.allowedTCPPorts = [
+    53317
+  ];
+
+
   # Set your time zone.
   time.timeZone = "America/Denver";
 

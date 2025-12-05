@@ -54,6 +54,7 @@
     # pkgs.openmw
     pkgs.protonvpn-gui
     pkgs.qbittorrent
+    pkgs.remmina
     pkgs.rustup
     pkgs.signal-desktop
     pkgs.slack
