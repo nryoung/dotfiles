@@ -123,9 +123,6 @@
     curl
     git
     jackett
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
     just
     tailscale
     wget
@@ -166,14 +163,6 @@
     "d /syncthing 1777 nic syncthing -"
     "Z /syncthing 1777 nic syncthing -"
   ];
-
-  # Jellyfin
-  # enable Jellyfin
-  services.jellyfin = {
-    enable = true;
-    group = "media";
-    openFirewall = true;
-  };
 
   # Jackett
   # enable Jackett, default is ok
