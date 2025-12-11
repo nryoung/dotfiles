@@ -9,6 +9,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/protonvpn.nix
+      ../../modules/qbittorrent.nix
     ];
 
   # Bootloader.
@@ -37,6 +38,7 @@
     443
     8080
     8081
+    8083
     53317
   ];
 
