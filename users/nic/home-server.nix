@@ -31,6 +31,7 @@
     jq
     lazygit
     pkgs.atuin
+    pkgs.btop
     pkgs.calibre
     pkgs.localsend
     pkgs.nicotine-plus
