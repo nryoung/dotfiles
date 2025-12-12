@@ -36,7 +36,6 @@
     pkgs.localsend
     pkgs.nicotine-plus
     pkgs.protonvpn-gui
-    pkgs.qbittorrent
     ripgrep
     starship
     yazi
