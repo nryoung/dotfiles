@@ -19,7 +19,7 @@
       "Preferences" = {
         "WebUI" = {
           "Enabled" = true;
-          "Port" = "8083";
+          "Port" = "8080";
           "Username" = "admin";
           "Password_PBKDF2" = "@ByteArray(gv8t9SdIz9N+J09wG+kUTQ==:ez/QBEM8e+/c4D6OVRnNcFyrHTSzIx+MK+WJ0uPP1hjeiUI3MD9KkIocHTi/I5O0UYF09Oxl0xuNsAWLY9LTKQ==)";
         };
