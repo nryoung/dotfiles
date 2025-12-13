@@ -104,10 +104,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -173,18 +169,6 @@
       PermitRootLogin = "no";
     };
   };
-
-  # Enable RDP
-  services.xrdp.enable = true;
-  # Use the GNOME Wayland session
-  services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
-  # XRDP needs the GNOME remote desktop backend to function
-  services.gnome.gnome-remote-desktop.enable = true;
-  # Open the default RDP port (3389)
-  services.xrdp.openFirewall = true;
-  # Disable autologin to avoid session conflicts
-  services.displayManager.autoLogin.enable = false;
-  services.getty.autologinUser = null;
 
   # Disable sleep, suspend and hibernate
   systemd = {

@@ -34,8 +34,6 @@
     pkgs.btop
     pkgs.calibre
     pkgs.localsend
-    pkgs.nicotine-plus
-    pkgs.protonvpn-gui
     ripgrep
     starship
     yazi
