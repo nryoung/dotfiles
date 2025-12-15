@@ -12,6 +12,7 @@
       ../../modules/qbittorrent.nix
       ../../modules/slskd.nix
       ../../modules/calibre-web.nix
+      ../../modules/audiobookshelf.nix
     ];
 
   # Bootloader.
