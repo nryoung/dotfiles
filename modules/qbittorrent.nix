@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }: {
   services.qbittorrent = {
     enable = true;
+    group = "media";
     serverConfig = {
       BitTorrent = {
         Session = {

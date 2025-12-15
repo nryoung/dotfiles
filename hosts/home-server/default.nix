@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../../modules/protonvpn.nix
       ../../modules/qbittorrent.nix
+      ../../modules/slskd.nix
     ];
 
   # Bootloader.
@@ -38,8 +39,7 @@
     443
     8080
     8081
-    8083
-    53317
+    50300
   ];
 
 
@@ -101,9 +101,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -142,9 +139,6 @@
     extraGroups = [ "networkmanager" "wheel" "media" ];
     packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
