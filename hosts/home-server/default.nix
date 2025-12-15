@@ -11,6 +11,7 @@
       ../../modules/protonvpn.nix
       ../../modules/qbittorrent.nix
       ../../modules/slskd.nix
+      ../../modules/calibre-web.nix
     ];
 
   # Bootloader.
@@ -39,6 +40,7 @@
     443
     8080
     8081
+    8082
     50300
   ];
 
