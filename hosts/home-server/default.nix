@@ -42,9 +42,36 @@
     8080
     8081
     8082
+    47984
+    47989
+    47990
+    48010
     50300
   ];
 
+  networking.firewall.allowedUDPPortRanges = [
+    { from = 47998; to = 48000; }
+    { from = 8000; to = 8010; }
+  ];
+
+  # Gnome
+  services.displayManager.gdm = {
+    enable = true;
+
+  };
+  services.desktopManager.gnome.enable = true;
+
+  # Enable RDP
+  services.xrdp.enable = true;
+  # Use the GNOME Wayland session
+  services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
+  # XRDP needs the GNOME remote desktop backend to function
+  services.gnome.gnome-remote-desktop.enable = true;
+  # Open the default RDP port (3389)
+  services.xrdp.openFirewall = true;
+  # Disable autologin to avoid session conflicts
+  services.displayManager.autoLogin.enable = false;
+  services.getty.autologinUser = null;
 
   # NVIDIA
   # Enable OpenGL
@@ -201,6 +228,20 @@
     "d /media 0775 nic media -"
     "Z /media 0775 nic media -"
   ];
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
