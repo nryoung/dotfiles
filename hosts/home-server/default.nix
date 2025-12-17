@@ -42,6 +42,7 @@
     8080
     8081
     8082
+    8083
     47984
     47989
     47990
@@ -155,9 +156,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define groups
   users.groups.media = { };

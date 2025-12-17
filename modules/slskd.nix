@@ -4,6 +4,7 @@
     domain = "10.0.0.99";
     environmentFile = "/home/nic/slskd.env";
     group = "media";
+    user = "nic";
     openFirewall = true;
     settings = {
       soulseek = {
