@@ -48,6 +48,7 @@
     pkgs.glow
     pkgs.localsend
     pkgs.mediainfo
+    pkgs.moonlight-qt
     pkgs.nicotine-plus
     pkgs.nil
     pkgs.papers
