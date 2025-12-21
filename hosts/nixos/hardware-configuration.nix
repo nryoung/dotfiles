@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
@@ -14,14 +15,16 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/8ef680f7-ac58-44b9-82ff-d759d09b9e5d";
+    {
+      device = "/dev/disk/by-uuid/8ef680f7-ac58-44b9-82ff-d759d09b9e5d";
       fsType = "ext4";
     };
 
   boot.initrd.luks.devices."luks-ec49c143-e5b8-419b-822b-ba59b22aca73".device = "/dev/disk/by-uuid/ec49c143-e5b8-419b-822b-ba59b22aca73";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/57AE-12ED";
+    {
+      device = "/dev/disk/by-uuid/57AE-12ED";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -37,4 +40,19 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
+
+  # GFX
+  hardware.graphics = {
+    # hardware.opengl until NixOS 24.05
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD (for HD Graphics starting Broadwell (2014) and newer)
+      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      libvdpau-va-gl
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 }
