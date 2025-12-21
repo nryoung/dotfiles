@@ -31,7 +31,7 @@
     jq
     lazygit
     pkgs.atuin
-    pkgs.btop
+    pkgs.bottom
     pkgs.calibre
     ripgrep
     starship
