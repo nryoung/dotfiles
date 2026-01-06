@@ -102,6 +102,7 @@
       "gifcapture"
       "hammerspoon"
       "localsend"
+      "moonlight"
       "orbstack"
       "rectangle-pro"
       # "shush"
