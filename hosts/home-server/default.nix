@@ -165,7 +165,7 @@
   users.users.nic = {
     isNormalUser = true;
     description = "nic";
-    extraGroups = [ "networkmanager" "wheel" "media" ];
+    extraGroups = [ "networkmanager" "wheel" "media" "syncthing" ];
     packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
   };
 
@@ -226,7 +226,17 @@
   systemd.tmpfiles.rules = [
     "d /media 0775 nic media -"
     "Z /media 0775 nic media -"
+    "d /syncthing 1777 nic syncthing -"
+    "Z /syncthing 1777 nic syncthing -"
   ];
+
+  # Syncthing
+  users.users.syncthing.extraGroups = [ "users" ];
+  systemd.services.syncthing.serviceConfig.UMask = "0007";
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
 
   # Steam
   programs.steam = {
