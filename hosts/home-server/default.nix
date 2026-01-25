@@ -44,6 +44,7 @@
     8081
     8082
     8083
+    8384
     47984
     47989
     47990
@@ -160,6 +161,7 @@
 
   # Define groups
   users.groups.media = { };
+  users.groups.syncthing = { };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nic = {
@@ -232,10 +234,16 @@
 
   # Syncthing
   users.users.syncthing.extraGroups = [ "users" ];
+  users.users.syncthing.group = "syncthing";
+  users.users.syncthing.isNormalUser = true;
   systemd.services.syncthing.serviceConfig.UMask = "0007";
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
+    guiAddress = "0.0.0.0:8384";
+    user = "nic";
+    group = "syncthing";
+    dataDir = "/syncthing";
   };
 
   # Steam
