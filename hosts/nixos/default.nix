@@ -172,10 +172,15 @@
 
   # Syncthing
   users.users.syncthing.extraGroups = [ "users" ];
+  users.users.syncthing.group = "syncthing";
+  users.users.syncthing.isNormalUser = true;
   systemd.services.syncthing.serviceConfig.UMask = "0007";
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
+    user = "nic";
+    group = "syncthing";
+    dataDir = "/syncthing";
   };
 
   # Steam
