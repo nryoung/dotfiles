@@ -21,8 +21,8 @@ in
   ];
 
   home = {
-    username = "NYG4";
-    homeDirectory = "/Users/NYG4";
+    username = "nyg4";
+    homeDirectory = "/Users/nyg4";
   };
 
   # Firefox from homebrew doesn't open with symlinks

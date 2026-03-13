@@ -91,6 +91,7 @@
       "zlib"
     ];
     casks = [
+      "1password"
       "alfred"
       "calibre"
       "cryptomator"
@@ -112,7 +113,6 @@
       "visual-studio-code"
       "vlc"
       "wezterm"
-      "zoom"
     ];
   };
 
