@@ -14,7 +14,7 @@ in
     ../../modules/fish
     ../../modules/git.nix
     ../../modules/helix
-    ../../modules/newsboat.nix
+    # ../../modules/newsboat.nix
     ../../modules/wezterm
     ../../modules/zsh.nix
     ../../modules/zellij
@@ -63,7 +63,6 @@ in
     pkgs.clang
     pkgs.direnv
     pkgs.docker
-    pkgs.devbox
     pkgs.glow
     pkgs.kubectl
     pkgs.kubernetes-helm

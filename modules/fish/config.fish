@@ -15,6 +15,8 @@ if status is-interactive
     export PATH="$HOME/.yarn/bin:$PATH"
     # for rust config
     export PATH="$HOME/.cargo/bin:$PATH"
+    # for go config
+    export PATH="$HOME/go/bin:$PATH"
 
     # set alias for reloading this config
     alias rlf='source ~/.config/fish/config.fish'
