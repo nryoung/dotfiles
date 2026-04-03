@@ -5,5 +5,5 @@ return {
   automatically_reload_config = true,
   enable_tab_bar = false,
   enable_wayland= false,
-  font = wezterm.font_with_fallback { 'FiraCode', 'FiraCode NFM' },
+  font = wezterm.font(wezterm.target_triple:find('darwin') and 'FiraCode NFM' or 'FiraCode'),
 }
