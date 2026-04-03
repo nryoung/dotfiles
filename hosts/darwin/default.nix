@@ -80,6 +80,9 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
+    taps = [
+      "satrik/togglemute"
+    ];
     brews = [
       "asdf"
       "bzip2"
@@ -110,6 +113,7 @@
       "orbstack"
       "rectangle-pro"
       # "shush"
+      "satrik/togglemute/togglemute"
       "signal"
       "slack"
       "syncthing-app"
@@ -121,4 +125,9 @@
 
   # Used for backwards compatibility
   system.stateVersion = 5;
+
+  # toggleMute is unsigned so Gatekeeper blocks it. Strip quarantine after homebrew installs it.
+  system.activationScripts.postActivation.text = lib.mkAfter ''
+    /usr/bin/xattr -dr com.apple.quarantine /Applications/toggleMute.app 2>/dev/null || true
+  '';
 }
