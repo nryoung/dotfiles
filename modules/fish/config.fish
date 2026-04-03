@@ -54,6 +54,10 @@ if status is-interactive
     # set lazygit aliases
     alias lg='lazygit'
 
+    # set kiro aliases
+    alias kiro='kiro-cli --tui'
+    alias okiro='/opt/homebrew/bin/kiro-cli'
+
     # set kubectl aliases
     alias k='kubectl'
 
