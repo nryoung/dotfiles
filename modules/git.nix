@@ -2,23 +2,19 @@
   programs.git = {
     enable = true;
 
-    userName = "Nic Young";
-    userEmail = "nic@nicyoung.dev";
-
-    aliases = {
-      co = "checkout";
-      ci = "commit";
-      st = "status";
-      br = "branch";
-      hist = "log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short";
-      type = "cat-file -t";
-      dump = "cat-file -p";
-    };
-
-    extraConfig = {
-      core = {
-        editor = "hx";
+    settings = {
+      user.name = "Nic Young";
+      user.email = "nic@nicyoung.dev";
+      alias = {
+        co = "checkout";
+        ci = "commit";
+        st = "status";
+        br = "branch";
+        hist = "log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short";
+        type = "cat-file -t";
+        dump = "cat-file -p";
       };
+      core.editor = "hx";
       credential.helper = "osxkeychain";
       diff.colorMoved = "default";
       init.defaultBranch = "main";
@@ -28,18 +24,19 @@
       fetch.prune = true;
     };
 
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        light = false;
-        side-by-side = true;
-      };
-    };
-
     includes = [{
       condition = "gitdir:~/Workspace/";
       path = "~/.work_gitconfig";
     }];
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      light = false;
+      side-by-side = true;
+    };
   };
 }

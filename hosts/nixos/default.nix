@@ -115,7 +115,7 @@
       isNormalUser = true;
       description = "Nic";
       extraGroups = [ "networkmanager" "wheel" "media" "syncthing" ];
-      packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
+      packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };
   };
 

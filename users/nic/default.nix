@@ -79,6 +79,7 @@
   programs.ripgrep.enable = true;
   programs.starship.enable = true;
   programs.yazi.enable = true;
+  programs.yazi.shellWrapperName = "yy";
   programs.zoxide.enable = true;
 
   # switch touchpad scrolling to reverse
