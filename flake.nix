@@ -75,7 +75,7 @@
       # nix-darwin configuration entrypoint
       # Available through 'darwin-rebuild --flake .#your-hostname'
       darwinConfigurations = {
-        LMAC-R66QLYD-AG = nix-darwin.lib.darwinSystem {
+        LMAC-XHQKGYJ-AG = nix-darwin.lib.darwinSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/darwin
@@ -113,7 +113,7 @@
             ./users/nic/home-server.nix
           ];
         };
-        "nyg4@LMAC-R66QLYD-AG" = home-manager.lib.homeManagerConfiguration {
+        "nyg4@LMAC-XHQKGYJ-AG" = home-manager.lib.homeManagerConfiguration {
           backupFileExtension = "bak";
           pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs; };
