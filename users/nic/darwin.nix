@@ -18,6 +18,7 @@ in
     ../../modules/wezterm
     ../../modules/zsh.nix
     ../../modules/zellij
+    ../../modules/hammerspoon
   ];
 
   home = {
