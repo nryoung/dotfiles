@@ -104,7 +104,6 @@
       "gifcapture"
       "hammerspoon"
       "insomnia"
-      "kiro"
       "kiro-cli"
       "localsend"
       "moonlight"
