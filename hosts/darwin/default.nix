@@ -99,6 +99,7 @@
       "alfred"
       "calibre"
       "cryptomator"
+      "discord"
       "dbeaver-community"
       "element"
       "firefox@developer-edition"
