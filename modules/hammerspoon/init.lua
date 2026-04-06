@@ -1,6 +1,6 @@
 local send_escape = false
 local last_modifiers = {}
-local cancel_timer = hs.timer.delayed.new(0.075, function() send_escape = false end)
+local cancel_timer = hs.timer.delayed.new(0.115, function() send_escape = false end)
 
 local ctrl_tap = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, function(e)
   local flags = e:getFlags()
