@@ -9,8 +9,8 @@
       marksman
       nil
       nixpkgs-fmt
-      nodePackages.prettier
-      nodePackages.typescript-language-server
+      prettier
+      typescript-language-server
       rust-analyzer
       typescript
     ];
