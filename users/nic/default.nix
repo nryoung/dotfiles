@@ -52,6 +52,7 @@
     pkgs.nicotine-plus
     pkgs.nil
     pkgs.papers
+    pkgs.obsidian
     # pkgs.openmw
     pkgs.protonvpn-gui
     pkgs.qbittorrent
