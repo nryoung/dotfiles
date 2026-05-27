@@ -11,6 +11,8 @@
     ../../modules/git.nix
     ../../modules/helix
     ../../modules/newsboat.nix
+    ../../modules/niri.nix
+    ../../modules/noctalia.nix
     ../../modules/wezterm
     ../../modules/zellij
   ];
@@ -31,6 +33,7 @@
     firefox
     fish
     fzf
+    fuzzel
     gh
     git
     jq
@@ -44,6 +47,7 @@
     pkgs.direnv
     pkgs.discord
     pkgs.exiftool
+    pkgs.fastfetch
     pkgs.fluffychat
     pkgs.glow
     pkgs.localsend
@@ -54,7 +58,7 @@
     pkgs.papers
     pkgs.obsidian
     # pkgs.openmw
-    pkgs.protonvpn-gui
+    pkgs.proton-vpn
     pkgs.qbittorrent
     pkgs.remmina
     pkgs.rustup

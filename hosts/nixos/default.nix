@@ -45,20 +45,29 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # greetd with tuigreet (minimal TTY login, replaces cosmic-greeter)
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+        user = "greeter";
+      };
+    };
+  };
 
-  # Enable COSMIC
-  # Enable the login manager
-  services.displayManager.cosmic-greeter.enable = true;
-  # Enable the COSMIC DE itself
-  services.desktopManager.cosmic.enable = true;
-  # Enable XWayland support in COSMIC
-  services.desktopManager.cosmic.xwayland.enable = true;
+  # niri wayland compositor
+  programs.niri.enable = true;
+
+  # XDG portals for Wayland
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = "*";
+  };
 
   # Enable tailscale
   services.tailscale.enable = true;
-
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -78,6 +87,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  # Services required by noctalia widgets
+  services.upower.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   nixpkgs = {
     overlays = [
@@ -126,6 +140,8 @@
     just
     tailscale
     wget
+    # xwayland compatibility for niri
+    xwayland-satellite
   ];
 
   environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" (with pkgs.gst_all_1; [
