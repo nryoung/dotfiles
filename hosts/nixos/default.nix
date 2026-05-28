@@ -59,13 +59,6 @@
   # niri wayland compositor
   programs.niri.enable = true;
 
-  # XDG portals for Wayland
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-    config.common.default = "*";
-  };
-
   # Enable tailscale
   services.tailscale.enable = true;
 

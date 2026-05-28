@@ -27,7 +27,7 @@
 
     # niri wayland compositor
     niri-flake = {
-      url = "github:sodiboo/niri-flake";
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -59,7 +59,7 @@
           # > Our main nixos configuration file <
           modules = [
             ./hosts/nixos
-            niri-flake.nixosModules.niri
+            niri-flake.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "bak";
