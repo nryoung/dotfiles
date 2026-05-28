@@ -3,28 +3,32 @@
   imports = [ inputs.niri-flake.homeModules.default ];
 
   wayland.windowManager.niri = {
+    enable = true;
     settings = {
+
       input = {
         keyboard.xkb.layout = "us";
         touchpad = {
-          tap = true;
-          natural-scroll = false;
+          tap._args = [ ];
         };
       };
 
-      outputs._children = [
+      output = [
         {
           _args = [ "eDP-1" ];
-          scale = 1.0;
+          scale = 2.0;
         }
       ];
 
+      screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
+
       layout = {
         gaps = 8;
-        border._props = {
+        focus-ring = {
+          on._args = [ ];
           width = 2;
-          active-color = "#89b4fa";
-          inactive-color = "#313244";
+          active-color._args = [ "#89b4fa" ];
+          inactive-color._args = [ "#313244" ];
         };
         preset-column-widths._children = [
           { proportion = 0.33333; }
@@ -32,76 +36,76 @@
           { proportion = 0.66667; }
           { proportion = 1.0; }
         ];
-        default-column-width._props.proportion = 0.5;
+        default-column-width = { };
       };
 
-      cursor = {
-        theme = "Adwaita";
-        size = 24;
-      };
-
-      spawn-at-startup._children = [
+      spawn-at-startup = [
         { _args = [ "noctalia-shell" ]; }
         { _args = [ "xwayland-satellite" ]; }
       ];
 
+      window-rule = [
+        {
+          geometry-corner-radius = 10;
+          clip-to-geometry = true;
+        }
+      ];
+
       binds = {
-        "Mod+Return".action.spawn = [ "foot" ];
-        "Mod+D".action.spawn = [ "fuzzel" ];
-        "Mod+Q".action.close-window = { };
-        "Mod+Shift+E".action.quit = { };
-        "Alt+Tab".action.toggle-overview = { };
-        "Mod+W".action.toggle-overview = { };
+        "Mod+Return".spawn = "foot";
+        "Mod+D".spawn = "fuzzel";
+        "Mod+Q"."close-window" = [ ];
+        "Mod+Shift+E".quit = [ ];
+        "Alt+Tab"."toggle-overview" = [ ];
+        "Mod+W"."toggle-overview" = [ ];
 
-        "Mod+H".action.focus-column-left = { };
-        "Mod+L".action.focus-column-right = { };
-        "Mod+J".action.focus-window-down = { };
-        "Mod+K".action.focus-window-up = { };
-        "Mod+Left".action.focus-column-left = { };
-        "Mod+Right".action.focus-column-right = { };
-        "Mod+Down".action.focus-window-down = { };
-        "Mod+Up".action.focus-window-up = { };
+        "Mod+H"."focus-column-left" = [ ];
+        "Mod+L"."focus-column-right" = [ ];
+        "Mod+J"."focus-window-down" = [ ];
+        "Mod+K"."focus-window-up" = [ ];
+        "Mod+Left"."focus-column-left" = [ ];
+        "Mod+Right"."focus-column-right" = [ ];
+        "Mod+Down"."focus-workspace-down" = [ ];
+        "Mod+Up"."focus-workspace-up" = [ ];
 
-        "Mod+Shift+H".action.move-column-left = { };
-        "Mod+Shift+L".action.move-column-right = { };
-        "Mod+Shift+J".action.move-window-down = { };
-        "Mod+Shift+K".action.move-window-up = { };
+        "Mod+Shift+H"."move-column-left" = [ ];
+        "Mod+Shift+L"."move-column-right" = [ ];
+        "Mod+Shift+J"."move-window-down" = [ ];
+        "Mod+Shift+K"."move-window-up" = [ ];
 
-        "Mod+1".action.focus-workspace._args = [ 1 ];
-        "Mod+2".action.focus-workspace._args = [ 2 ];
-        "Mod+3".action.focus-workspace._args = [ 3 ];
-        "Mod+4".action.focus-workspace._args = [ 4 ];
-        "Mod+5".action.focus-workspace._args = [ 5 ];
+        "Mod+1"."focus-workspace" = 1;
+        "Mod+2"."focus-workspace" = 2;
+        "Mod+3"."focus-workspace" = 3;
+        "Mod+4"."focus-workspace" = 4;
+        "Mod+5"."focus-workspace" = 5;
 
-        "Mod+Shift+1".action.move-column-to-workspace._args = [ 1 ];
-        "Mod+Shift+2".action.move-column-to-workspace._args = [ 2 ];
-        "Mod+Shift+3".action.move-column-to-workspace._args = [ 3 ];
-        "Mod+Shift+4".action.move-column-to-workspace._args = [ 4 ];
-        "Mod+Shift+5".action.move-column-to-workspace._args = [ 5 ];
+        "Mod+Shift+1"."move-window-to-workspace" = 1;
+        "Mod+Shift+2"."move-window-to-workspace" = 2;
+        "Mod+Shift+3"."move-window-to-workspace" = 3;
+        "Mod+Shift+4"."move-window-to-workspace" = 4;
+        "Mod+Shift+5"."move-window-to-workspace" = 5;
 
-        "Mod+F".action.fullscreen-window = { };
-        "Mod+R".action.switch-preset-column-width = { };
-        "Mod+Shift+R".action.reset-window-height = { };
-        "Mod+Minus".action.set-column-width._args = [ "-10%" ];
-        "Mod+Equal".action.set-column-width._args = [ "+10%" ];
-        "Mod+Shift+Minus".action.set-window-height._args = [ "-10%" ];
-        "Mod+Shift+Equal".action.set-window-height._args = [ "+10%" ];
+        "Mod+F"."fullscreen-window" = [ ];
+        "Mod+R"."switch-preset-column-width" = [ ];
+        "Mod+Shift+R"."reset-window-height" = [ ];
+        "Mod+Minus"."set-column-width" = "-10%";
+        "Mod+Equal"."set-column-width" = "+10%";
+        "Mod+Shift+Minus"."set-window-height" = "-10%";
+        "Mod+Shift+Equal"."set-window-height" = "+10%";
 
-        "Print".action.screenshot = { };
-        "Mod+Shift+S".action.screenshot-screen = { };
+        "Print".screenshot = [ ];
+        "Mod+Shift+S"."screenshot-screen" = [ ];
 
-        "XF86MonBrightnessUp".action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ];
-        "XF86MonBrightnessDown".action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ];
-        "XF86AudioRaiseVolume".action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "increase" ];
-        "XF86AudioLowerVolume".action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "decrease" ];
-        "XF86AudioMute".action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteOutput" ];
-        "XF86AudioMicMute".action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteInput" ];
-        "XF86AudioPlay".action.spawn = [ "noctalia-shell" "ipc" "call" "media" "togglePlaying" ];
-        "XF86AudioPrev".action.spawn = [ "noctalia-shell" "ipc" "call" "media" "previous" ];
-        "XF86AudioNext".action.spawn = [ "noctalia-shell" "ipc" "call" "media" "next" ];
+        "XF86MonBrightnessUp"."spawn-sh" = "noctalia-shell ipc call brightness increase";
+        "XF86MonBrightnessDown"."spawn-sh" = "noctalia-shell ipc call brightness decrease";
+        "XF86AudioRaiseVolume"."spawn-sh" = "noctalia-shell ipc call volume increase";
+        "XF86AudioLowerVolume"."spawn-sh" = "noctalia-shell ipc call volume decrease";
+        "XF86AudioMute"."spawn-sh" = "noctalia-shell ipc call volume muteOutput";
+        "XF86AudioMicMute"."spawn-sh" = "noctalia-shell ipc call volume muteInput";
+        "XF86AudioPlay"."spawn-sh" = "noctalia-shell ipc call media togglePlaying";
+        "XF86AudioPrev"."spawn-sh" = "noctalia-shell ipc call media previous";
+        "XF86AudioNext"."spawn-sh" = "noctalia-shell ipc call media next";
       };
-
-      animations.enable = true;
     };
   };
 }
