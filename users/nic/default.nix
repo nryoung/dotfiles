@@ -55,6 +55,7 @@
     pkgs.moonlight-qt
     pkgs.nicotine-plus
     pkgs.nil
+    pkgs.nordzy-cursor-theme
     pkgs.papers
     pkgs.obsidian
     # pkgs.openmw

@@ -108,6 +108,12 @@
         "XF86AudioPrev"."spawn-sh" = "noctalia-shell ipc call media previous";
         "XF86AudioNext"."spawn-sh" = "noctalia-shell ipc call media next";
       };
+
+      cursor = {
+        xcursor-theme = [ "Nordzy-cursors" ];
+        xcursor-size = [ 24 ];
+        hide-when-typing = true;
+      };
     };
   };
 }
