@@ -54,8 +54,11 @@
       ];
 
       binds = {
-        "Mod+Return".spawn = "foot";
-        "Mod+D".spawn = "fuzzel";
+        "Mod+Return".spawn = "wezterm";
+        "Mod+D"."spawn-sh" = "noctalia-shell ipc call launcher toggle";
+        "Mod+C"."spawn-sh" = "noctalia-shell ipc call controlCenter toggle";
+        "Mod+S"."spawn-sh" = "noctalia-shell ipc call settings toggle";
+        "Mod+P"."spawn-sh" = "noctalia-shell ipc call sessionMenu toggle";
         "Mod+Q"."close-window" = [ ];
         "Mod+Shift+E".quit = [ ];
         "Alt+Tab"."toggle-overview" = [ ];
@@ -113,6 +116,9 @@
         xcursor-theme = [ "Nordzy-cursors" ];
         xcursor-size = [ 24 ];
         hide-when-typing = true;
+      };
+      switch-events = {
+        lid-close.spawn = [ "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend" ];
       };
     };
   };
