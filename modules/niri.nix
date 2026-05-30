@@ -53,6 +53,15 @@
         }
       ];
 
+      layer-rule = [
+        {
+          match = {
+            _props.namespace._raw = ''r#"^noctalia-overview.*"#'';
+          };
+          place-within-backdrop = true;
+        }
+      ];
+
       binds = {
         "Mod+Return".spawn = "wezterm";
         "Mod+D"."spawn-sh" = "noctalia-shell ipc call launcher toggle";
