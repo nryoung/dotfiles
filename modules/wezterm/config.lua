@@ -4,7 +4,8 @@ return {
   color_scheme = 'tokyonight',
   automatically_reload_config = true,
   enable_tab_bar = false,
-  enable_wayland= false,
+  enable_wayland= true,
   font = wezterm.font(wezterm.target_triple:find('darwin') and 'Fira Code' or 'FiraCode'),
   set_environment_variables = { TERM = "wezterm" },
+  window_background_opacity = 0.90
 }

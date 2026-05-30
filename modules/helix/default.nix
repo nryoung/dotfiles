@@ -15,8 +15,16 @@
       typescript
     ];
 
+    themes = {
+
+      tokyonight_transparent = {
+        "inherits" = "tokyonight";
+        "ui.background" = { };
+      };
+    };
+
     settings = {
-      theme = "tokyonight";
+      theme = "tokyonight_transparent";
 
       editor = {
         color-modes = true;
@@ -76,8 +84,6 @@
         };
       };
     };
-
-
 
     languages = {
       language-server.rust-analyzer.config.check = {

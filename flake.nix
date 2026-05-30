@@ -24,6 +24,18 @@
       url = "github:emmanuelrosa/erosanix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # niri wayland compositor
+    niri-flake = {
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # noctalia desktop shell
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -31,6 +43,8 @@
     , nixpkgs
     , home-manager
     , nix-darwin
+    , niri-flake
+    , noctalia
     , ...
     } @ inputs:
     let
@@ -45,6 +59,7 @@
           # > Our main nixos configuration file <
           modules = [
             ./hosts/nixos
+            niri-flake.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "bak";
