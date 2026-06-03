@@ -69,6 +69,7 @@ in
     pkgs.kubernetes-helm
     pkgs.nil
     pkgs.podman
+    pkgs.postgresql
     pkgs.python313Packages.python-lsp-server
     pkgs.rubyPackages_3_4.solargraph
     pkgs.rustup

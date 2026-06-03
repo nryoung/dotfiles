@@ -1,6 +1,11 @@
 {
   description = "Nic Young's nix config";
 
+  nixConfig = {
+    extra-substituters = "https://nixpkgs-terraform.cachix.org";
+    extra-trusted-public-keys = "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw=";
+  };
+
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
