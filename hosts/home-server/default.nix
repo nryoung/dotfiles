@@ -13,6 +13,8 @@
       ../../modules/slskd.nix
       ../../modules/calibre-web.nix
       ../../modules/audiobookshelf.nix
+      ../../modules/prowlarr.nix
+      ../../modules/cross-seed.nix
     ];
 
   # Bootloader.
@@ -40,6 +42,7 @@
   networking.firewall.allowedTCPPorts = [
     80
     443
+    2468
     8080
     8081
     8082
@@ -230,6 +233,7 @@
     "Z /media 0775 nic media -"
     "d /syncthing 1777 nic syncthing -"
     "Z /syncthing 1777 nic syncthing -"
+    "d /cross-seeds 0775 nic media -"
   ];
 
   # Syncthing

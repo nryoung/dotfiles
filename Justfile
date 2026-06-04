@@ -10,7 +10,7 @@ switch-darwin: git-add
   NIXPKGS_ALLOW_UNFREE=1 sudo darwin-rebuild switch --impure --flake .#LMAC-XHQKGYJ-AG
 
 update: git-add
-  nix flake update
+  nix --extra-experimental-features 'nix-command flakes' flake update
 
 clean:
   sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
