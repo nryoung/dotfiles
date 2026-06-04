@@ -33,6 +33,7 @@
     pkgs.atuin
     pkgs.bottom
     pkgs.calibre
+    pkgs.localsend
     ripgrep
     starship
     yazi
