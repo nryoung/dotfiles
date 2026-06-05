@@ -4,7 +4,7 @@
     user = "nic";
     group = "media";
     settings = {
-      dataDirs = [ "/media" ];
+      dataDirs = [ "/media/Movies" "/media/Shows" "/media/Music" "/media/Books" ];
       linkDirs = [ "/cross-seeds" ];
       linkType = "hardlink";
       action = "inject";
