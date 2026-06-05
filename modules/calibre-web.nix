@@ -9,7 +9,7 @@
       port = 8082;
     };
     options = {
-      calibreLibrary = /media/Books;
+      calibreLibrary = "/media/Books";
       enableBookUploading = true;
     };
     group = "media";
