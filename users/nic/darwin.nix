@@ -75,6 +75,7 @@ in
     pkgs.rustup
     pkgs.terraform
     pkgs.zola
+    pkgs.aider-chat
     nil
     ripgrep
     starship

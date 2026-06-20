@@ -56,6 +56,12 @@ if status is-interactive
 
     # set kiro aliases
     alias kiro='kiro-cli --tui'
+    # Ollama API for aider
+    export OLLAMA_API_BASE="http://10.0.0.99:11434"
+
+    # aider alias for local LLM
+    alias ai='aider --model ollama_chat/gemma3:12b'
+
     alias okiro='/opt/homebrew/bin/kiro-cli'
 
     # set kubectl aliases

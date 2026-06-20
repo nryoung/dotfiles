@@ -2,8 +2,8 @@
   description = "Nic Young's nix config";
 
   nixConfig = {
-    extra-substituters = "https://nixpkgs-terraform.cachix.org";
-    extra-trusted-public-keys = "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw=";
+    extra-substituters = "https://nixpkgs-terraform.cachix.org https://cuda-maintainers.cachix.org";
+    extra-trusted-public-keys = "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw= cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=";
   };
 
   inputs = {

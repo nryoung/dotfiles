@@ -67,6 +67,7 @@
     pkgs.slack
     pkgs.vlc
     pkgs.zola
+    pkgs.aider-chat
     ripgrep
     starship
     wezterm

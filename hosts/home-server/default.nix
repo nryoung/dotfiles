@@ -15,6 +15,7 @@
       ../../modules/audiobookshelf.nix
       ../../modules/prowlarr.nix
       ../../modules/cross-seed.nix
+      ../../modules/ollama.nix
     ];
 
   # Bootloader.
@@ -53,6 +54,8 @@
     47990
     48010
     50300
+    11434
+    8085
   ];
 
   networking.firewall.allowedUDPPortRanges = [
