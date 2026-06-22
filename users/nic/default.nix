@@ -15,6 +15,7 @@
     ../../modules/noctalia.nix
     ../../modules/wezterm
     ../../modules/zellij
+    ../../modules/opencode.nix
   ];
 
   home = {
@@ -67,7 +68,7 @@
     pkgs.slack
     pkgs.vlc
     pkgs.zola
-    pkgs.aider-chat
+    pkgs.opencode
     ripgrep
     starship
     wezterm

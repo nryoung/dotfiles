@@ -55,7 +55,6 @@
     48010
     50300
     11434
-    8085
   ];
 
   networking.firewall.allowedUDPPortRanges = [

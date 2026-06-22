@@ -19,6 +19,7 @@ in
     ../../modules/zsh.nix
     ../../modules/zellij
     ../../modules/hammerspoon
+    ../../modules/opencode.nix
   ];
 
   home = {
@@ -75,7 +76,7 @@ in
     pkgs.rustup
     pkgs.terraform
     pkgs.zola
-    pkgs.aider-chat
+    pkgs.opencode
     nil
     ripgrep
     starship
