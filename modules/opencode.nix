@@ -2,7 +2,7 @@
   home.file.".config/opencode/opencode.json".text = builtins.toJSON {
     "$schema" = "https://opencode.ai/config.json";
     instructions = [ "~/.claude/skills/dev-workflow/SKILL.md" ];
-    model = "ollama/qwen3:8b";
+    model = "ollama/hf.co/unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL";
     provider = {
       ollama = {
         npm = "@ai-sdk/openai-compatible";
@@ -15,6 +15,7 @@
           "qwen2.5-coder:14b" = { name = "Qwen2.5 Coder 14B"; };
           "qwen3:8b" = { name = "Qwen3 8B"; };
           "gemma4:12b" = { name = "Gemma 4 12B"; };
+          "hf.co/unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL" = { name = "Gemma 4 12B QAT"; };
         };
       };
     };
