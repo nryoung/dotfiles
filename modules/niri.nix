@@ -42,21 +42,31 @@
       };
 
       spawn-at-startup = [
-        { _args = [ "noctalia-shell" ]; }
+        { _args = [ "noctalia" ]; }
         { _args = [ "xwayland-satellite" ]; }
       ];
 
       window-rule = [
         {
-          geometry-corner-radius = 10;
+          geometry-corner-radius = 20;
           clip-to-geometry = true;
+          match = {
+            _props.app-id = "dev.noctalia.Noctalia.Settings";
+          };
+          open-floating = true;
+          default-column-width = {
+            fixed = 1080;
+          };
+          default-window-height = {
+            fixed = 920;
+          };
         }
       ];
 
       layer-rule = [
         {
           match = {
-            _props.namespace._raw = ''r#"^noctalia-overview.*"#'';
+            _props.namespace = "^noctalia-backdrop";
           };
           place-within-backdrop = true;
         }
@@ -64,10 +74,11 @@
 
       binds = {
         "Mod+Return".spawn = "wezterm";
-        "Mod+D"."spawn-sh" = "noctalia-shell ipc call launcher toggle";
-        "Mod+C"."spawn-sh" = "noctalia-shell ipc call controlCenter toggle";
-        "Mod+S"."spawn-sh" = "noctalia-shell ipc call settings toggle";
-        "Mod+P"."spawn-sh" = "noctalia-shell ipc call sessionMenu toggle";
+        "Mod+Space"."spawn-sh" = "noctalia msg panel-toggle launcher";
+        "Mod+C"."spawn-sh" = "noctalia msg panel-toggle control-center";
+        "Mod+Comma"."spawn-sh" = "noctalia msg settings-toggle";
+        "Mod+P"."spawn-sh" = "noctalia msg panel-toggle session";
+        "Mod+V"."spawn-sh" = "noctalia msg panel-toggle clipboard";
         "Mod+Q"."close-window" = [ ];
         "Mod+Shift+E".quit = [ ];
         "Alt+Tab"."toggle-overview" = [ ];
@@ -110,15 +121,15 @@
         "Print".screenshot = [ ];
         "Mod+Shift+S"."screenshot-screen" = [ ];
 
-        "XF86MonBrightnessUp"."spawn-sh" = "noctalia-shell ipc call brightness increase";
-        "XF86MonBrightnessDown"."spawn-sh" = "noctalia-shell ipc call brightness decrease";
-        "XF86AudioRaiseVolume"."spawn-sh" = "noctalia-shell ipc call volume increase";
-        "XF86AudioLowerVolume"."spawn-sh" = "noctalia-shell ipc call volume decrease";
-        "XF86AudioMute"."spawn-sh" = "noctalia-shell ipc call volume muteOutput";
-        "XF86AudioMicMute"."spawn-sh" = "noctalia-shell ipc call volume muteInput";
-        "XF86AudioPlay"."spawn-sh" = "noctalia-shell ipc call media togglePlaying";
-        "XF86AudioPrev"."spawn-sh" = "noctalia-shell ipc call media previous";
-        "XF86AudioNext"."spawn-sh" = "noctalia-shell ipc call media next";
+        "XF86MonBrightnessUp"."spawn-sh" = "noctalia msg brightness-up";
+        "XF86MonBrightnessDown"."spawn-sh" = "noctalia msg brightness-down";
+        "XF86AudioRaiseVolume"."spawn-sh" = "noctalia msg volume-up";
+        "XF86AudioLowerVolume"."spawn-sh" = "noctalia msg volume-down";
+        "XF86AudioMute"."spawn-sh" = "noctalia msg volume-mute";
+        "XF86AudioMicMute"."spawn-sh" = "noctalia msg volume muteInput";
+        "XF86AudioPlay"."spawn-sh" = "noctalia msg media togglePlaying";
+        "XF86AudioPrev"."spawn-sh" = "noctalia msg media previous";
+        "XF86AudioNext"."spawn-sh" = "noctalia msg media next";
       };
 
       cursor = {
@@ -127,7 +138,7 @@
         hide-when-typing = true;
       };
       switch-events = {
-        lid-close.spawn = [ "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend" ];
+        lid-close.spawn = [ "noctalia" "msg" "screen-lock" ];
       };
     };
   };

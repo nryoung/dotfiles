@@ -1,11 +1,5 @@
 {
   description = "Nic Young's nix config";
-
-  nixConfig = {
-    extra-substituters = "https://nixpkgs-terraform.cachix.org https://cuda-maintainers.cachix.org";
-    extra-trusted-public-keys = "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw= cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=";
-  };
-
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -38,8 +32,8 @@
 
     # noctalia desktop shell
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:noctalia-dev/noctalia";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -148,4 +142,8 @@
         };
       };
     };
+  nixConfig = {
+    extra-substituters = [ "https://noctalia.cachix.org" "https://nixpkgs-terraform.cachix.org" "https://cuda-maintainers.cachix.org" ];
+    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw=" "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=" ];
+  };
 }
