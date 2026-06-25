@@ -138,7 +138,7 @@
         hide-when-typing = true;
       };
       switch-events = {
-        lid-close.spawn = [ "noctalia" "msg" "screen-lock" ];
+        lid-close.spawn = [ "noctalia" "msg" "session" "lock-and-suspend" ];
       };
     };
   };
