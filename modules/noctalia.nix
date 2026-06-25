@@ -34,7 +34,6 @@
       idle = {
         behavior = {
           lock = {
-
             timeout = 600; # 10 min
             command = "noctalia:session lock";
             enabled = true;
@@ -46,6 +45,11 @@
             enabled = true;
           };
         };
+      };
+      backdrop = {
+        enabled = true;
+        blur_intensity = 0.5;
+        tint_intensity = 0.3;
       };
     };
   };
