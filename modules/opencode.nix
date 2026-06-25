@@ -3,6 +3,7 @@
     "$schema" = "https://opencode.ai/config.json";
     instructions = [ "~/.claude/skills/dev-workflow/SKILL.md" ];
     model = "ollama/hf.co/unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL";
+    plugin = [ "context-mode" ];
     provider = {
       ollama = {
         npm = "@ai-sdk/openai-compatible";

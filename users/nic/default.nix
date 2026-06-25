@@ -43,6 +43,7 @@
     pkgs._1password-cli
     pkgs._1password-gui
     pkgs.atuin
+    pkgs.bun
     pkgs.calibre
     pkgs.clang
     pkgs.cryptomator
