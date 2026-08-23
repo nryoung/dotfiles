@@ -45,6 +45,7 @@
     pkgs.atuin
     pkgs.bun
     pkgs.calibre
+    pkgs.ungoogled-chromium
     pkgs.clang
     pkgs.cryptomator
     pkgs.direnv
