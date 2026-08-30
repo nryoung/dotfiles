@@ -233,11 +233,11 @@
 
   # Create directories for services like jellyfin, syncthing, etc...
   systemd.tmpfiles.rules = [
-    "d /media 0775 nic media -"
-    "Z /media 0775 nic media -"
+    "d /media 0777 nic media -"
+    "Z /media 0777 nic media -"
     "d /syncthing 1777 nic syncthing -"
     "Z /syncthing 1777 nic syncthing -"
-    "d /cross-seeds 0775 nic media -"
+    "d /cross-seeds 0777 nic media -"
   ];
 
   # Syncthing
