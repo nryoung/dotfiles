@@ -62,7 +62,6 @@ in
     pkgs.atuin
     pkgs.awscli2
     pkgs.biome
-    pkgs.clang
     pkgs.direnv
     pkgs.docker
     pkgs.glow
@@ -71,6 +70,7 @@ in
     pkgs.nil
     pkgs.podman
     pkgs.postgresql
+    pkgs.pre-commit
     pkgs.python313Packages.python-lsp-server
     pkgs.rubyPackages_3_4.solargraph
     pkgs.rustup

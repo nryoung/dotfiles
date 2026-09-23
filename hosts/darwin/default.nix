@@ -88,6 +88,7 @@
       "bzip2"
       "go-task"
       "libffi"
+      "libyaml"
       "mermaid-cli"
       "node"
       "opensearch"
