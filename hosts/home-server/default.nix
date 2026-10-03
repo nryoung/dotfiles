@@ -65,7 +65,6 @@
   # Gnome
   services.displayManager.gdm = {
     enable = true;
-
   };
   services.desktopManager.gnome.enable = true;
 
@@ -77,9 +76,10 @@
   services.gnome.gnome-remote-desktop.enable = true;
   # Open the default RDP port (3389)
   services.xrdp.openFirewall = true;
-  # Disable autologin to avoid session conflicts
-  services.displayManager.autoLogin.enable = false;
-  services.getty.autologinUser = null;
+
+  # Autologin for Sunshine to start on boot
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "nic";
 
   # NVIDIA
   # Enable OpenGL
@@ -168,7 +168,7 @@
   users.groups.media = { };
   users.groups.syncthing = { };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with 'passwd'.
   users.users.nic = {
     isNormalUser = true;
     description = "nic";
@@ -189,6 +189,17 @@
     jellyfin-web
     jellyfin-ffmpeg
     just
+    (retroarch.withCores (cores: with cores; [
+      nestopia
+      snes9x
+      mupen64plus
+      beetle-psx-hw
+      pcsx2
+      dolphin
+      vice-x64
+      dosbox-pure
+    ]))
+    rpcs3
   ];
 
   # Enable the OpenSSH daemon.
