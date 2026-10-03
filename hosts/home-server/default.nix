@@ -200,6 +200,8 @@
       dosbox-pure
     ]))
     rpcs3
+    pegasus-frontend
+    skyscraper
   ];
 
   # Enable the OpenSSH daemon.
