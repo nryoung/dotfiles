@@ -9,6 +9,8 @@
     ../../modules/fish
     ../../modules/git.nix
     ../../modules/helix
+    ../../modules/pegasus
+    ../../modules/retroarch
   ];
 
   home = {

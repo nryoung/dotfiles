@@ -1,0 +1,5 @@
+collection: Nintendo 64
+shortname: n64
+extensions: n64, z64, v64, zip, 7z
+directory: /media/Games/n64
+launch: retroarch -L mupen64plus_next_libretro {file.path}

@@ -1,0 +1,5 @@
+collection: Nintendo GameCube
+shortname: gc
+extensions: iso, gcm, gcz, rvz, ciso
+directory: /media/Games/gc
+launch: retroarch -L dolphin_libretro {file.path}

@@ -17,6 +17,7 @@
     ../../modules/wezterm
     ../../modules/zellij
     ../../modules/opencode.nix
+    ../../modules/pegasus
   ];
 
   home = {

@@ -1,0 +1,5 @@
+collection: Super Nintendo
+shortname: snes
+extensions: sfc, smc, zip, 7z
+directory: /media/Games/snes
+launch: retroarch -L snes9x_libretro {file.path}

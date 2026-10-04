@@ -1,0 +1,5 @@
+collection: PlayStation 3
+shortname: ps3
+extensions: pkg
+directory: /media/Games/ps3
+launch: rpcs3 {file.path}

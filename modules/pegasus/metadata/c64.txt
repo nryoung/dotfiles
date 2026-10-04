@@ -1,0 +1,5 @@
+collection: Commodore 64
+shortname: c64
+extensions: d64, t64, tap, prg, crt, zip, 7z
+directory: /media/Games/c64
+launch: retroarch -L vice_x64_libretro {file.path}

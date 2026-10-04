@@ -1,0 +1,5 @@
+collection: PlayStation 2
+shortname: ps2
+extensions: iso, chd, cso, bin, gz
+directory: /media/Games/ps2
+launch: retroarch -L pcsx2_libretro {file.path}

@@ -1,0 +1,5 @@
+collection: PlayStation
+shortname: psx
+extensions: bin, cue, iso, chd, pbp, zip, 7z
+directory: /media/Games/psx
+launch: retroarch -L mednafen_psx_hw_libretro {file.path}

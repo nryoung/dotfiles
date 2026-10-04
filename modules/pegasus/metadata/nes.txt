@@ -1,0 +1,5 @@
+collection: Nintendo Entertainment System
+shortname: nes
+extensions: nes, zip, 7z
+directory: /media/Games/nes
+launch: retroarch -L nestopia_libretro {file.path}

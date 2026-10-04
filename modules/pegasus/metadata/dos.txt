@@ -1,0 +1,5 @@
+collection: DOS
+shortname: dos
+extensions: zip, dosz, exe, com, bat, iso, cue, ins, img, ima, vhd, jrc, tc, m3u, m3u8, conf
+directory: /media/Games/dos
+launch: retroarch -L dosbox_pure_libretro {file.path}

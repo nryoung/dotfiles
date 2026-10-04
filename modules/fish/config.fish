@@ -143,4 +143,7 @@ if status is-interactive
         set -gx --prepend PATH $_asdf_shims
     end
     set --erase _asdf_shims
+
+    # scrape all emulator games with Skyscraper
+    alias scrape='~/.local/bin/scrape-all.sh'
 end

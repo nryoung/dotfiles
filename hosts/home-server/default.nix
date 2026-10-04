@@ -189,16 +189,6 @@
     jellyfin-web
     jellyfin-ffmpeg
     just
-    (retroarch.withCores (cores: with cores; [
-      nestopia
-      snes9x
-      mupen64plus
-      beetle-psx-hw
-      pcsx2
-      dolphin
-      vice-x64
-      dosbox-pure
-    ]))
     rpcs3
     pegasus-frontend
     skyscraper
@@ -251,6 +241,7 @@
     "d /syncthing 1777 nic syncthing -"
     "Z /syncthing 1777 nic syncthing -"
     "d /cross-seeds 0777 nic media -"
+    "d /media/Games 0777 nic media -"
   ];
 
   # Syncthing
