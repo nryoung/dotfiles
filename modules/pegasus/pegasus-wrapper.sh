@@ -2,7 +2,7 @@
 STEAM_LOG="$HOME/.local/share/Steam/logs/content_log.txt"
 
 while true; do
-    sudo -u nic pegasus-fe &
+    sudo -E -u nic XDG_RUNTIME_DIR=/run/user/1000 pegasus-fe &
     PID=$!
     POS=$(wc -c < "$STEAM_LOG" 2>/dev/null || echo 0)
     RUNNING=false
