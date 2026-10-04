@@ -172,12 +172,16 @@
   users.users.nic = {
     isNormalUser = true;
     description = "nic";
-    extraGroups = [ "networkmanager" "wheel" "media" "syncthing" ];
+    extraGroups = [ "networkmanager" "wheel" "media" "syncthing" "input" ];
     packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # Overlay for Sunshine virtual gamepad autoconfig
+  nixpkgs.overlays = [
+    (import ../../overlays/sunshine-autoconfig.nix)
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
