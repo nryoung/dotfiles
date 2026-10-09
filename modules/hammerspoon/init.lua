@@ -25,11 +25,6 @@ local key_tap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function()
 end)
 
 ctrl_tap:start()
-local lastDeviceCount = ""
-local reloadTimer = hs.timer.doEvery(5, function()
-  local currentResult = hs.execute("ls /dev/hid* | wc -l")
-  if currentResult ~= lastDeviceCount then
-    lastDeviceCount = currentResult
-    hs.hs_reload()
-  end
-end)
+key_tap:start()
+local usbWatcher = hs.usb.watcher.new(function() hs.reload() end)
+usbWatcher:start()
