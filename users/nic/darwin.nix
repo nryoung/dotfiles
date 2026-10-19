@@ -106,6 +106,16 @@ in
   # Enable home-manager
   programs.home-manager.enable = true;
 
+  # Put the claude gateway shim ahead of ~/.local/bin/claude so the managed
+  # wrapper wins even after the native claude updater re-links ~/.local/bin/claude.
+  programs.zsh.initExtra = ''
+    PATH="/usr/local/libexec/claude-gateway:$PATH"
+  '';
+  programs.fish.shellInitLast = ''
+    set -x PATH "/usr/local/libexec/claude-gateway" $PATH
+    # <<< claude-gateway shim <<<
+  '';
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
 }
