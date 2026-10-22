@@ -17,8 +17,8 @@
     endpoint = {
       port = 51820;
       # main
-      publicKey = "YSj10LI8/Im58sgiA7n6Szw96GgE0p3TZv3MfbkxZH0=";
-      ip = "95.173.221.33";
+      publicKey = "EGo/2dw+hLWyYyRhLA8GDBihfxQ9KEWu0jTPKTK4Qm0=";
+      ip = "95.173.221.221";
     };
   };
 }
