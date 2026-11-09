@@ -1,23 +1,22 @@
 #!/usr/bin/env bash
 STEAM_LOG="$HOME/.local/share/Steam/logs/content_log.txt"
 
-# Start Steam minimized if not already running
-pgrep -x steam || steam -silent &
-sleep 2
+# Ensure only one instance
+exec 200>/tmp/pegasus-wrapper.lock
+flock -n 200 || exit 1
+
+# Start Steam minimized if not already running (as user nic with proper env)
+if ! pgrep -f 'ubuntu12_32/steam' > /dev/null; then
+    sudo -E -u nic XDG_RUNTIME_DIR=/run/user/1000 steam -silent &
+    sleep 3
+fi
 
 while true; do
-    sudo -E -u nic XDG_RUNTIME_DIR=/run/user/1000 pegasus-fe &
-    PID=$!
-    POS=$(wc -c < "$STEAM_LOG" 2>/dev/null || echo 0)
-    RUNNING=false
-    
-    while kill -0 $PID 2>/dev/null; do
-        sleep 2
-        NEW=$(tail -c +$(($POS + 1)) "$STEAM_LOG" 2>/dev/null | tr -d '\r')
-        echo "$NEW" | grep -q "state changed.*App Running" && RUNNING=true
-        if [ "$RUNNING" = true ] && echo "$NEW" | grep -qE 'state changed : Fully Installed,$'; then
-            kill $PID 2>/dev/null; wait $PID 2>/dev/null; sleep 1; break
-        fi
-        POS=$(wc -c < "$STEAM_LOG" 2>/dev/null || echo 0)
+    sudo -E -u nic XDG_RUNTIME_DIR=/run/user/1000 pegasus-fe
+    # Pegasus exited (user quit or launched a game)
+    # Wait for any running Steam game to finish before restarting
+    while pgrep -f 'steam.*AppId' > /dev/null 2>&1; do
+        sleep 5
     done
+    sleep 1
 done

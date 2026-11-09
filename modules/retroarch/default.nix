@@ -15,4 +15,8 @@
       video_fullscreen = "true";
     };
   };
+
+  xdg.configFile."retroarch/config/LRPS2/LRPS2.opt".text = ''
+    pcsx2_renderer = "Vulkan"
+  '';
 }

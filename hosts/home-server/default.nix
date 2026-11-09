@@ -269,11 +269,18 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
+  # enable game mode
+  programs.gamemode.enable = true;
+
   services.sunshine = {
     enable = true;
     autoStart = true;
     capSysAdmin = true;
     openFirewall = true;
+    settings = {
+      capture = "kms";
+      csrf_allowed_origins = "https://10.0.0.99:47990";
+    };
   };
 
   system.stateVersion = "25.05"; # Did you read the comment?
