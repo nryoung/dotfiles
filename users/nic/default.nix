@@ -56,6 +56,7 @@
     pkgs.fluffychat
     pkgs.glow
     pkgs.gvfs
+    pkgs.heroic
     pkgs.localsend
     pkgs.mediainfo
     pkgs.moonlight-qt
