@@ -13,6 +13,10 @@
     };
     settings = {
       video_fullscreen = "true";
+      frontend_log_level = "0";
+      log_to_file = "true";
+      log_verbosity = "true";
+      input_menu_toggle_gamepad_combo = "4";
     };
   };
 

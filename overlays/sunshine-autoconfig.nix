@@ -1,38 +1,41 @@
 final: prev: {
   retroarch-joypad-autoconfig = prev.retroarch-joypad-autoconfig.overrideAttrs (oldAttrs: {
     postInstall = (oldAttrs.postInstall or "") + ''
-      cat > $out/share/libretro/autoconfig/udev/Sunshine_X-Box_One_virtual_pad.cfg << 'AUTOCONFIG'
+      # Sunshine (libvirtualhid) X-Box Series Controller
+      # This device shows up as vendor 045e (1118), product 0b13 (2835)
+      # Uses Xbox One S button layout but custom trigger axes (2 and 5)
+      cat > $out/share/libretro/autoconfig/udev/Sunshine_libvirtualhid_X-Box_Series_Controller.cfg << 'AUTOCONFIG'
 input_driver = "udev"
-input_device = "Sunshine X-Box One (virtual) pad"
+input_device = "Sunshine (libvirtualhid) X-Box Series Controller"
 input_device_display_name = "Sunshine Virtual Xbox Controller"
 input_vendor_id = "1118"
-input_product_id = "746"
+input_product_id = "2835"
 
 input_b_btn = "0"
-input_y_btn = "2"
-input_select_btn = "6"
-input_start_btn = "7"
+input_y_btn = "3"
+input_select_btn = "10"
+input_start_btn = "11"
 input_up_btn = "h0up"
 input_down_btn = "h0down"
 input_left_btn = "h0left"
 input_right_btn = "h0right"
 input_a_btn = "1"
-input_x_btn = "3"
-input_l_btn = "4"
-input_r_btn = "5"
+input_x_btn = "4"
+input_l_btn = "6"
+input_r_btn = "7"
 input_l2_axis = "+2"
 input_r2_axis = "+5"
-input_l3_btn = "9"
-input_r3_btn = "10"
+input_l3_btn = "13"
+input_r3_btn = "14"
 input_l_x_plus_axis = "+0"
 input_l_x_minus_axis = "-0"
 input_l_y_plus_axis = "+1"
 input_l_y_minus_axis = "-1"
-input_r_x_plus_axis = "+3"
-input_r_x_minus_axis = "-3"
-input_r_y_plus_axis = "+4"
-input_r_y_minus_axis = "-4"
-input_menu_toggle_btn = "8"
+input_r_x_plus_axis = "+2"
+input_r_x_minus_axis = "-2"
+input_r_y_plus_axis = "+3"
+input_r_y_minus_axis = "-3"
+input_menu_toggle_btn = "12"
 
 input_b_btn_label = "A"
 input_y_btn_label = "X"
