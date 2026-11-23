@@ -10,6 +10,7 @@
       dolphin.enable = true;
       vice-x64.enable = true;
       dosbox-pure.enable = true;
+      genesis-plus-gx.enable = true;
     };
     settings = {
       video_fullscreen = "true";

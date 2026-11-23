@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  systems = [ "nes" "snes" "n64" "psx" "ps2" "ps3" "gc" "c64" "dos" ];
+  systems = [ "nes" "snes" "n64" "psx" "ps2" "ps3" "gc" "c64" "dos" "genesis" ];
 in {
   home.file = {
     ".local/bin/pegasus-wrapper.sh" = { source = ./pegasus-wrapper.sh; executable = true; };
@@ -35,5 +35,6 @@ in {
     ".config/pegasus-frontend/metafiles/gc.metadata.pegasus.txt".source = ./metadata/gc.txt;
     ".config/pegasus-frontend/metafiles/c64.metadata.pegasus.txt".source = ./metadata/c64.txt;
     ".config/pegasus-frontend/metafiles/dos.metadata.pegasus.txt".source = ./metadata/dos.txt;
+    ".config/pegasus-frontend/metafiles/genesis.metadata.pegasus.txt".source = ./metadata/genesis.txt;
   };
 }
