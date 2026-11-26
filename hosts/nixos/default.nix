@@ -44,14 +44,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # greetd with tuigreet (minimal TTY login, replaces cosmic-greeter)
-  services.greetd = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
     settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
-        user = "greeter";
-      };
+      cursor.size = 24;
+      keyboard.layout = "us";
+    };
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
     };
   };
 
