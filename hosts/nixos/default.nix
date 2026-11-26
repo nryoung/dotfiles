@@ -26,7 +26,6 @@
     53317
   ];
 
-
   # Set your time zone.
   time.timeZone = "America/Denver";
 
@@ -132,7 +131,6 @@
   environment.systemPackages = with pkgs; [
     curl
     git
-    jackett
     just
     tailscale
     wget
@@ -175,12 +173,6 @@
     "d /syncthing 1777 nic syncthing -"
     "Z /syncthing 1777 nic syncthing -"
   ];
-
-  # Jackett
-  # enable Jackett, default is ok
-  services.jackett = {
-    enable = true;
-  };
 
   # Syncthing
   users.users.syncthing.extraGroups = [ "users" ];

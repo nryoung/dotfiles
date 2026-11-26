@@ -68,7 +68,6 @@
     # pkgs.openmw
     pkgs.proton-vpn
     pkgs.qbittorrent
-    pkgs.remmina
     pkgs.rustup
     pkgs.signal-desktop
     pkgs.slack
@@ -109,7 +108,6 @@
         natural-scroll = false;
       };
   };
-
 
   # Enable font configuration
   fonts.fontconfig.enable = true;
