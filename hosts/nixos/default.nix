@@ -1,3 +1,4 @@
+# luciole
 { inputs
 , lib
 , config
@@ -55,6 +56,12 @@
       name = "Bibata-Modern-Ice";
     };
   };
+
+  # gvfs
+  services.gvfs.enable = true;
+
+  # luciole
+  programs.luciole.enable = true;
 
   # niri wayland compositor
   programs.niri.enable = true;

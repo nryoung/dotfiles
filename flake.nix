@@ -35,6 +35,11 @@
       url = "github:noctalia-dev/noctalia";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # luciole
+    luciole = {
+      url = "github:noctalia-dev/luciole/cachix";
+    };
   };
 
   outputs =
@@ -44,6 +49,7 @@
     , nix-darwin
     , niri-flake
     , noctalia
+    , luciole
     , ...
     } @ inputs:
     let
@@ -59,6 +65,7 @@
           modules = [
             ./hosts/nixos
             niri-flake.nixosModules.default
+            luciole.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "bak";

@@ -13,7 +13,6 @@
     ../../modules/newsboat.nix
     ../../modules/niri.nix
     ../../modules/noctalia.nix
-    ../../modules/thunar.nix
     ../../modules/wezterm
     ../../modules/zellij
     ../../modules/opencode.nix
@@ -72,11 +71,6 @@
     pkgs.signal-desktop
     pkgs.slack
     pkgs.sshfs
-    pkgs.thunar
-    pkgs.thunar-archive-plugin # Archive support (zip, tar, etc)
-    pkgs.thunar-media-tags-plugin
-    pkgs.thunar-volman
-    pkgs.xarchiver # GUI archive manager that Thunar uses for zip operations
     pkgs.vlc
     pkgs.zola
     pkgs.opencode
