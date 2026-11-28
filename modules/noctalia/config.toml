@@ -1,0 +1,306 @@
+# Noctalia v5.4.1 config - cleaned up from the old v4-style flat keys.
+# Validate with: noctalia config validate ./config.toml
+
+# ---------------------------------------------------------------- shell
+[shell]
+font_family = "Fira Code"
+lang = "en"
+niri_overview_type_to_launch_enabled = true
+polkit_agent = true
+settings_show_advanced = true
+telemetry_enabled = true          # default is false; this sends a startup ping
+
+[shell.greeter_sync]
+auto_sync = false
+
+[shell.shadow]
+direction = "down_right"          # was general.shadowDirection = "bottom_right"
+
+[shell.panel]
+transparency_mode = "soft"
+
+[shell.launcher]
+pinned = [
+    "steam",
+]
+
+[shell.mpris]
+blacklist = []                    # was audio.mprisBlacklist
+
+# Session panel (was sessionMenu.powerOptions)
+[shell.session]
+grid = false                      # was largeButtonsLayout = "single-row"
+
+[[shell.session.actions]]
+action = "lock"
+shortcut = "1"
+
+[[shell.session.actions]]
+action = "suspend"
+shortcut = "2"
+
+[[shell.session.actions]]
+action = "command"
+command = "systemctl hibernate"
+label = "Hibernate"
+glyph = "moon"
+shortcut = "3"
+
+[[shell.session.actions]]
+action = "reboot"
+shortcut = "4"
+countdown_seconds = 10
+
+[[shell.session.actions]]
+action = "logout"
+shortcut = "5"
+countdown_seconds = 10
+
+[[shell.session.actions]]
+action = "shutdown"
+shortcut = "6"
+countdown_seconds = 10
+variant = "destructive"
+
+[[shell.session.actions]]
+action = "reboot_uefi"
+shortcut = "7"
+countdown_seconds = 10
+
+[lockscreen]
+lock_before_suspend = true        # was general.lockOnSuspend
+blur_intensity = 0.0              # was general.lockScreenBlur = 0
+tint_intensity = 0.0              # was general.lockScreenTint = 0
+
+# ---------------------------------------------------------------- theme
+[theme]
+mode = "dark"                     # was colorSchemes.darkMode
+source = "wallpaper"              # was colorSchemes.useWallpaperColors
+builtin = "Noctalia"              # was "m3-tonal-spot", which isn't a palette name
+wallpaper_scheme = "m3-tonal-spot"
+sync_color_scheme = true          # was colorSchemes.syncGsettings
+
+[theme.templates]
+builtin_ids = [ "btop", "gtk3", "gtk4", "helix", "kitty", "niri", "qt", "starship" ]
+community_ids = [ "spicetify", "zen-browser", "discord", "neovim", "prismlauncher", "steam", "fuzzel", "yazi" ]
+
+# ---------------------------------------------------------------- bar
+[bar.top]
+thickness = 34
+font_family = "Fira Code"
+start  = ["launcher", "wallpaper", "workspaces", "cpu", "temp", "ram"]
+center = ["clock"]
+end    = ["media", "tray", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "control-center", "session"]
+
+# ---------------------------------------------------------------- widgets
+[widget.clock]
+format = "{:%H:%M} {:%Y-%m-%d}"
+vertical_format = "{:%H\n%M}"
+tooltip_format = "{:%A, %B %d, %Y}"
+
+[widget.network]
+show_label = false
+
+[widget.tray]
+drawer = true
+
+[widget.volume]
+show_label = true
+
+[widget.workspaces]
+pill_scale = 0.5
+show_labels = false
+
+# System monitor widgets ("cpu", "temp", "ram" aren't built-in types)
+[widget.cpu]
+type = "sysmon"
+stat = "cpu_usage"
+
+[widget.temp]
+type = "sysmon"
+stat = "cpu_temp"
+
+[widget.ram]
+type = "sysmon"
+stat = "ram_used"
+
+# Spacers
+[widget.spacer_2]
+type = "spacer"
+length = 400
+
+[widget.spacer_3]
+type = "spacer"
+
+[widget.spacer_4]
+type = "spacer"
+
+[widget.spacer_5]
+type = "spacer"
+
+[widget.spacer_6]
+type = "spacer"
+
+[widget.spacer_7]
+type = "spacer"
+
+[widget.spacer_8]
+type = "spacer"
+length = 30
+
+[widget.spacer_9]
+type = "spacer"
+
+[widget.spacer_10]
+type = "spacer"
+
+[widget.spacer_11]
+type = "spacer"
+
+# ---------------------------------------------------------------- services
+[audio]
+enable_sounds = true
+enable_overdrive = false          # was audio.volumeOverdrive
+enable_volume_sounds = false      # was audio.volumeFeedback
+
+[calendar]
+enabled = true
+
+[location]
+auto_locate = false
+address = "Englewood, CO"      # moved here from [weather] / old [location]
+
+[weather]
+enabled = true
+unit = "imperial"                 # was location.useFahrenheit = true
+effects = true                    # was location.weatherShowEffects
+
+[nightlight]
+enabled = false
+force = false
+temperature_day = 6500
+temperature_night = 4000
+
+# Idle behaviours (was flat idle.* keys). All disabled, as before.
+[idle]
+behavior_order = [ "lock", "screen-off", "suspend" ]
+
+[idle.behavior.lock]
+action = "lock"
+timeout = 660
+enabled = true
+
+[idle.behavior.screen-off]
+action = "screen_off"
+timeout = 600
+enabled = true
+
+[idle.behavior.suspend]
+action = "lock_and_suspend"
+timeout = 1800
+enabled = true
+
+# ---------------------------------------------------------------- notifications / OSD
+# [notifications] (plural) became [notification] (singular)
+[notification]
+scale = 0.75
+background_opacity = 1.0
+layer = "overlay"                 # was notifications.overlayLayer = true
+
+[osd]
+enabled = true
+position = "top_right"
+hide_delay_ms = 2000
+background_opacity = 1.0
+
+# Old enabledTypes = [0, 1, 2] meant volume, mic volume and brightness only.
+# Flip any of these to true to get the other popups back.
+[osd.kinds]
+volume = true
+volume_output = true
+volume_input = true
+brightness = true
+wifi = false
+bluetooth = false
+power_profile = false
+caffeine = false
+nightlight = false
+dnd = false
+lock_keys = false
+keyboard_layout = false
+media = false
+media_volume = false
+privacy = false
+keyboard_backlight = false
+custom = false
+
+# ---------------------------------------------------------------- wallpaper
+[wallpaper]
+directory = "/home/nic/Pictures/Wallpapers"
+transition_on_startup = true
+
+[wallpaper.automation]
+interval_seconds = 900            # was interval_minutes = 15
+
+# Enable the backdrop
+[backdrop]
+enabled = true
+blur_intensity = 0.5
+tint_intensity = 0.3
+
+
+# ---------------------------------------------------------------- lockscreen widgets
+# Not flagged by the validator, so carried over unchanged (disabled).
+[lockscreen_widgets]
+enabled = false
+schema_version = 1
+widget_order = [ "lockscreen-login-box@DP-4", "lockscreen-login-box@DP-5" ]
+
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-4"]
+box_height = 196.0
+box_width = 810.0
+cx = 1720.0
+cy = 1317.0
+output = "DP-4"
+placement_height = 1440.0
+placement_width = 3440.0
+rotation = 0.0
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-4".settings]
+center_password_text = false
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-5"]
+box_height = 196.0
+box_width = 810.0
+cx = 720.0
+cy = 2437.0
+output = "DP-5"
+placement_height = 0.0
+placement_width = 0.0
+rotation = 0.0
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-5".settings]
+center_password_text = false
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true

@@ -12,7 +12,7 @@
     ../../modules/helix
     ../../modules/newsboat.nix
     ../../modules/niri.nix
-    ../../modules/noctalia.nix
+    ../../modules/noctalia
     ../../modules/wezterm
     ../../modules/zellij
     ../../modules/opencode.nix
